@@ -40,22 +40,23 @@ lsp.format_on_save({
 
 lsp.setup()
 
--- Make sure you setup `cmp` after lsp-zero
-local cmp = require("cmp")
+-- Completion
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+-- Load snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+
+-- Load custom python
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/python" } }
+
 cmp.setup({
-    snippet = {
-        -- REQUIRED - you must specify a snippet engine
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        end,
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip', option = { show_autosnippets = true, use_show_condition = true } },
     },
     mapping = {
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        ['<C-n>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-N>'] = cmp_action.luasnip_jump_backward(),
-    },
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' }, -- For luasnip users.
-    })
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    }
 })

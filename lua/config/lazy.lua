@@ -57,12 +57,28 @@ require("lazy").setup({
             },
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },     -- Required
+            -- Installation
+            {
+                'L3MON4D3/LuaSnip',
+                dependencies = { "rafamadriz/friendly-snippets" }
+            },
+            {
+                'hrsh7th/nvim-cmp',
+                config = function()
+                    require 'cmp'.setup {
+                        snippet = {
+                            expand = function(args)
+                                require 'luasnip'.lsp_expand(args.body)
+                            end
+                        },
+                    }
+                end
+            },
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },     -- Required
+            { 'saadparwaiz1/cmp_luasnip' }
         }
     },
+
     -- DAP Plugins
     { 'mfussenegger/nvim-dap' },
     { 'mfussenegger/nvim-dap-python',   dependencies = { "mfussenegger/nvim-dap" } },
@@ -75,7 +91,6 @@ require("lazy").setup({
 
     -- Oil for Greasy File Exploration/Management
     { 'stevearc/oil.nvim' },
-
 
     -- Open AI
     {
