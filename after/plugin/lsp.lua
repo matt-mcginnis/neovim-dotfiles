@@ -12,7 +12,8 @@ lsp.nvim_workspace()
 lsp.ensure_installed({
     'lua_ls',
     'sqlls',
-    'vimls'
+    'vimls',
+    'pyright'
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -33,32 +34,30 @@ lsp.format_on_save({
         timeout_ms = 10000,
     },
     servers = {
-        ['black'] = { 'python' },
         ['lua_ls'] = { 'lua' },
     }
 })
 
 lsp.setup()
 
--- Completion Configuration
-local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
-
--- require("luasnip.loaders.from_vscode").lazy_load()
--- require("luasnip.loaders.from_vscode").load({ paths = {"./snippets" } })
--- require('luasnip').filetype_extend("python", { "python" })
--- require("luasnip/loaders/from_vscode").load({ paths = { "/Users/mattmcginnis/.local/share/nvim/site/pack/packer/start/friendly-snippets/python/python.json" } })
-
+-- Make sure you setup `cmp` after lsp-zero
+local cmp = require("cmp")
 cmp.setup({
-    sources = {
-    {name = 'nvim_lsp'},
-    {name = 'luasnip'},
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        end,
     },
-    require("luasnip.loaders.from_vscode").lazy_load(),
-    mapping = {
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        ['<C-n>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-N>'] = cmp_action.luasnip_jump_backward(),
-    }
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' }, -- For luasnip users.
+    })
 })
-
