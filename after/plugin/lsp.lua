@@ -13,7 +13,7 @@ lsp.ensure_installed({
     'lua_ls',
     'sqlls',
     'vimls',
-    'pyright'
+    'pylsp'
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -35,28 +35,16 @@ lsp.format_on_save({
     },
     servers = {
         ['lua_ls'] = { 'lua' },
+        ['pylsp'] = { 'python' },
     }
 })
 
 lsp.setup()
 
--- Completion
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
-
--- Load snippets
-require("luasnip.loaders.from_vscode").lazy_load()
-
--- Load custom python
-require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/python" } }
 
 cmp.setup({
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip', option = { show_autosnippets = true, use_show_condition = true } },
-    },
     mapping = {
-        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
     }
 })

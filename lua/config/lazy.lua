@@ -58,10 +58,7 @@ require("lazy").setup({
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Installation
-            {
-                'L3MON4D3/LuaSnip',
-                dependencies = { "rafamadriz/friendly-snippets" }
-            },
+            { 'L3MON4D3/LuaSnip' },
             {
                 'hrsh7th/nvim-cmp',
                 config = function()
@@ -75,7 +72,6 @@ require("lazy").setup({
                 end
             },
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'saadparwaiz1/cmp_luasnip' }
         }
     },
 
