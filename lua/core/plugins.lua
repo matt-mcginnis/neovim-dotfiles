@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-print(lazypath)
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -37,48 +36,30 @@ require("lazy").setup({
 
     -- Gruvbox Color Theme
     { "ellisonleao/gruvbox.nvim" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { 'nvim-treesitter/playground' },
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
 
     -- LSP Plugins
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
-            {                            -- Optional
-                'williamboman/mason.nvim',
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "neovim/nvim-lspconfig" },
 
-            -- Installation
-            { 'L3MON4D3/LuaSnip' },
-            {
-                'hrsh7th/nvim-cmp',
-                config = function()
-                    require 'cmp'.setup {
-                        snippet = {
-                            expand = function(args)
-                                require 'luasnip'.lsp_expand(args.body)
-                            end
-                        },
-                    }
-                end
-            },
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        }
+    -- Autocompletion and Snippets
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = { "rafamadriz/friendly-snippets" }
     },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "rafamadriz/friendly-snippets" },
 
     -- DAP Plugins
     { 'mfussenegger/nvim-dap' },
-    { 'mfussenegger/nvim-dap-python',   dependencies = { "mfussenegger/nvim-dap" } },
-    { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap" } },
+    { 'mfussenegger/nvim-dap-python',     dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap" } },
     { "theHamsta/nvim-dap-virtual-text" },
 
     -- Leap Motions
