@@ -1,7 +1,5 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>b", ":b")
-
 vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")

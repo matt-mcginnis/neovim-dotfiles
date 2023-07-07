@@ -66,6 +66,9 @@ require("lazy").setup({
     { "ggandor/leap.nvim" },
     { "ggandor/flit.nvim" },
 
+    -- Commenting
+    { "numToStr/Comment.nvim" },
+
     -- Oil for Greasy File Exploration/Management
     { 'stevearc/oil.nvim' },
 
