@@ -1,5 +1,4 @@
 require("core.plugin_config.chat_gpt")
-require("core.plugin_config.colors")
 require("core.plugin_config.cmp")
 require("core.plugin_config.dap")
 require("core.plugin_config.movement")
