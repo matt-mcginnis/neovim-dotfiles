@@ -1,1 +1,7 @@
-vim.keymap.set("n", "<leader>g", ":G ")
+vim.keymap.set("n", "<leader>gs", ":G<cr>")
+vim.keymap.set("n", "<leader>gb", ":G blame<cr>")
+vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit<cr>")
+vim.keymap.set("n", "<leader>gc", ":G commit<cr>")
+vim.keymap.set("n", "<leader>gm", ":G commit -m ")
+vim.keymap.set("n", "<leader>gp", ":G pull<cr>")
+vim.keymap.set("n", "<leader>gP", ":G push<cr>")
