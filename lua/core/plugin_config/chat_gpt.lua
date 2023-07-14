@@ -9,7 +9,7 @@ require("chatgpt").setup(
                 toggle_diff = "<C-d>",
                 toggle_settings = "<C-o>",
                 cycle_windows = "<Tab>",
-                use_output_as_input = "<C-t>",
+                use_output_as_input = "<C-u>",
             },
         },
         chat = {
@@ -33,18 +33,16 @@ require("chatgpt").setup(
                 close = { "<C-c>" },
                 yank_last = "<C-y>",
                 yank_last_code = "<C-k>",
-                scroll_up = "<C-u>",
-                scroll_down = "<C-d>",
                 new_session = "<C-n>",
                 cycle_windows = "<Tab>",
                 cycle_modes = "<C-f>",
-                select_session = "<Space>",
+                select_session = "<C-s>",
                 rename_session = "r",
                 delete_session = "d",
                 draft_message = "<C-d>",
                 toggle_settings = "<C-o>",
-                toggle_message_role = "<C-r>",
-                toggle_system_role_open = "<C-s>",
+                toggle_message_role = "<C-m>",
+                toggle_system_role_open = "<C-r>",
             },
         },
         popup_layout = {
@@ -139,10 +137,8 @@ require("chatgpt").setup(
     }
 )
 
-vim.keymap.set("n", "<leader>ac", "<cmd>ChatGPT<cr>")
+vim.keymap.set("n", "<leader>ai", "<cmd>ChatGPT<cr>")
 vim.keymap.set("v", "<leader>ae", "<cmd>ChatGPTEditWithInstructions<cr>")
-vim.keymap.set("v", "<leader>ax", "<cmd>ChatGPTRun explain_code<cr>")
-vim.keymap.set("v", "<leader>ad", "<cmd>ChatGPTRun docstring<cr>")
-vim.keymap.set("v", "<leader>ao", "<cmd>ChatGPTRun optimize_code<cr>")
-vim.keymap.set("v", "<leader>as", "<cmd>ChatGPTRun summarize<cr>")
-vim.keymap.set("v", "<leader>ab", "<cmd>ChatGPTRun fix_bugs<cr>")
+vim.keymap.set("n", "<leader>ac", "<cmd>ChatGPTCompleteCode<cr>")
+vim.keymap.set("n", "<leader>ar", ":ChatGPTRun ")
+vim.keymap.set("v", "<leader>ar", ":ChatGPTRun ")
