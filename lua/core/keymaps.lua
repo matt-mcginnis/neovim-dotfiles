@@ -10,13 +10,16 @@ vim.keymap.set("n", "<leader>l", "$")
 vim.keymap.set("n", "H", "Hzz")
 vim.keymap.set("n", "K", "Lzz")
 
-vim.keymap.set("n", "<leader>fm", ":!black .<cr><cr>")
+vim.keymap.set("n", "<leader>b", ":!black .<cr><cr>")
 
 vim.keymap.set("n", "<C-h>", "<C-u>zz")
 vim.keymap.set("n", "<C-k>", "<C-d>zz")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "<leader>mt", "`")
+vim.keymap.set("n", "<leader>md", ":delm ")
 
 vim.keymap.set("n", "<leader>p", "\"+p")
 
@@ -38,7 +41,7 @@ vim.keymap.set("n", "<leader>sl", ":s/")
 vim.keymap.set("n", "<leader>s.", "@:")
 
 vim.keymap.set("n", "<C-e>", "gt")
-vim.keymap.set("n", "<C-n", "gT")
+vim.keymap.set("n", "<C-n>", "gT")
 
 vim.keymap.set("n", "<leader>v", "<C-v>")
 
