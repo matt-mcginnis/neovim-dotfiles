@@ -33,8 +33,6 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
- 
-        -- Super Tab Functionality for Completions
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
