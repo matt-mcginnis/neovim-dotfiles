@@ -10,6 +10,8 @@ vim.keymap.set("n", "<leader>l", "$")
 vim.keymap.set("n", "H", "Hzz")
 vim.keymap.set("n", "K", "Lzz")
 
+vim.keymap.set("n", "<leader>ai", "O<cr><cr><esc>kk:ChatGPT ")
+
 vim.keymap.set("n", "<leader>b", ":!black .<cr><cr>")
 
 vim.keymap.set("n", "<C-h>", "<C-u>zz")

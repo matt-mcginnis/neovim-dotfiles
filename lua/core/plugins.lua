@@ -72,14 +72,11 @@ require("lazy").setup({
     -- Oil for Greasy File Exploration/Management
     { 'stevearc/oil.nvim' },
 
-    -- Open AI
     {
-        "jackMort/ChatGPT.nvim",
-        event="VeryLazy",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    }
+    "lvauthrin/chatgpt.nvim",
+    lazy = false,
+    config = function(_, _)
+      require("chatgpt").setup({ api_key = os.getenv("OPENAI_API_KEY") })
+    end,
+  }
 })
