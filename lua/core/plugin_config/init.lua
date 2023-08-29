@@ -1,3 +1,4 @@
+require("core.plugin_config.chat_gpt")
 require("core.plugin_config.cmp")
 require("core.plugin_config.comment")
 require("core.plugin_config.dap")
