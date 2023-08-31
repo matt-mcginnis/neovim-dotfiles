@@ -72,6 +72,7 @@ require("lazy").setup({
     -- Oil for Greasy File Exploration/Management
     { 'stevearc/oil.nvim' },
 
+    -- ChatGPT
     {
       "jackMort/ChatGPT.nvim",
         event = "VeryLazy",
