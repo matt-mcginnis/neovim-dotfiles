@@ -51,7 +51,7 @@ require("lazy").setup({
     { "hrsh7th/cmp-nvim-lsp" },
     {
         "L3MON4D3/LuaSnip",
-        dependencies = { "rafamadriz/friendly-snippets" }
+        dependencies = { "matt-mcginnis/my-snippets" }
     },
     { "saadparwaiz1/cmp_luasnip" },
 
