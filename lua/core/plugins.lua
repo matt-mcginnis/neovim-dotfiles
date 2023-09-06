@@ -54,7 +54,6 @@ require("lazy").setup({
         dependencies = { "rafamadriz/friendly-snippets" }
     },
     { "saadparwaiz1/cmp_luasnip" },
-    { "rafamadriz/friendly-snippets" },
 
     -- DAP Plugins
     { 'mfussenegger/nvim-dap' },
