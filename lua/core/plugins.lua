@@ -37,6 +37,7 @@ require("lazy").setup({
     -- Gruvbox Color Theme
     { "ellisonleao/gruvbox.nvim" },
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
     { 'nvim-treesitter/playground' },
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
@@ -63,7 +64,6 @@ require("lazy").setup({
 
     -- Leap Motions
     { "ggandor/leap.nvim" },
-    { "ggandor/flit.nvim" },
 
     -- Commenting
     { "numToStr/Comment.nvim" },

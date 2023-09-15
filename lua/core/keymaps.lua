@@ -47,8 +47,6 @@ vim.keymap.set("n", "<C-n>", "gT")
 vim.keymap.set("n", "<C-.>", ":tabm +1<cr>")
 vim.keymap.set("n", "<C-,>", ":tabm -1<cr>")
 
-vim.keymap.set("n", "<leader>v", "<C-v>")
-
 vim.keymap.set("n", "<leader>wj", "<C-w>h")
 vim.keymap.set("n", "<leader>wl", "<C-w>l")
 vim.keymap.set("n", "<leader>wh", "<C-w>k")
