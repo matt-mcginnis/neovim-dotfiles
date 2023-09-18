@@ -39,7 +39,6 @@ vim.keymap.set("n", "<leader>s]", "ciw[<esc>pa]<esc>")
 vim.keymap.set("n", "<leader>s{", "ciw{<esc>pa}<esc>")
 vim.keymap.set("n", "<leader>s}", "ciw{<esc>pa}<esc>")
 vim.keymap.set("n", "<leader>st", ":%s/")
-vim.keymap.set("n", "<leader>sl", ":s/")
 vim.keymap.set("n", "<leader>s.", "@:")
 
 vim.keymap.set("n", "<C-e>", "gt")

@@ -31,9 +31,7 @@ require("chatgpt").setup(
             },
             keymaps = {
                 close = { "<C-c>" },
-                yank_last = "<C-y>",
-                yank_last_code = "<C-k>",
-                new_session = "<C-n>",
+                new_session = "<C-k>",
                 cycle_windows = "<Tab>",
                 cycle_modes = "<C-f>",
                 select_session = "<Space>",
@@ -117,7 +115,7 @@ require("chatgpt").setup(
             },
         },
         openai_params = {
-            model = "gpt-3.5-turbo",
+            model = "gpt-4",
             frequency_penalty = 0,
             presence_penalty = 0,
             max_tokens = 1000,

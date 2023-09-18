@@ -39,5 +39,32 @@ require'nvim-treesitter.configs'.setup {
       },
       include_surrounding_whitespace = false,
     },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["<leader>tf"] = "@function.outer",
+        ["<leader>tc"] = "@comment.outer",
+        ["<leader>ti"] = "@conditional.*",
+        ["<leader>tl"] = "@loop.*",
+      },
+      goto_previous_start = {
+        ["<leader>sf"] = "@function.outer",
+        ["<leader>sc"] = "@comment.outer",
+        ["<leader>si"] = "@conditional.*",
+        ["<leader>sl"] = "@loop.*",
+      },
+    },
   },
 }
+
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+
+-- Repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward regardless of the last direction
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+
+-- Optionally, make builtin f, F, t, T also repeatable with ; and ,
+vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
