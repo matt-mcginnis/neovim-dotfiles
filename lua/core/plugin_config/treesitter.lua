@@ -48,11 +48,23 @@ require'nvim-treesitter.configs'.setup {
         ["<leader>ti"] = "@conditional.*",
         ["<leader>tl"] = "@loop.*",
       },
+      goto_next_end = {
+        ["<leader>tF"] = "@function.outer",
+        ["<leader>tC"] = "@comment.outer",
+        ["<leader>tI"] = "@conditional.*",
+        ["<leader>tL"] = "@loop.*",
+      },
       goto_previous_start = {
         ["<leader>sf"] = "@function.outer",
         ["<leader>sc"] = "@comment.outer",
         ["<leader>si"] = "@conditional.*",
         ["<leader>sl"] = "@loop.*",
+      },
+      goto_previous_end = {
+        ["<leader>sF"] = "@function.outer",
+        ["<leader>sC"] = "@comment.outer",
+        ["<leader>sI"] = "@conditional.*",
+        ["<leader>sL"] = "@loop.*",
       },
     },
   },
