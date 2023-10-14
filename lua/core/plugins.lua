@@ -34,8 +34,15 @@ require("lazy").setup({
         end,
     },
 
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
     -- Gruvbox Color Theme
     { "ellisonleao/gruvbox.nvim" },
+ 
+    -- Treesitter
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     { 'nvim-treesitter/playground' },
@@ -81,9 +88,4 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim"
         }
     },
-    {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    }
 })

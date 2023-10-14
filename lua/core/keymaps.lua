@@ -18,19 +18,20 @@ vim.keymap.set("n", "<leader>cR", "zR")
 vim.keymap.set("n", "<leader>cm", "zm")
 vim.keymap.set("n", "<leader>cM", "zM")
 
-vim.keymap.set("n", "<leader>F", ":!black .<cr><cr>")
-
 vim.keymap.set("n", "<C-h>", "<C-u>zz")
 vim.keymap.set("n", "<C-k>", "<C-d>zz")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set("n", "<leader>op", ":!black .<cr><cr>")
+
 vim.keymap.set("n", "<leader>mt", "`")
 vim.keymap.set("n", "<leader>md", ":delm ")
 
 vim.keymap.set("n", "<leader>ni", ":Neorg workspace notes<cr>")
 vim.keymap.set("n", "<leader>nr", ":Neorg return<cr>")
+vim.keymap.set("n", "<leader>ns", ":Neorg sync-parsers<cr>")
 
 vim.keymap.set("n", "<leader>p", "\"+p")
 
@@ -90,6 +91,9 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
+
+vim.keymap.set("v", "<leader>op", ":!black .<cr><cr>")
+vim.keymap.set("v", "<leader>ot", "gq")
 
 vim.keymap.set("v", "<leader>s'", "c'<esc>pa'<esc>")
 vim.keymap.set("v", "<leader>s\"", "c\"<esc>pa\"<esc>")
