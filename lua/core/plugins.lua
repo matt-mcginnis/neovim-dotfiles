@@ -41,7 +41,7 @@ require("lazy").setup({
     },
     -- Gruvbox Color Theme
     { "ellisonleao/gruvbox.nvim" },
- 
+
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
