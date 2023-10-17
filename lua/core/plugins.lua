@@ -34,11 +34,6 @@ require("lazy").setup({
         end,
     },
 
-    {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
     -- Gruvbox Color Theme
     { "ellisonleao/gruvbox.nvim" },
 
@@ -88,4 +83,23 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim"
         }
     },
+
+    -- Vimwiki
+    {
+    'vimwiki/vimwiki',
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/vimwiki',
+          syntax = 'markdown',
+          ext  = '.md',
+        }
+      }
+      vim.g.vimwiki_ext2syntax = {
+        ['.md'] = 'markdown',
+        ['.markdown'] = 'markdown',
+        ['.mdown'] = 'markdown',
+      }
+    end
+  }
 })

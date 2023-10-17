@@ -9,6 +9,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.tw = 120
 
+vim.opt.splitright = true
+
 vim.opt.foldmethod = "indent"
 
 vim.opt.swapfile = false
@@ -23,3 +25,13 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 vim.diagnostic.config({ signs = false, virtual_text = false })
+
+-- Vimwiki Settings
+vim.g.vimwiki_folding = 'custom'
+
+vim.api.nvim_create_autocmd('BufEnter', {
+    pattern = {'*.wiki'},
+    group = group,
+    command = 'setlocal nowrap'
+})
+
