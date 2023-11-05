@@ -10,8 +10,6 @@ vim.keymap.set("n", "<leader>l", "$")
 vim.keymap.set("n", "H", "Hzz")
 vim.keymap.set("n", "K", "Lzz")
 
-vim.keymap.set("n", "<leader>ai", "O<cr><cr><esc>kk:ChatGPT ")
-
 vim.keymap.set("n", "<leader>ca", "za")
 vim.keymap.set("n", "<leader>cr", "zr")
 vim.keymap.set("n", "<leader>cR", "zR")
@@ -24,12 +22,9 @@ vim.keymap.set("n", "<C-k>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>mt", "`")
-vim.keymap.set("n", "<leader>md", ":delm ")
-
-vim.keymap.set("n", "<leader>ni", ":Neorg workspace notes<cr>")
-vim.keymap.set("n", "<leader>nr", ":Neorg return<cr>")
-vim.keymap.set("n", "<leader>ns", ":Neorg sync-parsers<cr>")
+vim.keymap.set("n", "<leader>m", "m")
+vim.keymap.set("n", "m", "`")
+vim.keymap.set("n", "<leader>dm", ":delm ")
 
 vim.keymap.set("n", "<leader>op", ":!black .<cr><cr>")
 

@@ -73,17 +73,6 @@ require("lazy").setup({
     -- Oil for Greasy File Exploration/Management
     { 'stevearc/oil.nvim' },
 
-    -- ChatGPT
-    {
-        "jackMort/ChatGPT.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    },
-
     -- Vimwiki
     {
     'vimwiki/vimwiki',
