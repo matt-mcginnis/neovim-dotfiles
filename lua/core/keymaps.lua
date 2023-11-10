@@ -46,6 +46,9 @@ vim.keymap.set("n", "<leader>s}", "ciw{<esc>pa}<esc>")
 vim.keymap.set("n", "<leader>st", ":%s/")
 vim.keymap.set("n", "<leader>s.", "@:")
 
+vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
+vim.keymap.set("n", "<leader>t-", ":new | term<cr>")
+
 vim.keymap.set("n", "<C-e>", "gt")
 vim.keymap.set("n", "<C-n>", "gT")
 vim.keymap.set("n", "<C-.>", ":tabm +1<cr>")
@@ -60,6 +63,9 @@ vim.keymap.set("n", "<leader>wJ", "<C-w>H")
 vim.keymap.set("n", "<leader>wL", "<C-w>L")
 vim.keymap.set("n", "<leader>wH", "<C-w>K")
 vim.keymap.set("n", "<leader>wK", "<C-w>J")
+
+vim.keymap.set("n", "<leader>w\\", ":vnew<cr>")
+vim.keymap.set("n", "<leader>w-", ":new<cr>")
 
 vim.keymap.set("n", "<leader>wt", "<C-w>T")
 
