@@ -72,29 +72,4 @@ require("lazy").setup({
 
     -- Oil for Greasy File Exploration/Management
     { 'stevearc/oil.nvim' },
-
-    {
-        "nomnivore/ollama.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-
-        -- All the user commands added by the plugin
-        cmd = { "Ollama", "OllamaModel", "OllamaServe", "OllamaServeStop" },
-
-        -- Sample keybind for prompting. Note that the <c-u> is important for selections to work properly.
-        keys = {
-            {
-                "<leader>oo",
-                ":<c-u>lua require('ollama').prompt()<cr>",
-                desc = "ollama prompt",
-                mode = { "n", "v" },
-            },
-        },
-
-        ---@type Ollama.Config
-        opts = {
-            -- your configuration overrides
-        }
-    }
 })
