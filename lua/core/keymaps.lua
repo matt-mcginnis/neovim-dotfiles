@@ -26,6 +26,7 @@ vim.keymap.set("n", "<leader>m", "m")
 vim.keymap.set("n", "m", "`")
 vim.keymap.set("n", "<leader>dm", ":delm ")
 
+vim.keymap.set("n", "<leader>og", ":Glow<cr>")
 vim.keymap.set("n", "<leader>op", ":!black .<cr><cr>")
 
 vim.keymap.set("n", "<leader>p", "\"+p")
@@ -54,6 +55,8 @@ vim.keymap.set("n", "<C-e>", "gt")
 vim.keymap.set("n", "<C-n>", "gT")
 vim.keymap.set("n", "<C-.>", ":tabm +1<cr>")
 vim.keymap.set("n", "<C-,>", ":tabm -1<cr>")
+
+vim.keymap.set("n", "<leader>v", "<C-v>")
 
 vim.keymap.set("n", "<leader>wj", "<C-w>h")
 vim.keymap.set("n", "<leader>wl", "<C-w>l")
