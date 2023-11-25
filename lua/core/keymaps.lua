@@ -10,11 +10,11 @@ vim.keymap.set("n", "<leader>l", "$")
 vim.keymap.set("n", "H", "Hzz")
 vim.keymap.set("n", "K", "Lzz")
 
-vim.keymap.set("n", "<leader>ca", "za")
-vim.keymap.set("n", "<leader>cr", "zr")
-vim.keymap.set("n", "<leader>cR", "zR")
-vim.keymap.set("n", "<leader>cm", "zm")
-vim.keymap.set("n", "<leader>cM", "zM")
+vim.keymap.set("n", "<leader>ca", "za", {desc = "Toggle collapsable fold"})
+vim.keymap.set("n", "<leader>cr", "zr", {desc = "Open a collapsable fold"})
+vim.keymap.set("n", "<leader>cR", "zR", {desc = "Open all collapsable folds recursively"})
+vim.keymap.set("n", "<leader>cm", "zm", {desc = "Close a collapsable fold"})
+vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds recursively"})
 
 vim.keymap.set("n", "<C-h>", "<C-u>zz")
 vim.keymap.set("n", "<C-k>", "<C-d>zz")
@@ -26,8 +26,10 @@ vim.keymap.set("n", "<leader>m", "m")
 vim.keymap.set("n", "m", "`")
 vim.keymap.set("n", "<leader>dm", ":delm ")
 
-vim.keymap.set("n", "<leader>og", ":Glow<cr>")
-vim.keymap.set("n", "<leader>op", ":!black .<cr><cr>")
+vim.keymap.set("n", "<leader>ob", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
+vim.keymap.set("n", "<leader>ok", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
+vim.keymap.set("n", "<leader>og", ":G<cr>", {desc = "Open fugitive for Git"})
+vim.keymap.set("n", "<leader>om", ":Glow<cr>", {desc = "Open Glow for Markdown previews"})
 
 vim.keymap.set("n", "<leader>p", "\"+p")
 
@@ -62,6 +64,8 @@ vim.keymap.set("n", "<leader>wj", "<C-w>h")
 vim.keymap.set("n", "<leader>wl", "<C-w>l")
 vim.keymap.set("n", "<leader>wh", "<C-w>k")
 vim.keymap.set("n", "<leader>wk", "<C-w>j")
+
+vim.keymap.set("n", "<leader>ww", ":q<cr>")
 
 vim.keymap.set("n", "<leader>wJ", "<C-w>H")
 vim.keymap.set("n", "<leader>wL", "<C-w>L")
