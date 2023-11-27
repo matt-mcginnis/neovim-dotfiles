@@ -1,16 +1,14 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "<C-e>", "<esc>")
+vim.keymap.set("v", "<C-e>", "<esc>")
 
 vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
 
-vim.keymap.set("n", "<leader>j", "_")
-vim.keymap.set("n", "<leader>l", "$")
-
-vim.keymap.set("n", "H", "Hzz")
-vim.keymap.set("n", "K", "Lzz")
+vim.keymap.set("n", "<C-j>", "_")
+vim.keymap.set("n", "<C-l>", "$")
 
 vim.keymap.set("n", "<leader>ca", "za", {desc = "Toggle collapsable fold"})
 vim.keymap.set("n", "<leader>cr", "zr", {desc = "Open a collapsable fold"})
@@ -24,16 +22,17 @@ vim.keymap.set("n", "<C-k>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>m", "m")
-vim.keymap.set("n", "m", "`")
-vim.keymap.set("n", "<leader>dm", ":delm ")
-
 vim.keymap.set("n", "<leader>ob", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
 vim.keymap.set("n", "<leader>ok", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
 vim.keymap.set("n", "<leader>og", ":G<cr>", {desc = "Open fugitive for Git"})
 vim.keymap.set("n", "<leader>om", ":Glow<cr>", {desc = "Open Glow for Markdown previews"})
 
 vim.keymap.set("n", "<leader>p", "\"+p")
+
+vim.keymap.set("n", "<leader>qo", ":copen<cr>")
+vim.keymap.set("n", "<leader>qn", ":cn<cr>")
+vim.keymap.set("n", "<leader>qp", ":cp<cr>")
+vim.keymap.set("n", "<leader>qd", ":cdo ")
 
 vim.keymap.set("n", "<leader>rj", ":vertical resize -10<cr>")
 vim.keymap.set("n", "<leader>rl", ":vertical resize +10<cr>")
@@ -53,7 +52,7 @@ vim.keymap.set("n", "<leader>s.", "@:")
 
 vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
 vim.keymap.set("n", "<leader>t-", ":new | term<cr>")
-vim.keymap.set("t", "<C-t>", "<C-\\><C-n>")
+vim.keymap.set("t", "<C-n>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>v", "<C-v>")
 

@@ -18,10 +18,11 @@ require('telescope').setup {
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
                 ["k"] = "move_selection_next",
                 ["h"] = "move_selection_previous",
-                ["t"] = "select_tab",
                 ["-"] = "select_horizontal",
                 ["\\"] = "select_vertical",
-                ["d"] = "delete_buffer",
+                ["db"] = "delete_buffer",
+                ["qs"] = "send_selected_to_qflist",
+                ["qa"] = "add_selected_to_qflist",
             }
         }
     }
