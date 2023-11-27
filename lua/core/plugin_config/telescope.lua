@@ -16,13 +16,25 @@ require('telescope').setup {
                 -- map actions.which_key to <C-h> (default: <C-/>)
                 -- actions.which_key shows the mappings for your picker,
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-                ["k"] = "move_selection_next",
-                ["h"] = "move_selection_previous",
-                ["-"] = "select_horizontal",
-                ["\\"] = "select_vertical",
+                ["<C-c>"] = "close",
+                ["<C-h>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous",
+                ["<C-_>"] = "select_horizontal",
+                ["<C-\\>"] = "select_vertical",
+                ["a"] = "select_all",
+                ["A"] = "drop_all",
                 ["db"] = "delete_buffer",
                 ["qs"] = "send_selected_to_qflist",
                 ["qa"] = "add_selected_to_qflist",
+            },
+            i = {
+                -- map actions.which_key to <C-h> (default: <C-/>)
+                -- actions.which_key shows the mappings for your picker,
+                -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+                ["<C-h>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous",
+                ["<C-_>"] = "select_horizontal",
+                ["<C-\\>"] = "select_vertical",
             }
         }
     }
