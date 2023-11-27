@@ -8,7 +8,6 @@ vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 
 vim.keymap.set("n", "<leader>ds", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>df", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
-
 require("telescope").load_extension("dir")
 require('telescope').setup {
     defaults = {
@@ -21,7 +20,8 @@ require('telescope').setup {
                 ["h"] = "move_selection_previous",
                 ["t"] = "select_tab",
                 ["-"] = "select_horizontal",
-                ["\\"] = "select_vertical"
+                ["\\"] = "select_vertical",
+                ["d"] = "delete_buffer",
             }
         }
     }

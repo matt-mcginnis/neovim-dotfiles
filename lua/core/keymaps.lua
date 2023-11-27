@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 
+vim.keymap.set("i", "<C-e>", "<esc>")
+
 vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
@@ -52,11 +54,6 @@ vim.keymap.set("n", "<leader>s.", "@:")
 vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
 vim.keymap.set("n", "<leader>t-", ":new | term<cr>")
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>")
-
-vim.keymap.set("n", "<C-e>", "gt")
-vim.keymap.set("n", "<C-n>", "gT")
-vim.keymap.set("n", "<C-.>", ":tabm +1<cr>")
-vim.keymap.set("n", "<C-,>", ":tabm -1<cr>")
 
 vim.keymap.set("n", "<leader>v", "<C-v>")
 
