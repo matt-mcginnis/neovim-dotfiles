@@ -12,23 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Telescope
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.4',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-
-    -- Search directories first with telescope
-    {
-        "princejoogie/dir-telescope.nvim",
-        -- telescope.nvim is a required dependency
-        dependencies = { "nvim-telescope/telescope.nvim" },
-    },
-
-    -- Gruvbox Color Theme
-    { "ellisonleao/gruvbox.nvim" },
-
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -36,19 +19,26 @@ require("lazy").setup({
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
 
+    -- Telescope
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
+    -- Oil for Greasy File Exploration/Management
+    { 'stevearc/oil.nvim' },
+
     -- LSP Plugins
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
 
-    -- Autocompletion and Snippets
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    {
-        "L3MON4D3/LuaSnip",
-        dependencies = { "matt-mcginnis/my-snippets" }
-    },
-    { "saadparwaiz1/cmp_luasnip" },
+    -- Leap Motions
+    { "ggandor/leap.nvim" },
+
+    -- gruvbox color theme
+    { "ellisonleao/gruvbox.nvim" },
 
     -- DAP Plugins
     { 'mfussenegger/nvim-dap' },
@@ -56,15 +46,13 @@ require("lazy").setup({
     { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap" } },
     { "theHamsta/nvim-dap-virtual-text" },
 
-    -- Leap Motions
-    { "ggandor/leap.nvim" },
-
     -- Commenting
     { "numToStr/Comment.nvim" },
 
-    -- Oil for Greasy File Exploration/Management
-    { 'stevearc/oil.nvim' },
+    -- Autocompletion
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
 
-    -- Glow for Markdown previews
-    { 'ellisonleao/glow.nvim' }
+    -- lazy.nvim
+    { "robitx/gp.nvim" },
 })
