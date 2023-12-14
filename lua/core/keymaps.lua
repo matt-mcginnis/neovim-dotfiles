@@ -7,8 +7,8 @@ vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
 
-vim.keymap.set("n", "J", "_")
-vim.keymap.set("n", "L", "$")
+vim.keymap.set("n", "<c-j>", "_")
+vim.keymap.set("n", "<c-l>", "$")
 
 vim.keymap.set("n", "<leader>ai",  ":vnew | term chatgpt -i<cr>", {desc = "Toggle vertical AI terminal"})
 vim.keymap.set("n", "<leader>ao",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical AI terminal"})
@@ -22,8 +22,8 @@ vim.keymap.set("n", "<leader>cR", "zR", {desc = "Open all collapsable folds recu
 vim.keymap.set("n", "<leader>cm", "zm", {desc = "Close a collapsable fold"})
 vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds recursively"})
 
-vim.keymap.set("n", "H", "<C-u>zz", {desc = "Page down and center"})
-vim.keymap.set("n", "K", "<C-d>zz", {desc = "Page up and center"})
+vim.keymap.set("n", "<c-h>", "<C-u>zz", {desc = "Page down and center"})
+vim.keymap.set("n", "<c-k>", "<C-d>zz", {desc = "Page up and center"})
 
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})

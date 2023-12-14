@@ -60,26 +60,26 @@ vim.keymap.set("v", "<C-e>x", ":<C-u>'<,'>GpContext<cr>", keymapOptions("Visual 
 vim.keymap.set({"n", "i", "v", "x"}, "<C-e>s", "<cmd>GpStop<cr>", keymapOptions("Stop"))
 vim.keymap.set({"n", "i", "v", "x"}, "<C-e>n", "<cmd>GpNextAgent<cr>", keymapOptions("Next Agent"))
 
--- optional Whisper commands with prefix <C-g>w
--- vim.keymap.set({"n", "i"}, "<C-g>ww", "<cmd>GpWhisper<cr>", keymapOptions("Whisper"))
--- vim.keymap.set("v", "<C-g>ww", ":<C-u>'<,'>GpWhisper<cr>", keymapOptions("Visual Whisper"))
---
--- vim.keymap.set({"n", "i"}, "<C-g>wr", "<cmd>GpWhisperRewrite<cr>", keymapOptions("Whisper Inline Rewrite"))
--- vim.keymap.set({"n", "i"}, "<C-g>wa", "<cmd>GpWhisperAppend<cr>", keymapOptions("Whisper Append (after)"))
--- vim.keymap.set({"n", "i"}, "<C-g>wb", "<cmd>GpWhisperPrepend<cr>", keymapOptions("Whisper Prepend (before) "))
---
--- vim.keymap.set("v", "<C-g>wr", ":<C-u>'<,'>GpWhisperRewrite<cr>", keymapOptions("Visual Whisper Rewrite"))
--- vim.keymap.set("v", "<C-g>wa", ":<C-u>'<,'>GpWhisperAppend<cr>", keymapOptions("Visual Whisper Append (after)"))
--- vim.keymap.set("v", "<C-g>wb", ":<C-u>'<,'>GpWhisperPrepend<cr>", keymapOptions("Visual Whisper Prepend (before)"))
---
--- vim.keymap.set({"n", "i"}, "<C-g>wp", "<cmd>GpWhisperPopup<cr>", keymapOptions("Whisper Popup"))
--- vim.keymap.set({"n", "i"}, "<C-g>we", "<cmd>GpWhisperEnew<cr>", keymapOptions("Whisper Enew"))
--- vim.keymap.set({"n", "i"}, "<C-g>wn", "<cmd>GpWhisperNew<cr>", keymapOptions("Whisper New"))
--- vim.keymap.set({"n", "i"}, "<C-g>wv", "<cmd>GpWhisperVnew<cr>", keymapOptions("Whisper Vnew"))
--- vim.keymap.set({"n", "i"}, "<C-g>wt", "<cmd>GpWhisperTabnew<cr>", keymapOptions("Whisper Tabnew"))
---
--- vim.keymap.set("v", "<C-g>wp", ":<C-u>'<,'>GpWhisperPopup<cr>", keymapOptions("Visual Whisper Popup"))
--- vim.keymap.set("v", "<C-g>we", ":<C-u>'<,'>GpWhisperEnew<cr>", keymapOptions("Visual Whisper Enew"))
--- vim.keymap.set("v", "<C-g>wn", ":<C-u>'<,'>GpWhisperNew<cr>", keymapOptions("Visual Whisper New"))
--- vim.keymap.set("v", "<C-g>wv", ":<C-u>'<,'>GpWhisperVnew<cr>", keymapOptions("Visual Whisper Vnew"))
--- vim.keymap.set("v", "<C-g>wt", ":<C-u>'<,'>GpWhisperTabnew<cr>", keymapOptions("Visual Whisper Tabnew"))
+-- optional Whisper commands with prefix <C-e>w
+vim.keymap.set({"n", "i"}, "<C-e>ww", "<cmd>GpWhisper<cr>", keymapOptions("Whisper"))
+vim.keymap.set("v", "<C-e>ww", ":<C-u>'<,'>GpWhisper<cr>", keymapOptions("Visual Whisper"))
+
+vim.keymap.set({"n", "i"}, "<C-e>wr", "<cmd>GpWhisperRewrite<cr>", keymapOptions("Whisper Inline Rewrite"))
+vim.keymap.set({"n", "i"}, "<C-e>wa", "<cmd>GpWhisperAppend<cr>", keymapOptions("Whisper Append (after)"))
+vim.keymap.set({"n", "i"}, "<C-e>wb", "<cmd>GpWhisperPrepend<cr>", keymapOptions("Whisper Prepend (before) "))
+
+vim.keymap.set("v", "<C-e>wr", ":<C-u>'<,'>GpWhisperRewrite<cr>", keymapOptions("Visual Whisper Rewrite"))
+vim.keymap.set("v", "<C-e>wa", ":<C-u>'<,'>GpWhisperAppend<cr>", keymapOptions("Visual Whisper Append (after)"))
+vim.keymap.set("v", "<C-e>wb", ":<C-u>'<,'>GpWhisperPrepend<cr>", keymapOptions("Visual Whisper Prepend (before)"))
+
+vim.keymap.set({"n", "i"}, "<C-e>wp", "<cmd>GpWhisperPopup<cr>", keymapOptions("Whisper Popup"))
+vim.keymap.set({"n", "i"}, "<C-e>we", "<cmd>GpWhisperEnew<cr>", keymapOptions("Whisper Enew"))
+vim.keymap.set({"n", "i"}, "<C-e>wn", "<cmd>GpWhisperNew<cr>", keymapOptions("Whisper New"))
+vim.keymap.set({"n", "i"}, "<C-e>wv", "<cmd>GpWhisperVnew<cr>", keymapOptions("Whisper Vnew"))
+vim.keymap.set({"n", "i"}, "<C-e>wt", "<cmd>GpWhisperTabnew<cr>", keymapOptions("Whisper Tabnew"))
+
+vim.keymap.set("v", "<C-e>wp", ":<C-u>'<,'>GpWhisperPopup<cr>", keymapOptions("Visual Whisper Popup"))
+vim.keymap.set("v", "<C-e>we", ":<C-u>'<,'>GpWhisperEnew<cr>", keymapOptions("Visual Whisper Enew"))
+vim.keymap.set("v", "<C-e>wn", ":<C-u>'<,'>GpWhisperNew<cr>", keymapOptions("Visual Whisper New"))
+vim.keymap.set("v", "<C-e>wv", ":<C-u>'<,'>GpWhisperVnew<cr>", keymapOptions("Visual Whisper Vnew"))
+vim.keymap.set("v", "<C-e>wt", ":<C-u>'<,'>GpWhisperTabnew<cr>", keymapOptions("Visual Whisper Tabnew"))
