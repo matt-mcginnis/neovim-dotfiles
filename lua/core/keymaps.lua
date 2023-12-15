@@ -10,7 +10,6 @@ vim.keymap.set("n", "h", "k")
 vim.keymap.set("n", "<c-j>", "_")
 vim.keymap.set("n", "<c-l>", "$")
 
-vim.keymap.set("n", "<leader>ai",  ":vnew | term chatgpt -i<cr>", {desc = "Toggle vertical AI terminal"})
 vim.keymap.set("n", "<leader>ao",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical AI terminal"})
 
 vim.keymap.set("n", "<c-.>", ":bnext<cr>", {desc = "Go to next buffer"})
@@ -58,7 +57,7 @@ vim.keymap.set("n", "<leader>s.", "@:")
 
 vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
 vim.keymap.set("n", "<leader>t-", ":new | term<cr>")
-vim.keymap.set("t", "<C-n>", "<C-\\><C-n>")
+vim.keymap.set("t", "<c-c>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>v", "<C-v>")
 
@@ -86,11 +85,11 @@ vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
 vim.keymap.set("v", "h", "k")
 
-vim.keymap.set("v", "J", "_")
-vim.keymap.set("v", "L", "$")
+vim.keymap.set("v", "<c-j>", "_")
+vim.keymap.set("v", "<c-l>", "$")
 
-vim.keymap.set("v", "H", "<C-u>zz")
-vim.keymap.set("v", "K", "<C-d>zz")
+vim.keymap.set("v", "<c-h>", "<C-u>zz")
+vim.keymap.set("v", "<c-k>", "<C-d>zz")
 
 vim.keymap.set("v", "mf", ":norm mf<cr>")
 

@@ -16,4 +16,4 @@ require("oil").setup({
     }
 })
 
-vim.keymap.set("n", "<leader>oi", ":Oil .<cr>")
+vim.keymap.set({"n", "i"}, "<c-n>", ":Oil .<cr>")
