@@ -10,8 +10,6 @@ vim.keymap.set("n", "h", "k")
 vim.keymap.set("n", "<c-j>", "_")
 vim.keymap.set("n", "<c-l>", "$")
 
-vim.keymap.set("n", "<leader>ao",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical AI terminal"})
-
 vim.keymap.set("n", "<c-.>", ":bnext<cr>", {desc = "Go to next buffer"})
 vim.keymap.set("n", "<c-,>", ":bprev<cr>", {desc = "Go to previous buffer"})
 
@@ -24,6 +22,8 @@ vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds rec
 vim.keymap.set("n", "<c-h>", "<C-u>zz", {desc = "Page down and center"})
 vim.keymap.set("n", "<c-k>", "<C-d>zz", {desc = "Page up and center"})
 
+vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", {desc = "Toggle search highlight"})
+
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})
 
@@ -31,6 +31,8 @@ vim.keymap.set("n", "<leader>ob", ":!black .<cr><cr>", {desc = "Open Black for P
 vim.keymap.set("n", "<leader>ok", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
 vim.keymap.set("n", "<leader>og", ":G<cr>", {desc = "Open fugitive for Git"})
 vim.keymap.set("n", "<leader>om", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
+vim.keymap.set("n", "<leader>ol",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
+
 
 vim.keymap.set("n", "<leader>p", "\"+p", {desc = "Paste from computer register"})
 
@@ -80,6 +82,9 @@ vim.keymap.set("n", "<leader>-", ":sp ")
 vim.keymap.set("n", "<leader>\\", ":vsp ")
 
 vim.keymap.set("n", "'", "@")
+
+vim.keymap.set({"n", "i"}, "<c-s>", ":w<cr>", {desc = "Write file"})
+vim.keymap.set({"n", "i"}, "<c-w>", ":q<cr>", {desc = "Close buffer"})
 
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
