@@ -84,8 +84,10 @@ vim.keymap.set("n", "<leader>\\", ":vsp ")
 
 vim.keymap.set("n", "'", "@")
 
-vim.keymap.set({"n", "i"}, "<c-s>", ":w<cr>", {desc = "Write file"})
-vim.keymap.set({"n", "i"}, "<c-w>", ":q<cr>", {desc = "Close buffer"})
+vim.keymap.set("n", "<c-s>", ":w<cr>", {desc = "Write file normal"})
+vim.keymap.set("i", "<c-s>", "<esc>:w<cr>", {desc = "Write file insert"})
+vim.keymap.set("n", "<c-w>", ":q<cr>", {desc = "Close buffer normal"})
+vim.keymap.set("i", "<c-w>", "<esc>:q<cr>", {desc = "Close buffer insert"})
 
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
