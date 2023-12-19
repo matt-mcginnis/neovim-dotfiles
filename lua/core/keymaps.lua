@@ -24,6 +24,8 @@ vim.keymap.set("n", "<c-k>", "<C-d>zz", {desc = "Page up and center"})
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", {desc = "Toggle search highlight"})
 
+vim.keymap.set({"n", "i"}, "<c-m>", "`", {desc = "Go to mark"})
+
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})
 
@@ -32,7 +34,6 @@ vim.keymap.set("n", "<leader>ok", ":Telescope keymaps<cr>", {desc = "Open keymap
 vim.keymap.set("n", "<leader>og", ":G<cr>", {desc = "Open fugitive for Git"})
 vim.keymap.set("n", "<leader>om", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
 vim.keymap.set("n", "<leader>ol",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
-
 
 vim.keymap.set("n", "<leader>p", "\"+p", {desc = "Paste from computer register"})
 
