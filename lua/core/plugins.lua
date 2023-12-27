@@ -16,7 +16,11 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     { 'nvim-treesitter/playground' },
+
+    -- Undotree
     { 'mbbill/undotree' },
+
+    -- Fugitive for git
     { 'tpope/vim-fugitive' },
 
     -- Telescope
@@ -53,6 +57,6 @@ require("lazy").setup({
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
 
-    -- lazy.nvim
+    -- GPT Plugin
     { "robitx/gp.nvim" },
 })
