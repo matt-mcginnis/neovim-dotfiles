@@ -59,4 +59,7 @@ require("lazy").setup({
 
     -- GPT Plugin
     { "robitx/gp.nvim" },
+
+    -- Toggle Term
+    { 'akinsho/toggleterm.nvim', version = "*", config = true }
 })
