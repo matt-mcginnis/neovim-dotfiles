@@ -64,30 +64,23 @@ vim.keymap.set("t", "<c-c>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>v", "<C-v>")
 
-vim.keymap.set("n", "<leader>wj", "<C-w>h")
-vim.keymap.set("n", "<leader>wl", "<C-w>l")
-vim.keymap.set("n", "<leader>wh", "<C-w>k")
-vim.keymap.set("n", "<leader>wk", "<C-w>j")
+vim.keymap.set("n", "<c-w>j", "<c-w>h")
+vim.keymap.set("n", "<c-w>l", "<c-w>l")
+vim.keymap.set("n", "<c-w>h", "<c-w>k")
+vim.keymap.set("n", "<c-w>k", "<c-w>j")
 
-vim.keymap.set("n", "<leader>wJ", "<C-w>H")
-vim.keymap.set("n", "<leader>wL", "<C-w>L")
-vim.keymap.set("n", "<leader>wH", "<C-w>K")
-vim.keymap.set("n", "<leader>wK", "<C-w>J")
+vim.keymap.set("n", "<c-w>J", "<c-w>H")
+vim.keymap.set("n", "<c-w>L", "<c-w>L")
+vim.keymap.set("n", "<c-w>H", "<c-w>K")
+vim.keymap.set("n", "<c-w>K", "<c-w>J")
 
-vim.keymap.set("n", "<leader>w\\", ":vnew<cr>")
-vim.keymap.set("n", "<leader>w-", ":new<cr>")
-
-vim.keymap.set("n", "<leader>wt", "<C-w>T")
+vim.keymap.set("n", "<c-w>\\", ":vnew<cr>")
+vim.keymap.set("n", "<c-w>-", ":new<cr>")
 
 vim.keymap.set("n", "<leader>-", ":sp ")
 vim.keymap.set("n", "<leader>\\", ":vsp ")
 
 vim.keymap.set("n", "'", "@")
-
-vim.keymap.set("n", "<c-s>", ":w<cr>", {desc = "Write file normal"})
-vim.keymap.set("i", "<c-s>", "<esc>:w<cr>", {desc = "Write file insert"})
-vim.keymap.set("n", "<c-w>", ":q<cr>", {desc = "Close buffer normal"})
-vim.keymap.set("i", "<c-w>", "<esc>:q<cr>", {desc = "Close buffer insert"})
 
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
@@ -108,8 +101,7 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
-vim.keymap.set("v", "<leader>op", ":!black .<cr><cr>")
-vim.keymap.set("v", "<leader>ot", "gq")
+vim.keymap.set("v", "<leader>ob", ":!black .<cr><cr>")
 
 vim.keymap.set("v", "<leader>s'", "c'<esc>pa'<esc>")
 vim.keymap.set("v", "<leader>s\"", "c\"<esc>pa\"<esc>")
