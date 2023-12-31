@@ -30,9 +30,6 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
-    -- Oil for Greasy File Exploration/Management
-    { 'stevearc/oil.nvim' },
-
     -- LSP Plugins
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
@@ -58,6 +55,10 @@ require("lazy").setup({
     { "hrsh7th/cmp-nvim-lsp" },
     {
         "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp",
         dependencies = { "matt-mcginnis/my-snippets" }
     },
     { "saadparwaiz1/cmp_luasnip" },
@@ -66,5 +67,8 @@ require("lazy").setup({
     { "robitx/gp.nvim" },
 
     -- Toggle Term
-    { 'akinsho/toggleterm.nvim', version = "*", config = true }
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+
+    -- Mini capabilities
+    { 'echasnovski/mini.nvim', version = '*' },
 })

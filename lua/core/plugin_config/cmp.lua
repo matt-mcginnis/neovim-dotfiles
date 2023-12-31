@@ -7,9 +7,7 @@ end
 
 -- cmp and luasnip modules
 local cmp = require("cmp")
-
--- Load VS Code Snippets
-require("luasnip.loaders.from_vscode").lazy_load()
+local luasnip = require("luasnip")
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
@@ -50,7 +48,7 @@ cmp.setup({
     }),
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     sources = cmp.config.sources({
@@ -60,3 +58,6 @@ cmp.setup({
         { name = 'buffer' },
     }),
 })
+
+-- Load VS Code Snippets
+require("luasnip.loaders.from_vscode").lazy_load()
