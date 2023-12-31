@@ -54,7 +54,6 @@ require("lazy").setup({
         "L3MON4D3/LuaSnip",
         -- Later versions have an issue with BufWinEnter Autocommands for "*"
         version = "v2.1.1",
-        build = "make install_jsregexp",
         dependencies = { "matt-mcginnis/my-snippets" }
     },
     { "saadparwaiz1/cmp_luasnip" },

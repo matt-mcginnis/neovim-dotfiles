@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "bash", "c", "dockerfile", "json", "lua", "python", "query", "sql", "vim", "vimdoc", "yaml"},
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -30,10 +30,8 @@ require'nvim-treesitter.configs'.setup {
         -- You can use the capture groups defined in textobjects.scm
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
-        ["ac"] = "@comment.outer",
-        ["ic"] = "@comment.inner",
-        ["ai"] = "@conditional.outer",
-        ["ii"] = "@conditional.inner",
+        ["ac"] = "@conditional.outer",
+        ["ic"] = "@conditional.inner",
         ["al"] = "@loop.outer",
         ["il"] = "@loop.inner",
       },
