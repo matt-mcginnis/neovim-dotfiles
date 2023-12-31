@@ -20,13 +20,10 @@ require("lazy").setup({
     -- Undotree
     { 'mbbill/undotree' },
 
-    -- Fugitive for git
-    { 'tpope/vim-fugitive' },
-
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.4',
+        tag = "0.1.5",
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
@@ -55,9 +52,8 @@ require("lazy").setup({
     { "hrsh7th/cmp-nvim-lsp" },
     {
         "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!).
+        -- Later versions have an issue with BufWinEnter Autocommands for "*"
+        version = "v2.1.1",
         build = "make install_jsregexp",
         dependencies = { "matt-mcginnis/my-snippets" }
     },
@@ -70,5 +66,5 @@ require("lazy").setup({
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
     -- Mini capabilities
-    { 'echasnovski/mini.nvim', version = '*' },
+    { 'echasnovski/mini.nvim', version = "*" },
 })
