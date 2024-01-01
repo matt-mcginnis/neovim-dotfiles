@@ -50,13 +50,9 @@ require("lazy").setup({
     -- Autocompletion and Snippets
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
-    {
-        "L3MON4D3/LuaSnip",
-        -- Later versions have an issue with BufWinEnter Autocommands for "*"
-        version = "v2.1.1",
-        dependencies = { "matt-mcginnis/my-snippets" }
-    },
-    { "saadparwaiz1/cmp_luasnip" },
+    { "dcampos/nvim-snippy" },
+    { "dcampos/cmp-snippy" },
+    { "honza/vim-snippets" },
 
     -- GPT Plugin
     { "robitx/gp.nvim" },
