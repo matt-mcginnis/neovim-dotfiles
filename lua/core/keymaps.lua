@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("i", "<c-space>", "<esc>")
-vim.keymap.set("v", "<c-space>", "<esc>")
+vim.keymap.set({"i", "n", "v", "s"}, "<c-space>", "<esc>")
 
 vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
