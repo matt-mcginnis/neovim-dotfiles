@@ -1,4 +1,15 @@
 local cmp = require("cmp")
+local snippy = require('snippy').setup({
+    mappings = {
+        is = {
+            ['<c-l>'] = 'expand_or_advance',
+            ['<c-j>'] = 'previous',
+        },
+        nx = {
+            ['x'] = 'cut_text',
+        },
+    },
+})
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
@@ -26,7 +37,7 @@ cmp.setup({
     -- REQUIRED - you must specify a snippet engine
     snippet = {
         expand = function(args)
-            require('snippy').expand_snippet(args.body)
+            snippy.expand_snippet(args.body)
         end,
     },
     sources = cmp.config.sources({

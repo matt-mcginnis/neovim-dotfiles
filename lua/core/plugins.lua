@@ -62,4 +62,14 @@ require("lazy").setup({
 
     -- Mini capabilities
     { 'echasnovski/mini.nvim', version = "*" },
+
+    -- Obsidian
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",  -- recommended, use latest release instead of latest commit
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+        },
+    }
 })
