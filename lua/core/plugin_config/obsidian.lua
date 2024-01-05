@@ -10,12 +10,12 @@ require("obsidian").setup({
         -- },
         workspaces = {
             {
-                name = "personal",
-                path = "~/vaults/personal",
-            },
-            {
                 name = "work",
                 path = "~/vaults/work",
+            },
+            {
+                name = "personal",
+                path = "~/vaults/personal",
             },
         },
 
@@ -28,3 +28,11 @@ require("obsidian").setup({
             substitutions = {},
         },
     })
+
+vim.keymap.set('n', '<leader>on', ":ObsidianNew<cr> dip:ObsidianTemplate<cr>")
+vim.keymap.set('n', '<leader>oo', ":ObsidianOpen<cr>")
+vim.keymap.set('n', '<leader>ot', ":ObsidianTemplate<cr>")
+vim.keymap.set('n', '<leader>off', ":ObsidianQuickSwitch<cr>")
+vim.keymap.set('n', '<leader>ofs', ":ObsidianSearch<cr>")
+vim.keymap.set('n', '<leader>owp', ":ObsidianWorkspace personal<cr>")
+vim.keymap.set('n', '<leader>oww', ":ObsidianWorkspace work<cr>")

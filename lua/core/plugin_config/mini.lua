@@ -1,11 +1,12 @@
+-- mini files
 require('mini.files').setup({
   mappings = {
     close       = 'q',
-    go_in       = 'L',
-    go_in_plus  = 'l',
-    go_out      = 'J',
-    go_out_plus = 'j',
-    reset       = '<BS>',
+    go_in       = '>',
+    go_in_plus  = '.',
+    go_out      = '<',
+    go_out_plus = ',',
+    reset       = 'u',
     reveal_cwd  = '@',
     show_help   = 'g?',
     synchronize = 's',
@@ -15,3 +16,6 @@ require('mini.files').setup({
 })
 
 vim.keymap.set("n", "<c-n>", ":lua MiniFiles.open()<cr>")
+
+-- mini pairs 
+require('mini.pairs').setup()

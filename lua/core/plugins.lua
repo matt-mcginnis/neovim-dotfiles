@@ -71,5 +71,8 @@ require("lazy").setup({
             -- Required.
             "nvim-lua/plenary.nvim",
         },
-    }
+    },
+
+    -- Follow Markdown Links
+    { "jghauser/follow-md-links.nvim" }
 })

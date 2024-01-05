@@ -1,23 +1,25 @@
-local cmp = require("cmp")
-local snippy = require('snippy').setup({
+-- Set up snippy
+require("snippy").setup({
     mappings = {
         is = {
-            ['<c-l>'] = 'expand_or_advance',
-            ['<c-j>'] = 'previous',
+            ["<c-l>"] = "expand_or_advance",
+            ["<c-j>"] = "previous",
         },
         nx = {
-            ['x'] = 'cut_text',
+            ["x"] = "cut_text",
         },
     },
 })
 
+-- Set up cmp
+local cmp = require("cmp")
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        ['<c-h>'] = cmp.mapping.scroll_docs(-4),
-        ['<c-k>'] = cmp.mapping.scroll_docs(4),
-        ['<c-o>'] = cmp.mapping.complete(),
-        ['<c-e>'] = cmp.mapping.abort(),
-        ['<cr>'] = cmp.mapping.confirm({ select = true }),
+        ["<c-h>"] = cmp.mapping.scroll_docs(-4),
+        ["<c-k>"] = cmp.mapping.scroll_docs(4),
+        ["<c-o>"] = cmp.mapping.complete(),
+        ["<c-e>"] = cmp.mapping.abort(),
+        ["<cr>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -37,13 +39,13 @@ cmp.setup({
     -- REQUIRED - you must specify a snippet engine
     snippet = {
         expand = function(args)
-            snippy.expand_snippet(args.body)
+            require("snippy").expand_snippet(args.body)
         end,
     },
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'snippy' },
+        { name = "nvim_lsp" },
+        { name = "snippy" },
     }, {
-        { name = 'buffer' },
+        { name = "buffer" },
     }),
 })

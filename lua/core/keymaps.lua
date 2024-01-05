@@ -18,6 +18,12 @@ vim.keymap.set("n", "<leader>cR", "zR", {desc = "Open all collapsable folds recu
 vim.keymap.set("n", "<leader>cm", "zm", {desc = "Close a collapsable fold"})
 vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds recursively"})
 
+vim.keymap.set("n", "<leader>eb", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
+vim.keymap.set("n", "<leader>ek", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
+vim.keymap.set("n", "<leader>eg", ":G<cr>", {desc = "Open fugitive for Git"})
+vim.keymap.set("n", "<leader>em", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
+vim.keymap.set("n", "<leader>el",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
+
 vim.keymap.set("n", "<c-h>", "<C-u>zz", {desc = "Page down and center"})
 vim.keymap.set("n", "<c-k>", "<C-d>zz", {desc = "Page up and center"})
 
@@ -27,12 +33,6 @@ vim.keymap.set({"n", "i"}, "<c-m>", "`", {desc = "Go to mark"})
 
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})
-
-vim.keymap.set("n", "<leader>ob", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
-vim.keymap.set("n", "<leader>ok", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
-vim.keymap.set("n", "<leader>og", ":G<cr>", {desc = "Open fugitive for Git"})
-vim.keymap.set("n", "<leader>om", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
-vim.keymap.set("n", "<leader>ol",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
 
 vim.keymap.set("n", "<leader>p", "\"+p", {desc = "Paste from computer register"})
 
@@ -76,11 +76,18 @@ vim.keymap.set("n", "<c-w>K", "<c-w>J")
 vim.keymap.set("n", "<c-w>\\", ":vnew<cr>")
 vim.keymap.set("n", "<c-w>-", ":new<cr>")
 
-vim.keymap.set("n", "<leader>-", ":sp ")
-vim.keymap.set("n", "<leader>\\", ":vsp ")
+vim.keymap.set("n", "<c-_>", ":sp<cr>")
+vim.keymap.set("n", "<c-\\>", ":vsp<cr>")
 
 vim.keymap.set("n", "'", "@")
 
+-- Writing and Saving
+vim.keymap.set("n", "<leader><leader>q", ":q<cr>")
+vim.keymap.set("n", "<leader><leader>Q", ":q!<cr>")
+vim.keymap.set("n", "<leader><leader>w", ":w<cr>")
+vim.keymap.set("n", "<leader><leader>W", ":wq<cr>")
+
+-- Visual Keymaps
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
 vim.keymap.set("v", "h", "k")
