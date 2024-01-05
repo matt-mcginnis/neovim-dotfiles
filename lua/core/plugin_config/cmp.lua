@@ -6,7 +6,7 @@ require("snippy").setup({
             ["<c-j>"] = "previous",
         },
         nx = {
-            ["x"] = "cut_text",
+            ["<leader>x"] = "cut_text",
         },
     },
 })
