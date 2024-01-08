@@ -52,7 +52,7 @@ require("lazy").setup({
     { "hrsh7th/cmp-nvim-lsp" },
     { "dcampos/nvim-snippy" },
     { "dcampos/cmp-snippy" },
-    { "honza/vim-snippets" },
+    { "matt-mcginnis/vim-snippets" },
 
     -- GPT Plugin
     { "robitx/gp.nvim" },
