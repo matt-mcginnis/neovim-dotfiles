@@ -32,7 +32,7 @@ require("obsidian").setup({
 vim.keymap.set("n", "<leader>og", ":ObsidianFollowLink<cr>")
 vim.keymap.set("v", "<leader>ol", ":ObsidianLink<cr>")
 vim.keymap.set("v", "<leader>oL", ":ObsidianLinkNew<cr>")
-vim.keymap.set("n", "<leader>on", ":ObsidianNew<cr> dip:ObsidianTemplate<cr>")
+vim.keymap.set("n", "<leader>on", ":ObsidianNew<cr>")
 vim.keymap.set("n", "<leader>oo", ":ObsidianOpen<cr>")
 vim.keymap.set("n", "<leader>ot", ":ObsidianTemplate<cr>")
 vim.keymap.set("n", "<leader>off", ":ObsidianQuickSwitch<cr>")
