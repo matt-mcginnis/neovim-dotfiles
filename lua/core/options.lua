@@ -26,12 +26,4 @@ vim.opt.scrolloff = 8
 
 vim.diagnostic.config({ signs = false, virtual_text = false })
 
--- Vimwiki Settings
-vim.g.vimwiki_folding = 'custom'
-
-vim.api.nvim_create_autocmd('BufEnter', {
-    pattern = {'*.wiki'},
-    group = group,
-    command = 'setlocal nowrap'
-})
-
+vim.opt.conceallevel = 1
