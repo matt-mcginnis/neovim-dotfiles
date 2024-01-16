@@ -15,12 +15,12 @@ require("snippy").setup({
 local cmp = require("cmp")
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        ["<c-h>"] = cmp.mapping.scroll_docs(-4),
-        ["<c-k>"] = cmp.mapping.scroll_docs(4),
+        ["<tab>"] = cmp.mapping.scroll_docs(-4),
+        ["<s-tab>"] = cmp.mapping.scroll_docs(4),
         ["<c-o>"] = cmp.mapping.complete(),
         ["<c-e>"] = cmp.mapping.abort(),
         ["<cr>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<c-k>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else
@@ -28,7 +28,7 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["<c-h>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else
