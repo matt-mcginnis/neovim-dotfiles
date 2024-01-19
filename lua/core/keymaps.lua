@@ -6,8 +6,8 @@ vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
 
-vim.keymap.set("n", "<c-j>", "_")
-vim.keymap.set("n", "<c-l>", "$")
+vim.keymap.set("n", "<leader>j", "_")
+vim.keymap.set("n", "<leader>l", "$")
 
 vim.keymap.set("n", "<c-.>", ":bnext<cr>", {desc = "Go to next buffer"})
 vim.keymap.set("n", "<c-,>", ":bprev<cr>", {desc = "Go to previous buffer"})
@@ -24,8 +24,8 @@ vim.keymap.set("n", "<leader>eg", ":G<cr>", {desc = "Open fugitive for Git"})
 vim.keymap.set("n", "<leader>em", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
 vim.keymap.set("n", "<leader>el",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
 
-vim.keymap.set("n", "<c-h>", "<C-u>zz", {desc = "Page down and center"})
-vim.keymap.set("n", "<c-k>", "<C-d>zz", {desc = "Page up and center"})
+vim.keymap.set("n", "H", "<C-u>zz", {desc = "Page down and center"})
+vim.keymap.set("n", "K", "<C-d>zz", {desc = "Page up and center"})
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", {desc = "Toggle search highlight"})
 
@@ -63,18 +63,18 @@ vim.keymap.set("t", "<c-c>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>v", "<C-v>")
 
-vim.keymap.set("n", "<c-w>j", "<c-w>h")
-vim.keymap.set("n", "<c-w>l", "<c-w>l")
-vim.keymap.set("n", "<c-w>h", "<c-w>k")
-vim.keymap.set("n", "<c-w>k", "<c-w>j")
+vim.keymap.set("n", "<c-j>", "<c-w>h")
+vim.keymap.set("n", "<c-l>", "<c-w>l")
+vim.keymap.set("n", "<c-h>", "<c-w>k")
+vim.keymap.set("n", "<c-k>", "<c-w>j")
 
-vim.keymap.set("n", "<c-w>J", "<c-w>H")
-vim.keymap.set("n", "<c-w>L", "<c-w>L")
-vim.keymap.set("n", "<c-w>H", "<c-w>K")
-vim.keymap.set("n", "<c-w>K", "<c-w>J")
+vim.keymap.set("n", "<leader>wJ", "<c-w>H")
+vim.keymap.set("n", "<leader>wL", "<c-w>L")
+vim.keymap.set("n", "<leader>wH", "<c-w>K")
+vim.keymap.set("n", "<leader>wK", "<c-w>J")
 
-vim.keymap.set("n", "<c-w>\\", ":vnew<cr>")
-vim.keymap.set("n", "<c-w>-", ":new<cr>")
+vim.keymap.set("n", "<leader>w\\", ":vnew<cr>")
+vim.keymap.set("n", "<leader>w-", ":new<cr>")
 
 vim.keymap.set("n", "<c-_>", ":sp<cr>")
 vim.keymap.set("n", "<c-\\>", ":vsp<cr>")
