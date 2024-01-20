@@ -20,7 +20,6 @@ vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds rec
 
 vim.keymap.set("n", "<leader>eb", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
 vim.keymap.set("n", "<leader>ek", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
-vim.keymap.set("n", "<leader>eg", ":G<cr>", {desc = "Open fugitive for Git"})
 vim.keymap.set("n", "<leader>em", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
 vim.keymap.set("n", "<leader>el",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
 
@@ -92,11 +91,11 @@ vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
 vim.keymap.set("v", "h", "k")
 
-vim.keymap.set("v", "<c-j>", "_")
-vim.keymap.set("v", "<c-l>", "$")
+vim.keymap.set("v", "<leader>j", "_")
+vim.keymap.set("v", "<leader>l", "$")
 
-vim.keymap.set("v", "<c-h>", "<C-u>zz")
-vim.keymap.set("v", "<c-k>", "<C-d>zz")
+vim.keymap.set("v", "H", "<C-u>zz")
+vim.keymap.set("v", "K", "<C-d>zz")
 
 vim.keymap.set("v", "mf", ":norm mf<cr>")
 
