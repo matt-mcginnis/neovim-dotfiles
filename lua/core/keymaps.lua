@@ -20,7 +20,6 @@ vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds rec
 
 vim.keymap.set("n", "<leader>eb", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
 vim.keymap.set("n", "<leader>ek", ":Telescope keymaps<cr>", {desc = "Open keymaps with Telescope"})
-vim.keymap.set("n", "<leader>em", ":MarkdownPreviewToggle<cr>", {desc = "Toggle Markdown previews"})
 vim.keymap.set("n", "<leader>el",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
 
 vim.keymap.set("n", "H", "<C-u>zz", {desc = "Page down and center"})
@@ -32,6 +31,7 @@ vim.keymap.set({"n", "i"}, "<c-m>", "`", {desc = "Go to mark"})
 
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})
+vim.keymap.set("n", "<c-n>", ":Oil<cr>")
 
 vim.keymap.set("n", "<leader>p", "\"+p", {desc = "Paste from computer register"})
 
@@ -45,22 +45,10 @@ vim.keymap.set("n", "<leader>rl", ":vertical resize +10<cr>")
 vim.keymap.set("n", "<leader>rh", ":resize +10<cr>")
 vim.keymap.set("n", "<leader>rk", ":resize -10<cr>")
 
-vim.keymap.set("n", "<leader>s'", "ciw'<esc>pa'<esc>")
-vim.keymap.set("n", "<leader>s\"", "ciw\"<esc>pa\"<esc>")
-vim.keymap.set("n", "<leader>s(", "ciw(<esc>pa)<esc>")
-vim.keymap.set("n", "<leader>s)", "ciw(<esc>pa)<esc>")
-vim.keymap.set("n", "<leader>s[", "ciw[<esc>pa]<esc>")
-vim.keymap.set("n", "<leader>s]", "ciw[<esc>pa]<esc>")
-vim.keymap.set("n", "<leader>s{", "ciw{<esc>pa}<esc>")
-vim.keymap.set("n", "<leader>s}", "ciw{<esc>pa}<esc>")
 vim.keymap.set("n", "<leader>st", ":%s/")
 vim.keymap.set("n", "<leader>s.", "@:")
 
 vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
-vim.keymap.set("n", "<leader>t-", ":new | term<cr>")
-vim.keymap.set("t", "<c-c>", "<C-\\><C-n>")
-
-vim.keymap.set("n", "<leader>v", "<C-v>")
 
 vim.keymap.set("n", "<c-j>", "<c-w>h")
 vim.keymap.set("n", "<c-l>", "<c-w>l")
@@ -74,9 +62,6 @@ vim.keymap.set("n", "<leader>wK", "<c-w>J")
 
 vim.keymap.set("n", "<leader>w\\", ":vnew<cr>")
 vim.keymap.set("n", "<leader>w-", ":new<cr>")
-
-vim.keymap.set("n", "<c-_>", ":sp<cr>")
-vim.keymap.set("n", "<c-\\>", ":vsp<cr>")
 
 vim.keymap.set("n", "'", "@")
 
@@ -97,8 +82,6 @@ vim.keymap.set("v", "<leader>l", "$")
 vim.keymap.set("v", "H", "<C-u>zz")
 vim.keymap.set("v", "K", "<C-d>zz")
 
-vim.keymap.set("v", "mf", ":norm mf<cr>")
-
 vim.keymap.set("v", "p", "\"_dP")
 vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("v", "<leader>y", "\"+y")
@@ -106,17 +89,5 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
-vim.keymap.set("v", "<leader>ob", ":!black .<cr><cr>")
-
-vim.keymap.set("v", "<leader>s'", "c'<esc>pa'<esc>")
-vim.keymap.set("v", "<leader>s\"", "c\"<esc>pa\"<esc>")
-vim.keymap.set("v", "<leader>s(", "c(<esc>pa)<esc>")
-vim.keymap.set("v", "<leader>s)", "c(<esc>pa)<esc>")
-vim.keymap.set("v", "<leader>s[", "c[<esc>pa]<esc>")
-vim.keymap.set("v", "<leader>s]", "c[<esc>pa]<esc>")
-vim.keymap.set("v", "<leader>s{", "c{<esc>pa}<esc>")
-vim.keymap.set("v", "<leader>s}", "c{<esc>pa}<esc>")
 vim.keymap.set("v", "<leader>st", ":s/")
 vim.keymap.set("v", "<leader>s.", "@:")
-
-vim.keymap.set("v", "<leader>/", "y/\\V<C-R>=escape(@\",'/\')<CR><CR>")

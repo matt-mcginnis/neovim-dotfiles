@@ -60,9 +60,6 @@ require("lazy").setup({
     -- Toggle Term
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
-    -- Mini capabilities
-    { 'echasnovski/mini.nvim', version = "*" },
-
     -- Obsidian
     {
         "epwalsh/obsidian.nvim",
@@ -74,5 +71,13 @@ require("lazy").setup({
     },
 
     -- Follow Markdown Links
-    { "jghauser/follow-md-links.nvim" }
+    { "jghauser/follow-md-links.nvim" },
+
+    -- Oil
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    }
 })
