@@ -73,11 +73,6 @@ require("lazy").setup({
     -- Follow Markdown Links
     { "jghauser/follow-md-links.nvim" },
 
-    -- Oil
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    }
+    -- Mini
+    { 'echasnovski/mini.nvim', version = '*' }
 })
