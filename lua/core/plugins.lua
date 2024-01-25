@@ -44,9 +44,6 @@ require("lazy").setup({
     { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap" } },
     { "theHamsta/nvim-dap-virtual-text" },
 
-    -- Commenting
-    { "numToStr/Comment.nvim" },
-
     -- Autocompletion and Snippets
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
