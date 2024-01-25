@@ -6,8 +6,8 @@ vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
 
-vim.keymap.set("n", "<leader>j", "_")
-vim.keymap.set("n", "<leader>l", "$")
+vim.keymap.set("n", "<leader>,", "_")
+vim.keymap.set("n", "<leader>.", "$")
 
 vim.keymap.set("n", "<c-.>", ":bnext<cr>", {desc = "Go to next buffer"})
 vim.keymap.set("n", "<c-,>", ":bprev<cr>", {desc = "Go to previous buffer"})
@@ -47,8 +47,6 @@ vim.keymap.set("n", "<leader>rk", ":resize -10<cr>")
 
 vim.keymap.set("n", "<leader>st", ":%s/")
 vim.keymap.set("n", "<leader>s.", "@:")
-
-vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
 
 vim.keymap.set("n", "<c-j>", "<c-w>h")
 vim.keymap.set("n", "<c-l>", "<c-w>l")
