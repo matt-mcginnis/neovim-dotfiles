@@ -19,8 +19,10 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require("lspconfig").lua_ls.setup {
+    on_attach = on_attach,
     capabilities = capabilities
 }
 require("lspconfig").pylsp.setup {
+    on_attach = on_attach,
     capabilities = capabilities
 }

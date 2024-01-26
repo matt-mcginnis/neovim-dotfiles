@@ -20,13 +20,6 @@ require("lazy").setup({
     -- Undotree
     { 'mbbill/undotree' },
 
-    -- Telescope
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = "0.1.5",
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-
     -- LSP Plugins
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
