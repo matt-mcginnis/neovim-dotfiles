@@ -15,13 +15,12 @@ local on_attach = function()
     vim.keymap.set('n', 'g.', '<cmd>lua vim.diagnostic.goto_next()<cr>', { buffer = true })
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require("lspconfig").lua_ls.setup {
-    on_attach = on_attach,
     capabilities = capabilities
 }
 require("lspconfig").pylsp.setup {
-    on_attach = on_attach,
     capabilities = capabilities
 }
