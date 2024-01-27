@@ -25,9 +25,6 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
 
-    -- Leap Motions
-    { "ggandor/leap.nvim" },
-
     -- gruvbox color theme
     { "ellisonleao/gruvbox.nvim" },
 
