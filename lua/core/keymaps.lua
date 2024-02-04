@@ -80,6 +80,8 @@ vim.keymap.set("v", "<leader>.", "$")
 vim.keymap.set("v", "H", "<C-u>zz")
 vim.keymap.set("v", "K", "<C-d>zz")
 
+vim.keymap.set("v", "<leader>eb", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
+
 vim.keymap.set("v", "p", "\"_dP")
 vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("v", "<leader>y", "\"+y")

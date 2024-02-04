@@ -15,7 +15,7 @@ require("neo-tree").setup({
         mappings = {
             ["<space>"] = {
                 "toggle_node",
-                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
             },
             ["<cr>"] = "open",
             ["."] = "open",
