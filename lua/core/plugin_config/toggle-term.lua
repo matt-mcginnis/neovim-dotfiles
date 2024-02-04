@@ -37,5 +37,5 @@ function _mergetool_toggle()
   mergetool:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>go", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<leader>gm", "<cmd>lua _mergetool_toggle()<CR>", {noremap = true, silent = true})

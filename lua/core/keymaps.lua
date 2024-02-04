@@ -30,7 +30,6 @@ vim.keymap.set({"n", "i"}, "<c-m>", "`", {desc = "Go to mark"})
 
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})
-vim.keymap.set("n", "<c-n>", ":Oil<cr>")
 
 vim.keymap.set("n", "<leader>p", "\"+p", {desc = "Paste from computer register"})
 
