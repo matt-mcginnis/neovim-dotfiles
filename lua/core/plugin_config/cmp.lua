@@ -2,8 +2,8 @@
 require("snippy").setup({
     mappings = {
         is = {
-            ["<c-l>"] = "expand_or_advance",
-            ["<c-j>"] = "previous",
+            ["<c-o>"] = "expand_or_advance",
+            ["<c-i>"] = "previous",
         },
         nx = {
             ["<leader>x"] = "cut_text",
@@ -17,10 +17,10 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<tab>"] = cmp.mapping.scroll_docs(-4),
         ["<s-tab>"] = cmp.mapping.scroll_docs(4),
-        ["<c-o>"] = cmp.mapping.complete(),
-        ["<c-e>"] = cmp.mapping.abort(),
+        ["<c-t>"] = cmp.mapping.complete(),
+        ["<c-c>"] = cmp.mapping.abort(),
         ["<cr>"] = cmp.mapping.confirm({ select = true }),
-        ["<c-k>"] = cmp.mapping(function(fallback)
+        ["<c-n>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             else

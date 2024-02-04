@@ -48,7 +48,6 @@ require('mini.files').setup(
         -- Width of preview window
         width_preview = 25,
     },
-}
-)
+})
 
 vim.keymap.set("n", "<c-n>", ":lua MiniFiles.open()<cr>")
