@@ -8,6 +8,7 @@ vim.keymap.set('n', '<leader>fm', ':Telescope marks<cr>')
 require('telescope').setup {
     defaults = {
         layout_strategy = "bottom_pane",
+        sorting_strategy = "ascending",
         mappings = {
             n = {
                 -- map actions.which_key to <C-h> (default: <C-/>)
