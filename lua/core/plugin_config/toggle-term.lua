@@ -27,9 +27,15 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 -- Lazygit Setup
 local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", direction="tab", hidden = true })
+local mergetool = Terminal:new({ cmd = "git mergetool", direction="tab", hidden = true })
 
 function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+function _mergetool_toggle()
+  mergetool:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gm", "<cmd>lua _mergetool_toggle()<CR>", {noremap = true, silent = true})
