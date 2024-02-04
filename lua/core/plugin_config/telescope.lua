@@ -15,7 +15,7 @@ require('telescope').setup {
                 -- actions.which_key shows the mappings for your picker,
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
                 ["<c-c>"] = "close",
-                ["<c-k>"] = "move_selection_next",
+                ["<c-n>"] = "move_selection_next",
                 ["<c-h>"] = "move_selection_previous",
                 ["k"] = "move_selection_next",
                 ["h"] = "move_selection_previous",
