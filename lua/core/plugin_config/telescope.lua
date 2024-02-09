@@ -4,6 +4,14 @@ vim.keymap.set('n', '<leader>fk', ':Telescope keymaps<cr>')
 vim.keymap.set('n', '<leader>fs', ':Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fm', ':Telescope marks<cr>')
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fn",
+  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  { noremap = true }
+)
+
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 require('telescope').setup {
     defaults = {
@@ -39,5 +47,30 @@ require('telescope').setup {
                 ["<c-d>"] = "delete_buffer",
             }
         }
-    }
+    },
+    extensions = {
+        file_browser = {
+            -- disables netrw and use telescope-file-browser in its place
+            hijack_netrw = true,
+            mappings = {
+                ["i"] = {
+                    -- remap to going to home directory
+                    ["<C-h>"] = false,
+                    ["<c-cr>"] = fb_actions.goto_parent_dir
+                },
+                ["n"] = {
+                    -- your custom normal mode mappings
+                    ["a"] = fb_actions.create,
+                    ["d"] = fb_actions.remove,
+                    ["m"] = fb_actions.move,
+                    ["r"] = fb_actions.rename,
+                    ["y"] = fb_actions.copy,
+                    ["h"] = fb_actions.toggle_hidden,
+                    ["<c-cr>"] = fb_actions.goto_parent_dir
+                },
+            },
+        },
+    },
 }
+
+require("telescope").load_extension("file_browser")
