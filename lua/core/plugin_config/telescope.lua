@@ -65,7 +65,7 @@ require('telescope').setup {
                     ["m"] = fb_actions.move,
                     ["r"] = fb_actions.rename,
                     ["y"] = fb_actions.copy,
-                    ["h"] = fb_actions.toggle_hidden,
+                    ["."] = fb_actions.toggle_hidden,
                     ["<c-cr>"] = fb_actions.goto_parent_dir
                 },
             },
