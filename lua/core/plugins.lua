@@ -58,6 +58,7 @@ require("lazy").setup({
     -- Autocompletion and Snippets
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
     { "dcampos/nvim-snippy" },
     { "dcampos/cmp-snippy" },
     { "matt-mcginnis/vim-snippets" },
