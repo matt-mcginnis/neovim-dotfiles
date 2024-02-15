@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "vimls", "pylsp" }
+    ensure_installed = { "lua_ls", "vimls", "pylsp", "ruff_lsp"}
 })
 
 local on_attach = function()
@@ -21,7 +21,13 @@ require("lspconfig").lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+
 require("lspconfig").pylsp.setup {
     on_attach = on_attach,
     capabilities = capabilities
+}
+
+require('lspconfig').ruff_lsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
 }

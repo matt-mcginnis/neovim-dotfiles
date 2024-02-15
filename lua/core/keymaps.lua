@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>cR", "zR", {desc = "Open all collapsable folds recu
 vim.keymap.set("n", "<leader>cm", "zm", {desc = "Close a collapsable fold"})
 vim.keymap.set("n", "<leader>cM", "zM", {desc = "Close all collapsable folds recursively"})
 
-vim.keymap.set("n", "<leader>eb", ":!black .<cr><cr>", {desc = "Open Black for Python formatting"})
+vim.keymap.set('n', '<space>ef', function() vim.lsp.buf.format { async = true } end)
 vim.keymap.set("n", "<leader>el",  ":vnew | term open_ollama_model<cr>", {desc = "Toggle vertical Ollama terminal"})
 
 vim.keymap.set("n", "H", "<C-u>zz", {desc = "Page down and center"})
