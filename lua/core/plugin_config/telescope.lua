@@ -16,15 +16,15 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 require('telescope').setup {
     defaults = {
         layout_strategy = "bottom_pane",
-        sorting_strategy = "ascending",
+        sorting_strategy = "descending",
         mappings = {
             n = {
                 -- map actions.which_key to <C-h> (default: <C-/>)
                 -- actions.which_key shows the mappings for your picker,
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
                 ["<c-c>"] = "close",
-                ["<c-n>"] = "move_selection_next",
-                ["<c-h>"] = "move_selection_previous",
+                ["<c-p>"] = "move_selection_next",
+                ["<c-n>"] = "move_selection_previous",
                 ["k"] = "move_selection_next",
                 ["h"] = "move_selection_previous",
                 ["<c-_>"] = "select_horizontal",
@@ -40,8 +40,8 @@ require('telescope').setup {
                 -- actions.which_key shows the mappings for your picker,
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
                 ["<c-c>"] = "close",
-                ["<c-n>"] = "move_selection_next",
-                ["<c-h>"] = "move_selection_previous",
+                ["<c-p>"] = "move_selection_next",
+                ["<c-n>"] = "move_selection_previous",
                 ["<c-_>"] = "select_horizontal",
                 ["<c-\\>"] = "select_vertical",
                 ["<c-d>"] = "delete_buffer",

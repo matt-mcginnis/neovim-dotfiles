@@ -19,7 +19,7 @@ cmp.setup({
         ["<s-tab>"] = cmp.mapping.scroll_docs(4),
         ["<c-t>"] = cmp.mapping.complete(),
         ["<c-c>"] = cmp.mapping.abort(),
-        ["<cr>"] = cmp.mapping.confirm({ select = true }),
+        ["<cr>"] = cmp.mapping.confirm({ select = false }),
         ["<c-n>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -28,7 +28,7 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ["<c-h>"] = cmp.mapping(function(fallback)
+        ["<c-p>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else

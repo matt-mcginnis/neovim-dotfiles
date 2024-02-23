@@ -26,7 +26,8 @@ vim.keymap.set("n", "K", "<C-d>zz", {desc = "Page up and center"})
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", {desc = "Toggle search highlight"})
 
-vim.keymap.set({"n", "i"}, "<c-m>", "`", {desc = "Go to mark"})
+vim.keymap.set("n", "<c-m>", "m", {desc = "Set mark"})
+vim.keymap.set("n", "m", "`", {desc = "Go to mark"})
 
 vim.keymap.set("n", "n", "nzzzv", {desc = "Move to next in search and center"})
 vim.keymap.set("n", "N", "Nzzzv", {desc = "Move to previous in search and center"})
@@ -45,8 +46,6 @@ vim.keymap.set("n", "<leader>rk", ":resize -10<cr>")
 
 vim.keymap.set("n", "<leader>st", ":%s/")
 vim.keymap.set("n", "<leader>s.", "@:")
-
-vim.keymap.set("n", "<leader>t\\", ":vnew | term<cr>")
 
 vim.keymap.set("n", "<c-j>", "<c-w>h")
 vim.keymap.set("n", "<c-l>", "<c-w>l")
