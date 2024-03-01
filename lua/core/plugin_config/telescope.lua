@@ -2,7 +2,7 @@ vim.keymap.set('n', '<leader>ff', ':Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>fg', ':Telescope git_files<cr>')
 vim.keymap.set('n', '<leader>fk', ':Telescope keymaps<cr>')
 vim.keymap.set('n', '<leader>fs', ':Telescope live_grep<cr>')
-vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')
+vim.keymap.set('n', '<leader>fe', ':Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fm', ':Telescope marks<cr>')
 vim.api.nvim_set_keymap(
   "n",
