@@ -9,8 +9,7 @@ vim.keymap.set("n", "h", "k")
 vim.keymap.set("n", "<leader>,", "_")
 vim.keymap.set("n", "<leader>.", "$")
 
-vim.keymap.set("n", "<c-.>", ":bnext<cr>", {desc = "Go to next buffer"})
-vim.keymap.set("n", "<c-,>", ":bprev<cr>", {desc = "Go to previous buffer"})
+vim.keymap.set("n", "<c-.>", ":b#<cr>", {desc = "Go to last open buffer"})
 
 vim.keymap.set("n", "<leader>ca", "za", {desc = "Toggle collapsable fold"})
 vim.keymap.set("n", "<leader>cr", "zr", {desc = "Open a collapsable fold"})
