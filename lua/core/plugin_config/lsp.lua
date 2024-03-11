@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "vimls", "pylsp", "ruff_lsp"}
+    ensure_installed = { "lua_ls", "vimls", "pylsp", "ruff_lsp" }
 })
 
 local on_attach = function()
@@ -31,3 +31,10 @@ require('lspconfig').ruff_lsp.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
+
+local group = vim.api.nvim_create_augroup("Ruff", { clear = true })
+vim.api.nvim_create_autocmd("bufWritePost", {
+    pattern = "*.py",
+    command = ":lua vim.lsp.buf.format()",
+    group = group,
+})
