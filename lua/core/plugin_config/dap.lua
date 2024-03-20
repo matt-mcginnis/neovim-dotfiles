@@ -2,6 +2,14 @@
 require('nvim-dap-virtual-text').setup()
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
+table.insert(require('dap').configurations.python, {
+    name = 'Fast API',
+    type = 'python',
+    request = 'launch',
+    module = 'uvicorn',
+    args =  {'app.main:app', '--host', '0.0.0.0', '--port', '80'}
+})
+
 require('dapui').setup(
     {
         controls = {
