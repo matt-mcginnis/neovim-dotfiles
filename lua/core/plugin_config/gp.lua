@@ -18,9 +18,9 @@ local config = {
             .. "- If you're unsure don't guess. Say you don't know instead.\n"
             .. "- Ask question if you need clarification to provide better answer.\n"
             .. "- Think deeply and carefully from first principles step by step.\n"
-            .. "- Zoom out first to see the big picture and then zoom in to details.\n"
-            .. "- Use Socratic method to improve your thinking and coding skills.\n"
+            .. "- Zoom out first to see the big picture and then zoom in to focus on details.\n"
             .. "- Don't elide any code from your output if the answer requires coding.\n"
+            .. "- Be CLEAR and CONCISE with your response.\n"
             .. "- Take a deep breath; You've got this!\n",
         },
         {
@@ -36,8 +36,8 @@ local config = {
             .. "- Ask question if you need clarification to provide better answer.\n"
             .. "- Think deeply and carefully from first principles step by step.\n"
             .. "- Zoom out first to see the big picture and then zoom in to details.\n"
-            .. "- Use Socratic method to improve your thinking and coding skills.\n"
             .. "- Don't elide any code from your output if the answer requires coding.\n"
+            .. "- Be CLEAR and CONCISE with your response.\n"
             .. "- Take a deep breath; You've got this!\n",
         },
         {
