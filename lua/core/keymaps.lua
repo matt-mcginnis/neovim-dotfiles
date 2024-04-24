@@ -78,8 +78,8 @@ vim.keymap.set("v", "h", "k")
 vim.keymap.set("v", "<leader>,", "_")
 vim.keymap.set("v", "<leader>.", "$")
 
-vim.keymap.set("n", "K", "}")
-vim.keymap.set("n", "H", "{")
+vim.keymap.set("v", "K", "}")
+vim.keymap.set("v", "H", "{")
 
 vim.keymap.set("v", "<leader>H", "<C-u>zz")
 vim.keymap.set("v", "<leader>K", "<C-d>zz")
