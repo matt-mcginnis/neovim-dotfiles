@@ -10,6 +10,13 @@ table.insert(require('dap').configurations.python, {
     args =  {'app.main:app', '--host', '0.0.0.0', '--port', '80'}
 })
 
+table.insert(require('dap').configurations.python, {
+    name = 'App Tests',
+    type = 'python',
+    request = 'launch',
+    module = 'app.tests.${fileBasenameNoExtension}'
+})
+
 require('dapui').setup(
     {
         controls = {
