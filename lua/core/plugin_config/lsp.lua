@@ -32,9 +32,6 @@ require('lspconfig').ruff_lsp.setup {
     capabilities = capabilities,
 }
 
-local group = vim.api.nvim_create_augroup("Ruff", { clear = true })
-vim.api.nvim_create_autocmd("bufWritePost", {
-    pattern = "*.py",
-    command = ":lua vim.lsp.buf.format()",
-    group = group,
-})
+require('lspconfig').volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}

@@ -15,7 +15,7 @@ require("lazy").setup({
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
-    { 'nvim-treesitter/playground' },
+    -- { 'nvim-treesitter/playground' },
 
     -- Undotree
     { 'mbbill/undotree' },
@@ -81,4 +81,23 @@ require("lazy").setup({
 
     -- Follow Markdown Links
     { "jghauser/follow-md-links.nvim" },
+
+    -- vim-dadbod
+    {
+      'kristijanhusak/vim-dadbod-ui',
+      dependencies = {
+        { 'tpope/vim-dadbod', lazy = true },
+        { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+      },
+      cmd = {
+        'DBUI',
+        'DBUIToggle',
+        'DBUIAddConnection',
+        'DBUIFindBuffer',
+      },
+      init = function()
+        -- Your DBUI configuration
+        vim.g.db_ui_use_nerd_fonts = 1
+      end,
+    }
 })

@@ -7,7 +7,7 @@ table.insert(require('dap').configurations.python, {
     type = 'python',
     request = 'launch',
     module = 'uvicorn',
-    args =  {'app.main:app', '--host', '0.0.0.0', '--port', '80'}
+    args = { 'app.main:app', '--host', '0.0.0.0', '--port', '80' }
 })
 
 table.insert(require('dap').configurations.python, {
@@ -50,20 +50,14 @@ require('dapui').setup(
         },
         layouts = { {
             elements = { {
-                id = "scopes",
-                size = 0.45
-            }, {
-                id = "breakpoints",
-                size = 0.20
-            }, {
-                id = "stacks",
-                size = 0.15
+                id = "repl",
+                size = 0.5
             }, {
                 id = "watches",
-                size = 0.20
+                size = 0.5
             } },
             position = "left",
-            size = 40
+            size = 50
         }, {
             elements = { {
                 id = "console",
@@ -93,11 +87,6 @@ vim.keymap.set('n', '<leader>dB', "<cmd>lua require'dap'.set_breakpoint(vim.fn.i
 vim.keymap.set('n', '<leader>do', "<cmd>lua require'dap'.step_over()<cr>")
 vim.keymap.set('n', '<leader>di', "<cmd>lua require'dap'.step_into()<cr>")
 vim.keymap.set('n', '<leader>dq', "<cmd>lua require'dap'.terminate()<cr>")
-vim.keymap.set('n', '<leader>dr', "<cmd>lua require'dap'.repl.open({ height = 10 })<cr>")
-vim.keymap.set('n', '<leader>dR', "<cmd>lua require'dap'.repl.close()<cr>")
-
-vim.keymap.set('n', '<leader>duo', "<cmd>lua require'dapui'.open()<cr>")
-vim.keymap.set('n', '<leader>duq', "<cmd>lua require'dapui'.close()<cr>")
 
 local dap, dapui = require("dap"), require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
