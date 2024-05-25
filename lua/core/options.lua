@@ -1,4 +1,5 @@
 vim.g.netrw_liststyle = 0
+vim.g.db_ui_save_location = "/Users/mattmcginnis/.local/share/db_ui/"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
