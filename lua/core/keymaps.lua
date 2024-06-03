@@ -11,11 +11,8 @@ vim.keymap.set("n", "<leader>.", "$")
 
 vim.keymap.set("n", "<c-.>", ":b#<cr>", { desc = "Go to last open buffer" })
 
-vim.keymap.set("n", "<leader>ca", "za", { desc = "Toggle collapsable fold" })
-vim.keymap.set("n", "<leader>cr", "zr", { desc = "Open a collapsable fold" })
-vim.keymap.set("n", "<leader>cR", "zR", { desc = "Open all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>cm", "zm", { desc = "Close a collapsable fold" })
-vim.keymap.set("n", "<leader>cM", "zM", { desc = "Close all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>a", "za", { desc = "Toggle collapsable fold" })
+vim.keymap.set("n", "<leader>A", "zA", { desc = "Toggle collapsable folds recursively" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 vim.keymap.set("n", "<leader>el", ":vnew | term open_ollama_model<cr>", { desc = "Toggle vertical Ollama terminal" })
