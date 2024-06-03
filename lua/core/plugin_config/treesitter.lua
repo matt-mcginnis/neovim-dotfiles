@@ -42,25 +42,29 @@ require'nvim-treesitter.configs'.setup {
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
         ["<leader>tF"] = "@function.outer",
-        ["<leader>tC"] = "@comment.outer",
+        ["<leader>tC"] = "@class.outer",
+        ["<leader>t?"] = "@comment.outer",
         ["<leader>tI"] = "@conditional.*",
         ["<leader>tL"] = "@loop.*",
       },
       goto_next_end = {
         ["<leader>tf"] = "@function.outer",
-        ["<leader>tc"] = "@comment.outer",
+        ["<leader>tc"] = "@class.outer",
+        ["<leader>t/"] = "@comment.outer",
         ["<leader>ti"] = "@conditional.*",
         ["<leader>tl"] = "@loop.*",
       },
       goto_previous_start = {
         ["<leader>sf"] = "@function.outer",
-        ["<leader>sc"] = "@comment.outer",
+        ["<leader>sc"] = "@class.outer",
+        ["<leader>s/"] = "@comment.outer",
         ["<leader>si"] = "@conditional.*",
         ["<leader>sl"] = "@loop.*",
       },
       goto_previous_end = {
         ["<leader>sF"] = "@function.outer",
-        ["<leader>sC"] = "@comment.outer",
+        ["<leader>sC"] = "@class.outer",
+        ["<leader>s?"] = "@comment.outer",
         ["<leader>sI"] = "@conditional.*",
         ["<leader>sL"] = "@loop.*",
       },
