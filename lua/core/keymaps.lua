@@ -9,7 +9,7 @@ vim.keymap.set("n", "h", "k")
 vim.keymap.set("n", "<leader>,", "_")
 vim.keymap.set("n", "<leader>.", "$")
 
-vim.keymap.set("n", "<c-.>", ":b#<cr>", { desc = "Go to last open buffer" })
+vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
 vim.keymap.set("n", "<leader>a", "zA", { desc = "Toggle collapsable folds recursively" })
 vim.keymap.set("n", "<leader>A", "za", { desc = "Toggle collapsable fold" })
@@ -21,8 +21,8 @@ vim.keymap.set("n", "<leader>cM", "zm", { desc = "Close a collapsable fold" })
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 vim.keymap.set("n", "<leader>el", ":vnew | term open_ollama_model<cr>", { desc = "Toggle vertical Ollama terminal" })
 
-vim.keymap.set("n", "<leader>H", "<C-u>zz", { desc = "Page down and center" })
-vim.keymap.set("n", "<leader>K", "<C-d>zz", { desc = "Page up and center" })
+vim.keymap.set("n", "H", "<C-u>zz", { desc = "Page up and center" })
+vim.keymap.set("n", "K", "<C-d>zz", { desc = "Page down and center" })
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", { desc = "Toggle search highlight" })
 
@@ -47,8 +47,8 @@ vim.keymap.set("n", "<leader>rk", ":resize -10<cr>")
 vim.keymap.set("n", "<leader>st", ":%s/")
 vim.keymap.set("n", "<leader>s.", "@:")
 
-vim.keymap.set("n", "K", "}zz")
-vim.keymap.set("n", "H", "{zz")
+vim.keymap.set("n", "<c-.>", "}zz")
+vim.keymap.set("n", "<c-,>", "{zz")
 
 vim.keymap.set("n", "<c-j>", "<c-w>h")
 vim.keymap.set("n", "<c-l>", "<c-w>l")
@@ -79,11 +79,11 @@ vim.keymap.set("v", "h", "k")
 vim.keymap.set("v", "<leader>,", "_")
 vim.keymap.set("v", "<leader>.", "$")
 
-vim.keymap.set("v", "K", "}zz")
-vim.keymap.set("v", "H", "{zz")
+vim.keymap.set("v", "<c-.>", "}zz")
+vim.keymap.set("v", "<c-,>", "{zz")
 
-vim.keymap.set("v", "<leader>H", "<C-u>zz")
-vim.keymap.set("v", "<leader>K", "<C-d>zz")
+vim.keymap.set("v", "H", "<C-u>zz")
+vim.keymap.set("v", "K", "<C-d>zz")
 
 vim.keymap.set("v", "p", "\"_dP")
 vim.keymap.set("v", "<leader>p", "\"+p")
