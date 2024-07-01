@@ -6,8 +6,8 @@ vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
 
-vim.keymap.set("n", "<leader>,", "_")
-vim.keymap.set("n", "<leader>.", "$")
+vim.keymap.set("n", "<leader>,", "_", { desc = "Go to beginning of line" })
+vim.keymap.set("n", "<leader>.", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
@@ -76,21 +76,21 @@ vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
 vim.keymap.set("v", "h", "k")
 
-vim.keymap.set("v", "<leader>,", "_")
-vim.keymap.set("v", "<leader>.", "$")
+vim.keymap.set("v", "<leader>,", "_", { desc = "Go to beginning of line" })
+vim.keymap.set("v", "<leader>.", "$", { desc = "Go to end of line" })
 
-vim.keymap.set("v", "<c-.>", "}zz")
-vim.keymap.set("v", "<c-,>", "{zz")
+vim.keymap.set("v", "<c-.>", "}zz", { desc = "Move up a paragragh" })
+vim.keymap.set("v", "<c-,>", "{zz", { desc = "Move down a paragragh" })
 
-vim.keymap.set("v", "H", "<C-u>zz")
-vim.keymap.set("v", "K", "<C-d>zz")
+vim.keymap.set("v", "H", "<C-u>zz", { desc = "Page up and center" })
+vim.keymap.set("v", "K", "<C-d>zz", { desc = "Page down and center" })
 
-vim.keymap.set("v", "p", "\"_dP")
-vim.keymap.set("v", "<leader>p", "\"+p")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("v", "p", "\"_dP", { desc = "Paste and retain what was pasted" })
+vim.keymap.set("v", "<leader>p", "\"+p", { desc = "Paste from computer register" })
+vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Copy to computer register" })
 
-vim.keymap.set("v", ">", ">gv")
-vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv", { desc = "Indent selection" })
+vim.keymap.set("v", "<", "<gv", { desc = "Unindent selection" })
 
-vim.keymap.set("v", "<leader>st", ":s/")
-vim.keymap.set("v", "<leader>s.", "@:")
+vim.keymap.set("v", "<leader>st", ":s/", { desc = "Sed replace in selected instance" })
+vim.keymap.set("v", "<leader>s.", "@:", { desc = "Sed repeat replace in selected instance" })
