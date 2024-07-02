@@ -12,13 +12,64 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Treesitter
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    -- { 'nvim-treesitter/playground' },
+    -- Autocompletion and Snippets
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "dcampos/nvim-snippy" },
+    { "dcampos/cmp-snippy" },
+    { "matt-mcginnis/vim-snippets" },
 
-    -- Undotree
-    { 'mbbill/undotree' },
+    -- Commenting
+    { "numToStr/Comment.nvim" },
+
+    -- Dadbod
+    {
+      'kristijanhusak/vim-dadbod-ui',
+      dependencies = {
+        { 'tpope/vim-dadbod', lazy = true },
+        { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+      },
+      cmd = {
+        'DBUI',
+        'DBUIToggle',
+        'DBUIAddConnection',
+        'DBUIFindBuffer',
+      },
+    },
+
+    -- DAP Plugins
+    { 'mfussenegger/nvim-dap' },
+    { 'mfussenegger/nvim-dap-python',     dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap" } },
+    { "theHamsta/nvim-dap-virtual-text" },
+
+    -- GPT Plugin
+    { "robitx/gp.nvim" },
+
+    -- Gruvbox Color Theme
+    { "ellisonleao/gruvbox.nvim" },
+
+    -- Leap Motions
+    { "ggandor/leap.nvim" },
+
+    -- LSP Plugins
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "neovim/nvim-lspconfig" },
+
+    -- Markdown Links
+    { "jghauser/follow-md-links.nvim" },
+
+    -- Obsidian
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",  -- recommended, use latest release instead of latest commit
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+        },
+    },
 
     -- Telescope
     {
@@ -35,65 +86,14 @@ require("lazy").setup({
         }
     },
 
-    -- LSP Plugins
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
-    { "neovim/nvim-lspconfig" },
-
-    -- Leap Motions
-    { "ggandor/leap.nvim" },
-
-    -- Gruvbox Color Theme
-    { "ellisonleao/gruvbox.nvim" },
-
-    -- DAP Plugins
-    { 'mfussenegger/nvim-dap' },
-    { 'mfussenegger/nvim-dap-python',     dependencies = { "mfussenegger/nvim-dap" } },
-    { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap" } },
-    { "theHamsta/nvim-dap-virtual-text" },
-
-    -- Commenting
-    { "numToStr/Comment.nvim" },
-
-    -- Autocompletion and Snippets
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-buffer" },
-    { "dcampos/nvim-snippy" },
-    { "dcampos/cmp-snippy" },
-    { "matt-mcginnis/vim-snippets" },
-
-    -- GPT Plugin
-    { "robitx/gp.nvim" },
-
     -- Toggle Term
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
-    -- Obsidian
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*",  -- recommended, use latest release instead of latest commit
-        dependencies = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-        },
-    },
+    -- Treesitter
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    -- { 'nvim-treesitter/playground' },
 
-    -- Follow Markdown Links
-    { "jghauser/follow-md-links.nvim" },
-
-    -- vim-dadbod
-    {
-      'kristijanhusak/vim-dadbod-ui',
-      dependencies = {
-        { 'tpope/vim-dadbod', lazy = true },
-        { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
-      },
-      cmd = {
-        'DBUI',
-        'DBUIToggle',
-        'DBUIAddConnection',
-        'DBUIFindBuffer',
-      },
-    }
+    -- Undotree
+    { 'mbbill/undotree' }
 })
