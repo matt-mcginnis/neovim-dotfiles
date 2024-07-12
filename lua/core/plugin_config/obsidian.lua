@@ -61,6 +61,10 @@ require("obsidian").setup({
     wiki_link_func = function(opts)
         return require("obsidian.util").wiki_link_id_prefix(opts)
     end,
+    follow_url_func = function(url)
+    -- Open the URL in the default web browser.
+    vim.fn.jobstart({"open", url})  -- Mac OS
+  end,
 })
 
 vim.keymap.set("n", "<leader>og", ":ObsidianFollowLink<cr>")

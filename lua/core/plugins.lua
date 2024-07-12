@@ -12,6 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Try loading Treesitter first
+    -- Treesitter
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    -- { 'nvim-treesitter/playground' },
+
     -- Autocompletion and Snippets
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
@@ -58,9 +64,6 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
 
-    -- Markdown Links
-    { "jghauser/follow-md-links.nvim" },
-
     -- Obsidian
     {
         "epwalsh/obsidian.nvim",
@@ -88,11 +91,6 @@ require("lazy").setup({
 
     -- Toggle Term
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
-
-    -- Treesitter
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    -- { 'nvim-treesitter/playground' },
 
     -- Undotree
     { 'mbbill/undotree' }
