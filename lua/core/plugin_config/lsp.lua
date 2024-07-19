@@ -19,7 +19,21 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 require("lspconfig").lua_ls.setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true)
+            },
+            telemetry = {
+                enable = false
+            }
+        }
+    }
+
 }
 
 require("lspconfig").pylsp.setup {
@@ -32,6 +46,6 @@ require('lspconfig').ruff_lsp.setup {
     capabilities = capabilities,
 }
 
-require('lspconfig').volar.setup{
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+require('lspconfig').volar.setup {
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
 }
