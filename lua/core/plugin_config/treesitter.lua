@@ -1,6 +1,9 @@
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline"},
+require 'nvim-treesitter.configs'.setup {
+  -- Said this was a required property...
+  modules = {},
+
+  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -8,6 +11,12 @@ require'nvim-treesitter.configs'.setup {
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
+
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = { "javascript" },
+
+  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
   highlight = {
     enable = true,
@@ -19,57 +28,57 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 
-  textobjects = {
-    select = {
-      enable = true,
+    textobjects = {
+        select = {
+            enable = true,
 
-      -- Automatically jump forward to textobj, similar to targets.vim
-      lookahead = true,
+            -- Automatically jump forward to textobj, similar to targets.vim
+            lookahead = true,
 
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@conditional.outer",
-        ["ic"] = "@conditional.inner",
-        ["al"] = "@loop.outer",
-        ["il"] = "@loop.inner",
-      },
-      include_surrounding_whitespace = false,
+            keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@conditional.outer",
+                ["ic"] = "@conditional.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
+            },
+            include_surrounding_whitespace = false,
+        },
+        move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+                ["<leader>tF"] = "@function.outer",
+                ["<leader>tC"] = "@class.outer",
+                ["<leader>t?"] = "@comment.outer",
+                ["<leader>tI"] = "@conditional.*",
+                ["<leader>tL"] = "@loop.*",
+            },
+            goto_next_end = {
+                ["<leader>tf"] = "@function.outer",
+                ["<leader>tc"] = "@class.outer",
+                ["<leader>t/"] = "@comment.outer",
+                ["<leader>ti"] = "@conditional.*",
+                ["<leader>tl"] = "@loop.*",
+            },
+            goto_previous_start = {
+                ["<leader>sf"] = "@function.outer",
+                ["<leader>sc"] = "@class.outer",
+                ["<leader>s/"] = "@comment.outer",
+                ["<leader>si"] = "@conditional.*",
+                ["<leader>sl"] = "@loop.*",
+            },
+            goto_previous_end = {
+                ["<leader>sF"] = "@function.outer",
+                ["<leader>sC"] = "@class.outer",
+                ["<leader>s?"] = "@comment.outer",
+                ["<leader>sI"] = "@conditional.*",
+                ["<leader>sL"] = "@loop.*",
+            },
+        },
     },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        ["<leader>tF"] = "@function.outer",
-        ["<leader>tC"] = "@class.outer",
-        ["<leader>t?"] = "@comment.outer",
-        ["<leader>tI"] = "@conditional.*",
-        ["<leader>tL"] = "@loop.*",
-      },
-      goto_next_end = {
-        ["<leader>tf"] = "@function.outer",
-        ["<leader>tc"] = "@class.outer",
-        ["<leader>t/"] = "@comment.outer",
-        ["<leader>ti"] = "@conditional.*",
-        ["<leader>tl"] = "@loop.*",
-      },
-      goto_previous_start = {
-        ["<leader>sf"] = "@function.outer",
-        ["<leader>sc"] = "@class.outer",
-        ["<leader>s/"] = "@comment.outer",
-        ["<leader>si"] = "@conditional.*",
-        ["<leader>sl"] = "@loop.*",
-      },
-      goto_previous_end = {
-        ["<leader>sF"] = "@function.outer",
-        ["<leader>sC"] = "@class.outer",
-        ["<leader>s?"] = "@comment.outer",
-        ["<leader>sI"] = "@conditional.*",
-        ["<leader>sL"] = "@loop.*",
-      },
-    },
-  },
 }
 
 local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"

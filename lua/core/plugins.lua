@@ -12,12 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Try loading Treesitter first
-    -- Treesitter
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    -- { 'nvim-treesitter/playground' },
-
     -- Autocompletion and Snippets
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
@@ -31,30 +25,24 @@ require("lazy").setup({
 
     -- Dadbod
     {
-      'kristijanhusak/vim-dadbod-ui',
-      dependencies = {
-        { 'tpope/vim-dadbod', lazy = true },
-        { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
-      },
-      cmd = {
-        'DBUI',
-        'DBUIToggle',
-        'DBUIAddConnection',
-        'DBUIFindBuffer',
-      },
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod',                     lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
     },
-
-    -- DAP Plugins
-    { 'mfussenegger/nvim-dap' },
-    { 'mfussenegger/nvim-dap-python',     dependencies = { "mfussenegger/nvim-dap" } },
-    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
-    { "theHamsta/nvim-dap-virtual-text" },
 
     -- GPT Plugin
     { "robitx/gp.nvim" },
 
-    -- Gruvbox Color Theme
-    { "ellisonleao/gruvbox.nvim" },
+    -- Rose-pine Color Theme
+    { "rose-pine/neovim",                 name = "rose-pine" },
 
     -- Leap Motions
     { "ggandor/leap.nvim" },
@@ -67,11 +55,20 @@ require("lazy").setup({
     -- Obsidian
     {
         "epwalsh/obsidian.nvim",
-        version = "*",  -- recommended, use latest release instead of latest commit
+        version = "*", -- recommended, use latest release instead of latest commit
         dependencies = {
             -- Required.
             "nvim-lua/plenary.nvim",
         },
+    },
+
+    -- Toggle Term
+    { 'akinsho/toggleterm.nvim',                    version = "*", config = true },
+
+    -- Treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
     },
 
     -- Telescope
@@ -89,8 +86,7 @@ require("lazy").setup({
         }
     },
 
-    -- Toggle Term
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
 
     -- Undotree
     { 'mbbill/undotree' }
