@@ -42,7 +42,7 @@ require("lazy").setup({
     { "robitx/gp.nvim" },
 
     -- Rose-pine Color Theme
-    { "Shatur/neovim-ayu"},
+    { "rose-pine/neovim", name = "rose-pine" },
 
     -- Leap Motions
     { "ggandor/leap.nvim" },

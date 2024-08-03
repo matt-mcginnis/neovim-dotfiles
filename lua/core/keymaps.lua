@@ -6,17 +6,17 @@ vim.keymap.set("n", "j", "h")
 vim.keymap.set("n", "k", "j")
 vim.keymap.set("n", "h", "k")
 
-vim.keymap.set("n", "<leader>,", "_", { desc = "Go to beginning of line" })
-vim.keymap.set("n", "<leader>.", "$", { desc = "Go to end of line" })
+vim.keymap.set("n", "<", "_", { desc = "Go to beginning of line" })
+vim.keymap.set("n", ">", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
 vim.keymap.set("n", "<leader>a", "zA", { desc = "Toggle collapsable folds recursively" })
 vim.keymap.set("n", "<leader>A", "za", { desc = "Toggle collapsable fold" })
-vim.keymap.set("n", "<leader>cr", "zR", { desc = "Open all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>cR", "zr", { desc = "Open a collapsable fold" })
-vim.keymap.set("n", "<leader>cm", "zM", { desc = "Close all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>cM", "zm", { desc = "Close a collapsable fold" })
+vim.keymap.set("n", "<leader>r", "zR", { desc = "Open all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>R", "zr", { desc = "Open a collapsable fold" })
+vim.keymap.set("n", "<leader>m", "zM", { desc = "Close all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>M", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 vim.keymap.set("n", "<leader>el", ":vnew | term open_ollama_model<cr>", { desc = "Toggle vertical Ollama terminal" })
@@ -39,10 +39,10 @@ vim.keymap.set("n", "<leader>qn", ":cn<cr>", { desc = "Move to next quickfix" })
 vim.keymap.set("n", "<leader>qp", ":cp<cr>", { desc = "Move to previous quickfix" })
 vim.keymap.set("n", "<leader>qd", ":cdo ", { desc = "Apply quickfix" })
 
-vim.keymap.set("n", "<leader>rj", ":vertical resize -10<cr>", { desc = "Decrease vertical split size" })
-vim.keymap.set("n", "<leader>rl", ":vertical resize +10<cr>", { desc = "Increase vertical split size" })
-vim.keymap.set("n", "<leader>rk", ":resize -10<cr>", { desc = "Decrease horizontal split size" })
-vim.keymap.set("n", "<leader>rh", ":resize +10<cr>", { desc = "Increase horizontal split size" })
+vim.keymap.set("n", "<C-S-j>", ":vertical resize -10<cr>", { desc = "Decrease vertical split size" })
+vim.keymap.set("n", "<C-S-l>", ":vertical resize +10<cr>", { desc = "Increase vertical split size" })
+vim.keymap.set("n", "<C-S-k>", ":resize -10<cr>", { desc = "Decrease horizontal split size" })
+vim.keymap.set("n", "<C-S-h>", ":resize +10<cr>", { desc = "Increase horizontal split size" })
 
 vim.keymap.set("n", "<leader>st", ":%s/", { desc = "Sed replace all instances in file" })
 vim.keymap.set("n", "<leader>s.", "@:", { desc = "Sed repeat replace all isntances in file" })
@@ -65,19 +65,13 @@ vim.keymap.set("n", "<leader>w-", ":new<cr>", { desc = "Create new horizontal sp
 
 vim.keymap.set("n", "'", "@", { desc = "Run recorded macro" })
 
--- Writing and Saving
-vim.keymap.set("n", "<leader><leader>q", ":q<cr>", { desc = "Regular quit" })
-vim.keymap.set("n", "<leader><leader>Q", ":q!<cr>", { desc = "Quit without saving" })
-vim.keymap.set("n", "<leader><leader>w", ":w<cr>", { desc = "Regular write/save" })
-vim.keymap.set("n", "<leader><leader>W", ":wq<cr>", { desc = "Write/save and quit" })
-
 -- Visual Keymaps
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
 vim.keymap.set("v", "h", "k")
 
-vim.keymap.set("v", "<leader>,", "_", { desc = "Go to beginning of line" })
-vim.keymap.set("v", "<leader>.", "$", { desc = "Go to end of line" })
+vim.keymap.set("v", "<", "_", { desc = "Go to beginning of line" })
+vim.keymap.set("v", ">", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("v", "<c-.>", "}zz", { desc = "Move up a paragragh" })
 vim.keymap.set("v", "<c-,>", "{zz", { desc = "Move down a paragragh" })
@@ -89,8 +83,8 @@ vim.keymap.set("v", "p", "\"_dP", { desc = "Paste and retain what was pasted" })
 vim.keymap.set("v", "<leader>p", "\"+p", { desc = "Paste from computer register" })
 vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Copy to computer register" })
 
-vim.keymap.set("v", ">", ">gv", { desc = "Indent selection" })
-vim.keymap.set("v", "<", "<gv", { desc = "Unindent selection" })
+vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selection" })
+vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "Unindent selection" })
 
 vim.keymap.set("v", "<leader>st", ":s/", { desc = "Sed replace in selected instance" })
 vim.keymap.set("v", "<leader>s.", "@:", { desc = "Sed repeat replace in selected instance" })
