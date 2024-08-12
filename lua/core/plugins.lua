@@ -52,16 +52,6 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
 
-    -- Obsidian
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*", -- recommended, use latest release instead of latest commit
-        dependencies = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-        },
-    },
-
     -- Toggle Term
     { 'akinsho/toggleterm.nvim',                    version = "*", config = true },
 
