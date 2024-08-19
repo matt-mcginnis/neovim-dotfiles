@@ -19,7 +19,6 @@ vim.keymap.set("n", "<leader>m", "zM", { desc = "Close all collapsable folds rec
 vim.keymap.set("n", "<leader>M", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
-vim.keymap.set("n", "<leader>el", ":vnew | term open_ollama_model<cr>", { desc = "Toggle vertical Ollama terminal" })
 
 vim.keymap.set("n", "H", "<C-u>zz", { desc = "Page up and center" })
 vim.keymap.set("n", "K", "<C-d>zz", { desc = "Page down and center" })
@@ -38,6 +37,8 @@ vim.keymap.set("n", "<leader>qo", ":copen<cr>", { desc = "Open quickfix" })
 vim.keymap.set("n", "<leader>qn", ":cn<cr>", { desc = "Move to next quickfix" })
 vim.keymap.set("n", "<leader>qp", ":cp<cr>", { desc = "Move to previous quickfix" })
 vim.keymap.set("n", "<leader>qd", ":cdo ", { desc = "Apply quickfix" })
+vim.keymap.set("n", "<leader>qc", ":cexpr []<cr>", { desc = "Clear quickfix" })
+vim.keymap.set("n", "<leader>qq", ":cq<cr>", { desc = "Quit quickfix" })
 
 vim.keymap.set("n", "<C-S-j>", ":vertical resize -10<cr>", { desc = "Decrease vertical split size" })
 vim.keymap.set("n", "<C-S-l>", ":vertical resize +10<cr>", { desc = "Increase vertical split size" })
