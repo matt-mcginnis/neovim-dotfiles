@@ -18,8 +18,8 @@ vim.keymap.set("n", "<leader>M", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 
-vim.keymap.set("n", "<c-h>", "<C-u>zz", { desc = "Page up and center" })
-vim.keymap.set("n", "<c-k>", "<C-d>zz", { desc = "Page down and center" })
+vim.keymap.set("n", "H", "<C-u>zz", { desc = "Page up and center" })
+vim.keymap.set("n", "K", "<C-d>zz", { desc = "Page down and center" })
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", { desc = "Toggle search highlight" })
 
