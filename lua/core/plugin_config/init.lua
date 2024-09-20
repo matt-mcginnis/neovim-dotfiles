@@ -1,6 +1,5 @@
 require("core.plugin_config.cmp")
 require("core.plugin_config.comment")
-require("core.plugin_config.dadbod")
 require("core.plugin_config.gp")
 require("core.plugin_config.lsp")
 require("core.plugin_config.movement")

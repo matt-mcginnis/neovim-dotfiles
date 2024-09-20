@@ -23,21 +23,6 @@ require("lazy").setup({
     -- Commenting
     { "numToStr/Comment.nvim" },
 
-    -- Dadbod
-    {
-        'kristijanhusak/vim-dadbod-ui',
-        dependencies = {
-            { 'tpope/vim-dadbod',                     lazy = true },
-            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
-        },
-        cmd = {
-            'DBUI',
-            'DBUIToggle',
-            'DBUIAddConnection',
-            'DBUIFindBuffer',
-        },
-    },
-
     -- GPT Plugin
     { "robitx/gp.nvim" },
 
