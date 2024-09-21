@@ -27,7 +27,7 @@ require("lazy").setup({
     { "robitx/gp.nvim" },
 
     -- Rose-pine Color Theme
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "rose-pine/neovim",                 name = "rose-pine" },
 
     -- Leap Motions
     { "ggandor/leap.nvim" },
@@ -38,7 +38,7 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
 
     -- Toggle Term
-    { 'akinsho/toggleterm.nvim',                    version = "*", config = true },
+    { 'akinsho/toggleterm.nvim',          version = "*",     config = true },
 
     -- Treesitter
     {
@@ -64,6 +64,10 @@ require("lazy").setup({
 
     { "nvim-treesitter/nvim-treesitter-textobjects" },
 
-    -- Undotree
-    { 'mbbill/undotree' }
+    -- Markdown Render
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {},
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    }
 })

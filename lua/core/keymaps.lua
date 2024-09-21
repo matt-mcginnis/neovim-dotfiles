@@ -9,6 +9,8 @@ vim.keymap.set("n", ">", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
+vim.keymap.set("n", "<leader>d", ":RenderMarkdown toggle<cr>", { desc = "Toggle markdown render" })
+
 vim.keymap.set("n", "<leader>a", "zA", { desc = "Toggle collapsable folds recursively" })
 vim.keymap.set("n", "<leader>A", "za", { desc = "Toggle collapsable fold" })
 vim.keymap.set("n", "<leader>r", "zR", { desc = "Open all collapsable folds recursively" })
