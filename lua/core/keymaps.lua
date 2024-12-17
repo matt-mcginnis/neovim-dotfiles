@@ -11,12 +11,12 @@ vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
 vim.keymap.set("n", "<leader>d", ":RenderMarkdown toggle<cr>", { desc = "Toggle markdown render" })
 
-vim.keymap.set("n", "<leader>a", "zA", { desc = "Toggle collapsable folds recursively" })
-vim.keymap.set("n", "<leader>A", "za", { desc = "Toggle collapsable fold" })
-vim.keymap.set("n", "<leader>r", "zR", { desc = "Open all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>R", "zr", { desc = "Open a collapsable fold" })
-vim.keymap.set("n", "<leader>m", "zM", { desc = "Close all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>M", "zm", { desc = "Close a collapsable fold" })
+vim.keymap.set("n", "<leader>ta", "zA", { desc = "Toggle collapsable folds recursively" })
+vim.keymap.set("n", "<leader>tA", "za", { desc = "Toggle collapsable fold" })
+vim.keymap.set("n", "<leader>tr", "zR", { desc = "Open all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>tR", "zr", { desc = "Open a collapsable fold" })
+vim.keymap.set("n", "<leader>tm", "zM", { desc = "Close all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>tM", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 

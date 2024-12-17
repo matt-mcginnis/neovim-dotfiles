@@ -1,6 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "vimls", "ruff", "pylsp" }
+    ensure_installed = { "lua_ls", "vimls", "ruff", "pylsp" },
+    automatic_installation = true
 })
 
 local on_attach = function()
