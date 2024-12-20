@@ -26,8 +26,8 @@ require("lazy").setup({
     -- Commenting
     { "numToStr/Comment.nvim" },
 
-    -- Rose-pine Color Theme
-    { "rose-pine/neovim",                           name = "rose-pine" },
+    -- Dracula Color Schemes
+    { 'Mofiqul/dracula.nvim' },
 
     -- Leap Motions
     { "ggandor/leap.nvim" },
