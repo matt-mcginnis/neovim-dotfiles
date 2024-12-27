@@ -54,12 +54,12 @@ vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "Move to right split" })
 vim.keymap.set("n", "<c-h>", "<c-w>k", { desc = "Move to above split" })
 vim.keymap.set("n", "<c-k>", "<c-w>j", { desc = "Move to below split" })
 
-vim.keymap.set("n", "<c-w>j", "<c-w>H", { desc = "Move split to the left" })
-vim.keymap.set("n", "<c-w>l", "<c-w>L", { desc = "Move split to the right" })
-vim.keymap.set("n", "<c-w>h", "<c-w>K", { desc = "Move split up" })
-vim.keymap.set("n", "<c-w>k", "<c-w>J", { desc = "Move split down" })
+vim.keymap.set("n", "<leader>wj", "<c-w>H", { desc = "Move split to the left" })
+vim.keymap.set("n", "<leader>wl", "<c-w>L", { desc = "Move split to the right" })
+vim.keymap.set("n", "<leader>wh", "<c-w>K", { desc = "Move split up" })
+vim.keymap.set("n", "<leader>wk", "<c-w>J", { desc = "Move split down" })
 
-vim.keymap.set("n", "<c-w>t", "<c-w>T", { desc = "Move split to its own window" })
+vim.keymap.set("n", "<leader>wt", "<c-w>T", { desc = "Move split to its own window" })
 
 vim.keymap.set("n", "<leader>w\\", ":vnew<cr>", { desc = "Create new vertical split" })
 vim.keymap.set("n", "<leader>w-", ":new<cr>", { desc = "Create new horizontal split" })
