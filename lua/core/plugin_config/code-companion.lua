@@ -12,9 +12,6 @@ require("codecompanion").setup({
         end,
     },
     strategies = {
-        agent = {
-            adapter = "openai",
-        },
         chat = {
             adapter = "openai",
             slash_commands = {
@@ -59,6 +56,33 @@ require("codecompanion").setup({
         },
         inline = {
             adapter = "openai",
+            keymaps = {
+                accept_change = {
+                    modes = {
+                        n = "ea",
+                    },
+                    index = 1,
+                    callback = "keymaps.accept_change",
+                    description = "Accept change",
+                },
+                reject_change = {
+                    modes = {
+                        n = "er",
+                    },
+                    index = 2,
+                    callback = "keymaps.reject_change",
+                    description = "Reject change",
+                },
+            },
+            prompts = {
+                -- The prompt to send to the LLM when a user initiates the inline strategy and it needs to convert to a chat
+                inline_to_chat = function(context)
+                    return fmt(
+                        [[I want you to act as an expert and senior developer in the %s language. I will ask you questions, perhaps giving you code examples, and I want you to advise me with explanations and code where neccessary.]],
+                        context.filetype
+                    )
+                end,
+            },
         },
     },
     display = {
@@ -68,11 +92,13 @@ require("codecompanion").setup({
     },
 })
 
-vim.api.nvim_set_keymap("n", "<C-n>", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<C-n>", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<leader>aa", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>ai", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<leader>ai", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ai", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>ai", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>ad", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ac", "<cmd>CodeCompanion<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>ac", "<cmd>CodeCompanion<cr>", { noremap = true, silent = true })
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])

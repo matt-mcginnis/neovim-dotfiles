@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "vimls", "ruff", "pylsp" },
+    ensure_installed = { "lua_ls", "vimls", "ruff", "pylsp", "rust_analyzer" },
     automatic_installation = true
 })
 
@@ -45,4 +45,9 @@ require("lspconfig").pylsp.setup {
 require('lspconfig').ruff.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+}
+
+require("lspconfig").rust_analyzer.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
 }

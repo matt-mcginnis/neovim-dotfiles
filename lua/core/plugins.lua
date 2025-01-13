@@ -38,7 +38,7 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
 
     -- Toggle Term
-    { 'akinsho/toggleterm.nvim',                    version = "*",     config = true },
+    { 'akinsho/toggleterm.nvim',                    version = "*", config = true },
 
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -79,6 +79,7 @@ require("lazy").setup({
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     },
 
+    -- Code Companion (AI)
     {
         "olimorris/codecompanion.nvim",
         dependencies = {
@@ -86,5 +87,11 @@ require("lazy").setup({
             "nvim-treesitter/nvim-treesitter",
         },
         config = true
+    },
+
+    -- Multicursor
+    {
+        "jake-stewart/multicursor.nvim",
+        branch = "1.0",
     },
 })

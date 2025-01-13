@@ -39,8 +39,10 @@ require 'nvim-treesitter.configs'.setup {
                 -- You can use the capture groups defined in textobjects.scm
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
-                ["ac"] = "@conditional.outer",
-                ["ic"] = "@conditional.inner",
+                ["ai"] = "@conditional.outer",
+                ["ii"] = "@conditional.inner",
+                ["ak"] = "@class.outer",
+                ["ik"] = "@class.inner",
                 ["al"] = "@loop.outer",
                 ["il"] = "@loop.inner",
             },
