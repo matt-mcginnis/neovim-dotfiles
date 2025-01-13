@@ -17,11 +17,11 @@ set({"n", "v"}, "<leader><down>",
 -- Add or skip adding a new cursor by matching word/selection
 set({"n", "v"}, "<c-n>",
     function() mc.matchAddCursor(1) end)
-set({"n", "v"}, "<c-e>",
+set({"n", "v"}, "<c-]>",
     function() mc.matchSkipCursor(1) end)
-set({"n", "v"}, "<leader>cn",
+set({"n", "v"}, "<c-e>",
     function() mc.matchAddCursor(-1) end)
-set({"n", "v"}, "<leader>ce",
+set({"n", "v"}, "<c-[>",
     function() mc.matchSkipCursor(-1) end)
 
 -- Add all matches in the document
@@ -40,7 +40,7 @@ set({"n", "v"}, "<left>", mc.nextCursor)
 set({"n", "v"}, "<right>", mc.prevCursor)
 
 -- Delete the main cursor.
-set({"n", "v"}, "<leader>cx", mc.deleteCursor)
+set({"n", "v"}, "<c-x>", mc.deleteCursor)
 
 -- Add and remove cursors with control + left click.
 set("n", "<c-leftmouse>", mc.handleMouse)
