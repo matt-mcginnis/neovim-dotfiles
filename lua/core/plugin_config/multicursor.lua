@@ -4,52 +4,21 @@ mc.setup()
 
 local set = vim.keymap.set
 
--- Add or skip cursor above/below the main cursor.
-set({"n", "v"}, "<up>",
-    function() mc.lineAddCursor(-1) end)
-set({"n", "v"}, "<down>",
-    function() mc.lineAddCursor(1) end)
-set({"n", "v"}, "<leader><up>",
-    function() mc.lineSkipCursor(-1) end)
-set({"n", "v"}, "<leader><down>",
-    function() mc.lineSkipCursor(1) end)
-
 -- Add or skip adding a new cursor by matching word/selection
 set({"n", "v"}, "<c-n>",
     function() mc.matchAddCursor(1) end)
-set({"n", "v"}, "<c-]>",
+set({"n", "v"}, "<leader>cn",
     function() mc.matchSkipCursor(1) end)
 set({"n", "v"}, "<c-e>",
     function() mc.matchAddCursor(-1) end)
-set({"n", "v"}, "<c-[>",
+set({"n", "v"}, "<leader>ce",
     function() mc.matchSkipCursor(-1) end)
 
 -- Add all matches in the document
 set({"n", "v"}, "<leader>ca", mc.matchAllAddCursors)
 
--- You can also add cursors with any motion you prefer:
--- set("n", "<right>", function()
---     mc.addCursor("w")
--- end)
--- set("n", "<leader><right>", function()
---     mc.skipCursor("w")
--- end)
-
--- Rotate the main cursor.
-set({"n", "v"}, "<left>", mc.nextCursor)
-set({"n", "v"}, "<right>", mc.prevCursor)
-
--- Delete the main cursor.
-set({"n", "v"}, "<c-x>", mc.deleteCursor)
-
--- Add and remove cursors with control + left click.
-set("n", "<c-leftmouse>", mc.handleMouse)
-
 -- Easy way to add and remove cursors using the main cursor.
-set({"n", "v"}, "<c-q>", mc.toggleCursor)
-
--- Clone every cursor and disable the originals.
-set({"n", "v"}, "<leader><c-q>", mc.duplicateCursors)
+set({"n", "v"}, "<c-'>", mc.toggleCursor)
 
 set("n", "<esc>", function()
     if not mc.cursorsEnabled() then
@@ -62,7 +31,7 @@ set("n", "<esc>", function()
 end)
 
 -- bring back cursors if you accidentally clear them
-set("n", "<leader>cv", mc.restoreCursors)
+set("n", "<leader>cu", mc.restoreCursors)
 
 -- Align cursor columns.
 set("n", "<leader>cl", mc.alignCursors)
@@ -76,12 +45,6 @@ set("v", "A", mc.appendVisual)
 
 -- match new cursors within visual selections by regex.
 set("v", "M", mc.matchCursors)
-
--- Rotate visual selection contents.
-set("v", "<leader>t",
-    function() mc.transposeCursors(1) end)
-set("v", "<leader>T",
-    function() mc.transposeCursors(-1) end)
 
 -- Jumplist support
 set({"v", "n"}, "<c-i>", mc.jumpForward)
