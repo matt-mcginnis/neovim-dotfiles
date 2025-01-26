@@ -34,7 +34,6 @@ require("lspconfig").lua_ls.setup {
             }
         }
     }
-
 }
 
 require("lspconfig").pylsp.setup {
@@ -45,9 +44,83 @@ require("lspconfig").pylsp.setup {
 require('lspconfig').ruff.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    commands = {
+        RuffAutoFix = {
+            function()
+                local bufnr = vim.api.nvim_get_current_buf()
+                vim.lsp.buf.execute_command({
+                    command = "ruff.applyAutofix",
+                    arguments = {
+                        {
+                            uri = vim.uri_from_bufnr(0),
+                            version = assert(
+                                vim.lsp.util.buf_versions[bufnr],
+                                ('No version found for buffer %d'):format(bufnr)
+                            )
+                        },
+                    }
+                })
+            end,
+            description = 'Ruff: Fix all auto-fixable problems.',
+        },
+        RuffOrganizeImports = {
+            function()
+                local bufnr = vim.api.nvim_get_current_buf()
+                vim.lsp.buf.execute_command({
+                    command = "ruff.applyOrganizeImports",
+                    arguments = {
+                        {
+                            uri = vim.uri_from_bufnr(0),
+                            version = assert(
+                                vim.lsp.util.buf_versions[bufnr],
+                                ('No version found for buffer %d'):format(bufnr)
+                            )
+                        },
+                    }
+                })
+            end,
+            description = 'Ruff: Organize all imports.',
+        },
+        RuffFormat = {
+            function()
+                local bufnr = vim.api.nvim_get_current_buf()
+                vim.lsp.buf.execute_command({
+                    command = "ruff.applyFormat",
+                    arguments = {
+                        {
+                            uri = vim.uri_from_bufnr(0),
+                            version = assert(
+                                vim.lsp.util.buf_versions[bufnr],
+                                ('No version found for buffer %d'):format(bufnr)
+                            )
+                        },
+                    }
+                })
+            end,
+            description = 'Ruff: Format the file.',
+        },
+    },
 }
 
 require("lspconfig").rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+
+-- Autocommands
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.py",
+    callback = function()
+        vim.cmd("RuffAutoFix")
+        vim.cmd("RuffOrganizeImports")
+        vim.cmd("sleep 50m")
+        vim.cmd("RuffFormat")
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.rs",
+    callback = function()
+        vim.cmd("RustFmt")
+    end,
+})
