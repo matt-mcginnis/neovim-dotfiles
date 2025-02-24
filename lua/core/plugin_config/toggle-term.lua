@@ -32,15 +32,15 @@ local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit   = Terminal:new({ cmd = "lazygit", direction = "tab", hidden = true })
 local mergetool = Terminal:new({ cmd = "git mergetool", direction = "tab", hidden = true })
 
-function _lazygit_toggle()
+function _Lazygit_Toggle()
     lazygit:toggle()
 end
 
-function _mergetool_toggle()
+function _Mergetool_Toggle()
     mergetool:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "go", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gm", "<cmd>lua _mergetool_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>lua _Lazygit_Toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tm", "<cmd>lua _Mergetool_Toggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })
