@@ -107,14 +107,14 @@ require("lspconfig").rust_analyzer.setup {
     capabilities = capabilities
 }
 
--- Autocommands
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.py",
     callback = function()
-        vim.cmd("RuffAutoFix")
-        vim.cmd("RuffOrganizeImports")
-        vim.cmd("sleep 50m")
-        vim.cmd("RuffFormat")
+        vim.cmd("silent RuffOrganizeImports")
+        vim.cmd("silent sleep 20m")
+        vim.cmd("silent RuffAutoFix")
+        vim.cmd("silent sleep 20m")
+        vim.cmd("silent RuffFormat")
     end,
 })
 
