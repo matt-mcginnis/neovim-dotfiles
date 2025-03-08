@@ -1,5 +1,6 @@
 require("core.plugin_config.cmp")
 require("core.plugin_config.code-companion")
+require("core.plugin_config.codeium")
 require("core.plugin_config.comment")
 require("core.plugin_config.dap")
 require("core.plugin_config.lsp")

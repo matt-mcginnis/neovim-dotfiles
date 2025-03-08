@@ -95,6 +95,7 @@ require("lazy").setup({
         branch = "1.0",
     },
 
+    -- Obsidian
     {
         "epwalsh/obsidian.nvim",
         version = "*", -- recommended, use latest release instead of latest commit
@@ -104,4 +105,10 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
         },
     },
+
+    -- Codeium
+    {
+        'Exafunction/codeium.vim',
+        event = 'BufEnter'
+    }
 })
