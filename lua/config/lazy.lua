@@ -15,6 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    install = { colorscheme = { "dracula" } },
     -- Autocompletion and Snippets
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
@@ -26,8 +27,10 @@ require("lazy").setup({
     -- Commenting
     { "numToStr/Comment.nvim" },
 
-    -- Dracula Color Schemes
-    { 'Mofiqul/dracula.nvim' },
+    -- Rose Pine
+    {
+        "rose-pine/neovim",
+    },
 
     -- Leap Motions
     { "ggandor/leap.nvim" },
@@ -38,7 +41,11 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
 
     -- Toggle Term
-    { 'akinsho/toggleterm.nvim',                    version = "*", config = true },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
 
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -65,12 +72,6 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons"
         }
     },
-
-    -- DAP Plugins
-    { 'mfussenegger/nvim-dap' },
-    { 'mfussenegger/nvim-dap-python',   dependencies = { "mfussenegger/nvim-dap" } },
-    { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-    { "theHamsta/nvim-dap-virtual-text" },
 
     -- Markdown Render
     {

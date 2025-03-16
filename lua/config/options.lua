@@ -1,3 +1,5 @@
+vim.cmd.colorscheme("rose-pine")
+
 vim.g.netrw_liststyle = 0
 
 vim.opt.nu = true
@@ -11,11 +13,6 @@ vim.opt.expandtab = true
 vim.opt.splitright = true
 
 vim.opt.foldmethod = "indent"
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
 
 vim.opt.incsearch = true
 
