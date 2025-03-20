@@ -77,8 +77,8 @@ vim.keymap.set("v", ">", "$", { desc = "Go to end of line" })
 vim.keymap.set("v", "<c-.>", "}zz", { desc = "Move up a paragragh" })
 vim.keymap.set("v", "<c-,>", "{zz", { desc = "Move down a paragragh" })
 
-vim.keymap.set("v", "H", "<C-u>zz", { desc = "Page up and center" })
-vim.keymap.set("v", "K", "<C-d>zz", { desc = "Page down and center" })
+vim.keymap.set("v", "H", ":m '<-2<CR>gv=gv", { desc = "Move highlighted block up" })
+vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv", { desc = "Move highlighted block down" })
 
 vim.keymap.set("v", "p", "\"_dP", { desc = "Paste and retain what was pasted" })
 vim.keymap.set("v", "<leader>p", "\"+p", { desc = "Paste from computer register" })
