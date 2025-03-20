@@ -43,6 +43,6 @@ end
 
 vim.api.nvim_set_keymap("n", "<leader>te", "<cmd>lua _Yazi_Toggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>lua _Lazygit_Toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>tm", "<cmd>lua _Mergetool_Toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tx", "<cmd>lua _Mergetool_Toggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })

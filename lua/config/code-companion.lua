@@ -13,7 +13,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "openai",
+            adapter = "ollama",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -52,10 +52,10 @@ require("codecompanion").setup({
             },
         },
         cmd = {
-            adapter = "openai",
+            adapter = "ollama",
         },
         inline = {
-            adapter = "openai",
+            adapter = "ollama",
             keymaps = {
                 accept_change = {
                     modes = {
