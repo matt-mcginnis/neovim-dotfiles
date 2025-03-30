@@ -4,14 +4,6 @@ vim.keymap.set('n', '<leader>fk', ':Telescope keymaps<cr>')
 vim.keymap.set('n', '<leader>fs', ':Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fe', ':Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fm', ':Telescope marks<cr>')
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>fn",
-  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  { noremap = true }
-)
-
-local fb_actions = require "telescope".extensions.file_browser.actions
 
 require('telescope').setup {
     defaults = {
@@ -27,8 +19,8 @@ require('telescope').setup {
                 ["<c-n>"] = "move_selection_previous",
                 ["k"] = "move_selection_next",
                 ["h"] = "move_selection_previous",
-                ["<c-_>"] = "select_horizontal",
-                ["<c-\\>"] = "select_vertical",
+                ["<c-h"] = "select_horizontal",
+                ["<c-v>"] = "select_vertical",
                 ["a"] = "select_all",
                 ["A"] = "drop_all",
                 ["<c-d>"] = "delete_buffer",
@@ -42,35 +34,11 @@ require('telescope').setup {
                 ["<c-c>"] = "close",
                 ["<c-p>"] = "move_selection_next",
                 ["<c-n>"] = "move_selection_previous",
-                ["<c-_>"] = "select_horizontal",
-                ["<c-\\>"] = "select_vertical",
+                ["<c-h>"] = "select_horizontal",
+                ["<c-v>"] = "select_vertical",
                 ["<c-d>"] = "delete_buffer",
             }
         }
     },
-    extensions = {
-        file_browser = {
-            -- disables netrw and use telescope-file-browser in its place
-            hijack_netrw = true,
-            mappings = {
-                ["i"] = {
-                    -- remap to going to home directory
-                    ["<C-h>"] = false,
-                    ["<c-cr>"] = fb_actions.goto_parent_dir
-                },
-                ["n"] = {
-                    -- your custom normal mode mappings
-                    ["c"] = fb_actions.create,
-                    ["d"] = fb_actions.remove,
-                    ["m"] = fb_actions.move,
-                    ["r"] = fb_actions.rename,
-                    ["p"] = fb_actions.copy,
-                    ["."] = fb_actions.toggle_hidden,
-                    ["<c-cr>"] = fb_actions.goto_parent_dir
-                },
-            },
-        },
-    },
 }
 
-require("telescope").load_extension("file_browser")

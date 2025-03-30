@@ -64,13 +64,14 @@ require("lazy").setup({
         tag = "0.1.5",
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
+
     {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons"
-        }
+      'stevearc/oil.nvim',
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      opts = {},
+      dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+      lazy = false,
     },
 
     -- Markdown Render
