@@ -8,7 +8,7 @@ require("toggleterm").setup {
         end
     end,
     open_mapping = [[<c-t>]],
-    direction = 'horizontal' -- 'vertical' | 'horizontal' | 'tab' | 'float',
+    direction = 'vertical' -- 'vertical' | 'horizontal' | 'tab' | 'float',
 }
 
 function _G.set_terminal_keymaps()
