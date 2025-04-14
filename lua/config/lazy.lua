@@ -40,13 +40,6 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
 
-    -- Toggle Term
-    {
-        'akinsho/toggleterm.nvim',
-        version = "*",
-        config = true
-    },
-
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     {
@@ -73,6 +66,7 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
         lazy = false,
     },
+
 
     -- Markdown Render
     {
