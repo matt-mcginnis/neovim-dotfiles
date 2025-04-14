@@ -66,6 +66,8 @@ vim.keymap.set("n", "<leader>w-", ":new<cr>", { desc = "Create new horizontal sp
 
 vim.keymap.set("n", "'", "@", { desc = "Run recorded macro" })
 
+vim.keymap.set("n", "<leader>to", ":silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>")
+
 -- Visual Keymaps
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
