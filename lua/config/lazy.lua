@@ -28,9 +28,7 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
 
     -- Rose Pine
-    {
-        "rose-pine/neovim",
-    },
+    { "rose-pine/neovim" },
 
     -- Leap Motions
     { "ggandor/leap.nvim" },
@@ -102,10 +100,13 @@ require("lazy").setup({
         },
     },
 
-    -- Codeium
+    -- Codeium (Windsurf)
     {
-        'Exafunction/windsurf.vim',
-        event = 'BufEnter'
+        "Exafunction/windsurf.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
     },
 
     -- MCP Hub

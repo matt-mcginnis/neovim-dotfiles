@@ -23,5 +23,5 @@
   "render-markdown.nvim": { "branch": "main", "commit": "c283dec1ea94947499c36bb17443e15d6acf5cda" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "vim-snippets": { "branch": "main", "commit": "1d64af284ee5174e328765d3628a5e7660f136c9" },
-  "windsurf.vim": { "branch": "main", "commit": "272c6e2755e8faa90e26bcdcd9fde6b9e61751ea" }
+  "windsurf.nvim": { "branch": "main", "commit": "9569c9095a70370849345c861cdb2b06c4cadac7" }
 }

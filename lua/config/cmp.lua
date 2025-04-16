@@ -1,24 +1,14 @@
 -- Set up snippy
-require("snippy").setup({
-    mappings = {
-        is = {
-            ["<c-o>"] = "expand_or_advance",
-            ["<c-i>"] = "previous",
-        },
-        nx = {
-            ["<leader>x"] = "cut_text",
-        },
-    },
-})
+require("snippy").setup({})
 
 -- Set up cmp
 local cmp = require("cmp")
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        ["<tab>"] = cmp.mapping.scroll_docs(-4),
-        ["<s-tab>"] = cmp.mapping.scroll_docs(4),
+        ["<c-.>"] = cmp.mapping.scroll_docs(-4),
+        ["<c-,>"] = cmp.mapping.scroll_docs(4),
         ["<c-t>"] = cmp.mapping.complete(),
-        ["<cr>"] = cmp.mapping.confirm({ select = false }),
+        ["<c-e>"] = cmp.mapping.confirm({ select = false }),
         ["<c-n>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -44,9 +34,9 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = "buffer" },
         { name = "nvim_lsp" },
-        { name = "snippy" },
+        -- { name = "snippy" },
         { name = "codeium" },
     }, {
-        { name = "buffer" },
+        -- { name = "buffer" },
     }),
 })
