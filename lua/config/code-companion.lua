@@ -13,7 +13,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "anthropic",
+            adapter = "ollama",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -52,10 +52,10 @@ require("codecompanion").setup({
             },
         },
         cmd = {
-            adapter = "anthropic",
+            adapter = "ollama",
         },
         inline = {
-            adapter = "anthropic",
+            adapter = "ollama",
             keymaps = {
                 accept_change = {
                     modes = {
