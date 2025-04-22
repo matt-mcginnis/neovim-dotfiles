@@ -48,7 +48,9 @@ require('lspconfig').ruff.setup {
         RuffAutoFix = {
             function()
                 local bufnr = vim.api.nvim_get_current_buf()
-                vim.lsp.buf.execute_command({
+                local ruff_client = vim.lsp.get_clients({ name = 'ruff' })[1]
+                ruff_client:exec_cmd({
+                    title = "Auto-fix",
                     command = "ruff.applyAutofix",
                     arguments = {
                         {
@@ -59,14 +61,17 @@ require('lspconfig').ruff.setup {
                             )
                         },
                     }
-                })
+                },
+                { bufnr = bufnr })
             end,
             description = 'Ruff: Fix all auto-fixable problems.',
         },
         RuffOrganizeImports = {
             function()
                 local bufnr = vim.api.nvim_get_current_buf()
-                vim.lsp.buf.execute_command({
+                local ruff_client = vim.lsp.get_clients({ name = 'ruff' })[1]
+                ruff_client:exec_cmd({
+                    title = "Organize imports",
                     command = "ruff.applyOrganizeImports",
                     arguments = {
                         {
@@ -77,14 +82,17 @@ require('lspconfig').ruff.setup {
                             )
                         },
                     }
-                })
+                },
+                { bufnr = bufnr })
             end,
             description = 'Ruff: Organize all imports.',
         },
         RuffFormat = {
             function()
                 local bufnr = vim.api.nvim_get_current_buf()
-                vim.lsp.buf.execute_command({
+                local ruff_client = vim.lsp.get_clients({ name = 'ruff' })[1]
+                ruff_client:exec_cmd({
+                    title = "Format",
                     command = "ruff.applyFormat",
                     arguments = {
                         {
@@ -95,7 +103,8 @@ require('lspconfig').ruff.setup {
                             )
                         },
                     }
-                })
+                },
+                { bufnr = bufnr })
             end,
             description = 'Ruff: Format the file.',
         },
