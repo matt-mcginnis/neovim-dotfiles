@@ -100,15 +100,6 @@ require("lazy").setup({
         },
     },
 
-    -- Codeium (Windsurf)
-    {
-        "Exafunction/windsurf.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-    },
-
     -- MCP Hub
     {
         "ravitemer/mcphub.nvim",

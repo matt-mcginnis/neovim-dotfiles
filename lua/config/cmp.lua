@@ -35,7 +35,6 @@ cmp.setup({
         { name = "buffer" },
         { name = "nvim_lsp" },
         { name = "snippy" },
-        { name = "codeium" },
     }, {
         { name = "buffer" },
     }),
