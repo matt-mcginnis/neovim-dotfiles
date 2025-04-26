@@ -4,8 +4,16 @@ require("codecompanion").setup({
             return require("codecompanion.adapters").extend("ollama", {
                 schema = {
                     model = {
-                        -- default = "deepseek-coder-v2:16b",
                         default = "mistral-nemo",
+                    },
+                },
+            })
+        end,
+        gemini = function()
+            return require("codecompanion.adapters").extend("gemini", {
+                schema = {
+                    model = {
+                        default = "gemini-2.0-flash",
                     },
                 },
             })
@@ -13,7 +21,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "ollama",
+            adapter = "gemini",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -52,10 +60,10 @@ require("codecompanion").setup({
             },
         },
         cmd = {
-            adapter = "ollama",
+            adapter = "gemini",
         },
         inline = {
-            adapter = "ollama",
+            adapter = "gemini",
             keymaps = {
                 accept_change = {
                     modes = {
