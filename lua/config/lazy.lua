@@ -112,6 +112,11 @@ require("lazy").setup({
         config = function()
             require("mcphub").setup()
         end,
-    }
+    },
 
+    -- Minuet
+    {
+        'milanglacier/minuet-ai.nvim',
+        dependencies = {'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp'},
+    },
 })
