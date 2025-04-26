@@ -76,8 +76,11 @@ require("obsidian").setup({
         vim.fn.jobstart({ "open", url }) -- Mac OS
     end,
 })
-vim.keymap.set("n", "<leader>ox", ":s/\\- \\[ /- [x/g<cr>")
-vim.keymap.set("n", "<leader>oX", ":s/\\- \\[x/- [ /g<cr>")
+
+vim.keymap.set("n", "<leader>ok", "I- [ ]    <esc>A")
+vim.keymap.set("v", "<leader>ok", "I- [ ]    <esc>")
+vim.keymap.set("n", "<leader>ox", ":s/\\- \\[ /- [x/g<cr>:set hlsearch! hlsearch?<cr>")
+vim.keymap.set("n", "<leader>oX", ":s/\\- \\[x/- [ /g<cr>:set hlsearch! hlsearch?<cr>")
 
 vim.keymap.set("n", "<leader>oa", ":ObsidianFollowLink<cr>")
 vim.keymap.set("n", "<leader>ob", ":ObsidianTemplate<cr>")
