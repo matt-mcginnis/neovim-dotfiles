@@ -46,6 +46,8 @@ vim.keymap.set("n", "<c-0>", ":vertical resize +10<cr>", { desc = "Increase hori
 vim.keymap.set("n", "<leader>st", ":%s/", { desc = "Sed replace all instances in file" })
 vim.keymap.set("n", "<leader>s.", "@:", { desc = "Sed repeat replace all isntances in file" })
 
+vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "<c-.>", "}zz", { desc = "Move up a paragragh" })
 vim.keymap.set("n", "<c-,>", "{zz", { desc = "Move down a paragragh" })
 
@@ -65,8 +67,6 @@ vim.keymap.set("n", "<leader>w\\", ":vnew<cr>", { desc = "Create new vertical sp
 vim.keymap.set("n", "<leader>w-", ":new<cr>", { desc = "Create new horizontal split" })
 
 vim.keymap.set("n", "'", "@", { desc = "Run recorded macro" })
-
-vim.keymap.set("n", "<leader>to", ":silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>")
 
 -- Visual Keymaps
 vim.keymap.set("v", "j", "h")
