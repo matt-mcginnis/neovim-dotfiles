@@ -109,9 +109,6 @@ require("lazy").setup({
         -- comment the following line to ensure hub will be ready at the earliest
         cmd = "MCPHub",                          -- lazy load by default
         build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
-        config = function()
-            require("mcphub").setup()
-        end,
     },
 
     -- Minuet
