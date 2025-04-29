@@ -67,7 +67,7 @@ require("codecompanion").setup({
             },
             keymaps = {
                 send = {
-                    modes = { n = "<C-h>", i = "<C-h>" },
+                    modes = { n = "<CR>", i = "<C-h>" },
                 },
                 close = {
                     modes = { n = "<C-c>", i = "<C-c>" },
