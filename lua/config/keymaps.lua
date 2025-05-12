@@ -33,6 +33,12 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Move to previous in search and cente
 
 vim.keymap.set("n", "<leader>p", "\"+p", { desc = "Paste from computer register" })
 
+vim.keymap.set("n", "<leader>l", function()
+  local filepath = vim.fn.expand('%:p')
+  vim.fn.setreg('+', filepath)
+  vim.notify("Copied filepath to clipboard: " .. filepath, vim.log.levels.INFO)
+end, { desc = "Copy filepath to system clipboard" })
+
 vim.keymap.set("n", "<leader>qo", ":copen<cr>", { desc = "Open quickfix" })
 vim.keymap.set("n", "<leader>qn", ":cn<cr>", { desc = "Move to next quickfix" })
 vim.keymap.set("n", "<leader>qp", ":cp<cr>", { desc = "Move to previous quickfix" })
