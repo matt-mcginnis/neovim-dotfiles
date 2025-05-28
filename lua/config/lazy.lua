@@ -110,10 +110,4 @@ require("lazy").setup({
         cmd = "MCPHub",                          -- lazy load by default
         build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
     },
-
-    -- Neocodeium
-    {
-        "monkoose/neocodeium",
-        event = "VeryLazy",
-    }
 })

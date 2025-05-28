@@ -7,9 +7,6 @@ vim.keymap.set("n", "h", "k")
 vim.keymap.set("n", "<", "_", { desc = "Go to beginning of line" })
 vim.keymap.set("n", ">", "$", { desc = "Go to end of line" })
 
-vim.api.nvim_set_keymap("n", "<leader>ai", "<cmd>silent !wezterm cli split-pane --right --cwd $(pwd) -- aider<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>silent !wezterm cli split-pane --right --cwd $(pwd) -- aider --chat-mode ask --model f<CR>", { noremap = true, silent = true })
-
 vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
 vim.keymap.set("n", "<leader>d", ":RenderMarkdown toggle<cr>", { desc = "Toggle markdown render" })
