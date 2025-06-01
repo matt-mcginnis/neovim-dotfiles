@@ -58,13 +58,6 @@ require('dapui').setup(
             } },
             position = "left",
             size = 50
-        }, {
-            elements = { {
-                id = "console",
-                size = 1.00
-            } },
-            position = "bottom",
-            size = 10
         } },
         mappings = {
             edit = "e",

@@ -113,4 +113,8 @@ require("lazy").setup({
     { 'mfussenegger/nvim-dap-python',   dependencies = { "mfussenegger/nvim-dap" } },
     { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "theHamsta/nvim-dap-virtual-text" },
+
+
+    -- Supermaven
+    { "supermaven-inc/supermaven-nvim" }
 })
