@@ -1,5 +1,8 @@
 require("codecompanion").setup({
     adapters = {
+        opts = {
+            show_model_choices = false,
+        },
         ollama = function()
             return require("codecompanion.adapters").extend("ollama", {
                 schema = {
@@ -9,11 +12,22 @@ require("codecompanion").setup({
                 },
             })
         end,
-        gemini = function()
+        flash = function()
             return require("codecompanion.adapters").extend("gemini", {
+                name = "flash",
                 schema = {
                     model = {
-                        default = "gemini-2.0-flash",
+                        default = "gemini-2.5-flash-preview-05-20",
+                    },
+                },
+            })
+        end,
+        gemini = function()
+            return require("codecompanion.adapters").extend("gemini", {
+                name = "gemini",
+                schema = {
+                    model = {
+                        default = "gemini-2.5-pro-preview-05-06",
                     },
                 },
             })
@@ -21,7 +35,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "gemini",
+            adapter = "flash",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -75,10 +89,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "gemini",
+            adapter = "flash",
         },
         inline = {
-            adapter = "gemini",
+            adapter = "flash",
             keymaps = {
                 accept_change = {
                     modes = {

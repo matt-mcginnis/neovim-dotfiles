@@ -110,4 +110,9 @@ require("lazy").setup({
         cmd = "MCPHub",                          -- lazy load by default
         build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
     },
+
+    -- Python DAP
+    { 'mfussenegger/nvim-dap-python',   dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+    { "theHamsta/nvim-dap-virtual-text" },
 })
