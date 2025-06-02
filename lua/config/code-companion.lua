@@ -204,7 +204,7 @@ require("codecompanion").setup({
                 },
                 change_adapter = {
                     modes = {
-                        n = "sa",
+                        n = "sm",
                     },
                     index = 15,
                     callback = "keymaps.change_adapter",

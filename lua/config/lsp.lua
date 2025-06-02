@@ -1,15 +1,11 @@
 require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "vimls", "ruff", "pylsp", "rust_analyzer" },
-    automatic_enable = true,
-    automatic_installation = true
-})
 
 local on_attach = function()
-    vim.keymap.set('n', 'sd', ':Telescope lsp_definitions<cr>')
     vim.keymap.set('n', 'sh', ':lua vim.lsp.buf.hover()<cr>')
+    vim.keymap.set('n', 'sd', ':Telescope lsp_definitions<cr>')
     vim.keymap.set('n', 'si', ':Telescope lsp_implementations<cr>')
     vim.keymap.set('n', 'sr', ':Telescope lsp_references<cr>')
+    vim.keymap.set('n', 'ss', ':Telescope lsp_document_symbols<cr>')
     vim.keymap.set('n', 'sc', ':lua vim.lsp.buf.code_action()<cr>')
     vim.keymap.set('n', 'sn', ':lua vim.lsp.buf.rename()<cr>')
     vim.keymap.set('n', 'sl', ':lua vim.diagnostic.open_float()<cr>')
