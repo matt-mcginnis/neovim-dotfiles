@@ -6,15 +6,15 @@ require("mason-lspconfig").setup({
 })
 
 local on_attach = function()
-    vim.keymap.set('n', 'sd', 'gd', { buffer = true }) -- not using vim.lsp.buf.definition() because it is returning a list of locations
-    vim.keymap.set('n', 'sh', '<cmd>lua vim.lsp.buf.hover()<cr>', { buffer = true })
-    vim.keymap.set('n', 'si', '<cmd>Telescope lsp_implementations<cr>', { buffer = true })
-    vim.keymap.set('n', 'sr', '<cmd>Telescope lsp_references<cr>', { buffer = true })
-    vim.keymap.set('n', 'sc', '<cmd>lua vim.lsp.buf.code_action()<cr>', { buffer = true })
-    vim.keymap.set('n', 'sn', '<cmd>lua vim.lsp.buf.rename()<cr>', { buffer = true })
-    vim.keymap.set('n', 'sl', '<cmd>lua vim.diagnostic.open_float()<cr>', { buffer = true })
-    vim.keymap.set('n', 's.', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { buffer = true })
-    vim.keymap.set('n', 's,', '<cmd>lua vim.diagnostic.goto_next()<cr>', { buffer = true })
+    vim.keymap.set('n', 'sd', '<cmd>Telescope lsp_definitions<cr>')
+    vim.keymap.set('n', 'sh', '<cmd>lua vim.lsp.buf.hover()<cr>')
+    vim.keymap.set('n', 'si', '<cmd>Telescope lsp_implementations<cr>')
+    vim.keymap.set('n', 'sr', '<cmd>Telescope lsp_references<cr>')
+    vim.keymap.set('n', 'sc', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+    vim.keymap.set('n', 'sn', '<cmd>lua vim.lsp.buf.rename()<cr>')
+    vim.keymap.set('n', 'sl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+    vim.keymap.set('n', 's.', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+    vim.keymap.set('n', 's,', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
