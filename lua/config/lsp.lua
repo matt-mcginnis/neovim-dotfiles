@@ -1,19 +1,20 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = { "lua_ls", "vimls", "ruff", "pylsp", "rust_analyzer" },
+    automatic_enable = true,
     automatic_installation = true
 })
 
 local on_attach = function()
-    vim.keymap.set('n', 'sh', '<cmd>lua vim.lsp.buf.hover()<cr>', { buffer = true })
     vim.keymap.set('n', 'sd', 'gd', { buffer = true }) -- not using vim.lsp.buf.definition() because it is returning a list of locations
-    vim.keymap.set('n', 'sr', '<cmd>Telescope lsp_references<cr>', { buffer = true })
+    vim.keymap.set('n', 'sh', '<cmd>lua vim.lsp.buf.hover()<cr>', { buffer = true })
     vim.keymap.set('n', 'si', '<cmd>Telescope lsp_implementations<cr>', { buffer = true })
+    vim.keymap.set('n', 'sr', '<cmd>Telescope lsp_references<cr>', { buffer = true })
     vim.keymap.set('n', 'sc', '<cmd>lua vim.lsp.buf.code_action()<cr>', { buffer = true })
     vim.keymap.set('n', 'sn', '<cmd>lua vim.lsp.buf.rename()<cr>', { buffer = true })
     vim.keymap.set('n', 'sl', '<cmd>lua vim.diagnostic.open_float()<cr>', { buffer = true })
-    vim.keymap.set('n', 's[', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { buffer = true })
-    vim.keymap.set('n', 's]', '<cmd>lua vim.diagnostic.goto_next()<cr>', { buffer = true })
+    vim.keymap.set('n', 's.', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { buffer = true })
+    vim.keymap.set('n', 's,', '<cmd>lua vim.diagnostic.goto_next()<cr>', { buffer = true })
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
