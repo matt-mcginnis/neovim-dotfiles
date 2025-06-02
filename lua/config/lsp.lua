@@ -6,7 +6,7 @@ require("mason-lspconfig").setup({
 
 local on_attach = function()
     vim.keymap.set('n', 'sh', '<cmd>lua vim.lsp.buf.hover()<cr>', { buffer = true })
-    vim.keymap.set('n', 'sd', '<cmd>lua vim.lsp.buf.definition()<cr>', { buffer = true })
+    vim.keymap.set('n', 'sd', 'gd', { buffer = true }) -- not using vim.lsp.buf.definition() because it is returning a list of locations
     vim.keymap.set('n', 'sr', '<cmd>Telescope lsp_references<cr>', { buffer = true })
     vim.keymap.set('n', 'si', '<cmd>Telescope lsp_implementations<cr>', { buffer = true })
     vim.keymap.set('n', 'sc', '<cmd>lua vim.lsp.buf.code_action()<cr>', { buffer = true })
