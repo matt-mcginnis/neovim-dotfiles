@@ -33,6 +33,16 @@ require("codecompanion").setup({
             })
         end,
     },
+    extensions = {
+        mcphub = {
+            callback = "mcphub.extensions.codecompanion",
+            opts = {
+                show_result_in_chat = true, -- Show mcp tool results in chat
+                make_vars = true,   -- Convert resources to #variables
+                make_slash_commands = true, -- Add prompts as /slash commands
+            }
+        }
+    },
     strategies = {
         chat = {
             adapter = "flash",
@@ -72,13 +82,13 @@ require("codecompanion").setup({
                     },
                 },
             },
-            tools = {
-                ["mcp"] = {
-                    -- calling it in a function would prevent mcphub from being loaded before it's needed
-                    callback = function() return require("mcphub.extensions.codecompanion") end,
-                    description = "Call tools and resources from the MCP Servers",
-                }
-            },
+            -- tools = {
+            --     ["mcp"] = {
+            --         -- calling it in a function would prevent mcphub from being loaded before it's needed
+            --         callback = function() return require("mcphub.extensions.codecompanion") end,
+            --         description = "Call tools and resources from the MCP Servers",
+            --     }
+            -- },
             keymaps = {
                 options = {
                     modes = {
@@ -88,18 +98,18 @@ require("codecompanion").setup({
                     description = "Options",
                     hide = true,
                 },
-                completion = {
-                    modes = {
-                        i = "<C-e>",
-                    },
-                    index = 1,
-                    callback = "keymaps.completion",
-                    description = "Completion Menu",
-                },
+                -- completion = {
+                --     modes = {
+                --         i = "",
+                --     },
+                --     index = 1,
+                --     callback = "keymaps.completion",
+                --     description = "Completion Menu",
+                -- },
                 send = {
                     modes = {
-                        n = { "<CR>", "<C-h>" },
-                        i = "<C-h>",
+                        n = { "<CR>", "<C-Space>" },
+                        i = "<C-Space>",
                     },
                     index = 2,
                     callback = "keymaps.send",
