@@ -1,13 +1,15 @@
 require("codecompanion").setup({
     adapters = {
         opts = {
+            show_defaults = false,
             show_model_choices = false,
         },
-        ollama = function()
-            return require("codecompanion.adapters").extend("ollama", {
+        anthropic = function()
+            return require("codecompanion.adapters").extend("anthropic", {
+                name = "anthropic",
                 schema = {
                     model = {
-                        default = "mistral-nemo",
+                        default = "claude-sonnet-4-20250514",
                     },
                 },
             })
@@ -28,6 +30,24 @@ require("codecompanion").setup({
                 schema = {
                     model = {
                         default = "gemini-2.5-pro-preview-05-06",
+                    },
+                },
+            })
+        end,
+        ollama = function()
+            return require("codecompanion.adapters").extend("ollama", {
+                schema = {
+                    model = {
+                        default = "mistral-nemo",
+                    },
+                },
+            })
+        end,
+        openai = function()
+            return require("codecompanion.adapters").extend("openai", {
+                schema = {
+                    model = {
+                        default = "gpt-4.1",
                     },
                 },
             })
