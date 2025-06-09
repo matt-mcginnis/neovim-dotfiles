@@ -14,40 +14,11 @@ require("codecompanion").setup({
                 },
             })
         end,
-        flash = function()
-            return require("codecompanion.adapters").extend("gemini", {
-                name = "flash",
+        opus = function()
+            return require("codecompanion.adapters").extend("anthropic", {
                 schema = {
                     model = {
-                        default = "gemini-2.5-flash-preview-05-20",
-                    },
-                },
-            })
-        end,
-        gemini = function()
-            return require("codecompanion.adapters").extend("gemini", {
-                name = "gemini",
-                schema = {
-                    model = {
-                        default = "gemini-2.5-pro-preview-05-06",
-                    },
-                },
-            })
-        end,
-        ollama = function()
-            return require("codecompanion.adapters").extend("ollama", {
-                schema = {
-                    model = {
-                        default = "mistral-nemo",
-                    },
-                },
-            })
-        end,
-        openai = function()
-            return require("codecompanion.adapters").extend("openai", {
-                schema = {
-                    model = {
-                        default = "gpt-4.1",
+                        default = "claude-opus-4-20250514",
                     },
                 },
             })
@@ -65,7 +36,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "gemini",
+            adapter = "anthropic",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -266,10 +237,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "gemini",
+            adapter = "anthropic",
         },
         inline = {
-            adapter = "gemini",
+            adapter = "anthropic",
             keymaps = {
                 accept_change = {
                     modes = {
