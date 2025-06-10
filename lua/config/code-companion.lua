@@ -14,6 +14,16 @@ require("codecompanion").setup({
                 },
             })
         end,
+        flash = function()
+            return require("codecompanion.adapters").extend("gemini", {
+                name = "flash",
+                schema = {
+                    model = {
+                        default = "gemini-2.5-flash-preview-05-20",
+                    },
+                },
+            })
+        end,
         opus = function()
             return require("codecompanion.adapters").extend("anthropic", {
                 schema = {
