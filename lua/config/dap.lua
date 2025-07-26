@@ -11,6 +11,14 @@ table.insert(require('dap').configurations.python, {
 })
 
 table.insert(require('dap').configurations.python, {
+    name = 'Fast API dev',
+    type = 'python',
+    request = 'launch',
+    module = 'fastapi',
+    args = { 'dev', 'main.py' }
+})
+
+table.insert(require('dap').configurations.python, {
     name = 'App Tests',
     type = 'python',
     request = 'launch',

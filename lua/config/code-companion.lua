@@ -19,7 +19,17 @@ require("codecompanion").setup({
                 name = "flash",
                 schema = {
                     model = {
-                        default = "gemini-2.5-flash-preview-05-20",
+                        default = "gemini-2.5-flash-lite-preview-06-17",
+                    },
+                },
+            })
+        end,
+        gemini = function()
+            return require("codecompanion.adapters").extend("gemini", {
+                name = "gemini",
+                schema = {
+                    model = {
+                        default = "gemini-2.5-pro-preview-06-05",
                     },
                 },
             })
@@ -46,7 +56,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "anthropic",
+            adapter = "gemini",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -247,10 +257,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "anthropic",
+            adapter = "gemini",
         },
         inline = {
-            adapter = "anthropic",
+            adapter = "gemini",
             keymaps = {
                 accept_change = {
                     modes = {
