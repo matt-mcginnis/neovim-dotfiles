@@ -167,8 +167,8 @@ require("codecompanion").setup({
                         n = "sp",
                     },
                     index = 9,
-                    callback = "keymaps.pin_reference",
-                    description = "Pin Reference",
+                    callback = "keymaps.pin_context",
+                    description = "Pin Context",
                 },
                 watch = {
                     modes = {
@@ -242,20 +242,18 @@ require("codecompanion").setup({
                     callback = "keymaps.toggle_system_prompt",
                     description = "Toggle the system prompt",
                 },
-                auto_tool_mode = {
-                    modes = {
-                        n = "sta",
-                    },
+                yolo_mode = {
+                    modes = { n = "sty" },
                     index = 18,
-                    callback = "keymaps.auto_tool_mode",
-                    description = "Toggle automatic tool mode",
+                    callback = "keymaps.yolo_mode",
+                    description = "YOLO mode toggle",
                 },
                 goto_file_under_cursor = {
                     modes = { n = "sR" },
                     index = 19,
                     callback = "keymaps.goto_file_under_cursor",
                     description = "Open the file under cursor in a new tab.",
-                },
+                }
             }
         },
         cmd = {
