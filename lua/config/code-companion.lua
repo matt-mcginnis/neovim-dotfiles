@@ -1,55 +1,57 @@
 require("codecompanion").setup({
     adapters = {
-        opts = {
-            show_defaults = false,
-            show_model_choices = false,
+        http = {
+            opts = {
+                show_defaults = false,
+                show_model_choices = false,
+            },
+            anthropic = function()
+                return require("codecompanion.adapters").extend("anthropic", {
+                    name = "anthropic",
+                    schema = {
+                        model = {
+                            default = "claude-sonnet-4-20250514",
+                        },
+                    },
+                })
+            end,
+            flash = function()
+                return require("codecompanion.adapters").extend("gemini", {
+                    name = "flash",
+                    schema = {
+                        model = {
+                            default = "gemini-2.5-flash-lite-preview-06-17",
+                        },
+                    },
+                })
+            end,
+            gemini = function()
+                return require("codecompanion.adapters").extend("gemini", {
+                    name = "gemini",
+                    schema = {
+                        model = {
+                            default = "gemini-2.5-pro-preview-06-05",
+                        },
+                    },
+                })
+            end,
+            opus = function()
+                return require("codecompanion.adapters").extend("anthropic", {
+                    schema = {
+                        model = {
+                            default = "claude-opus-4-20250514",
+                        },
+                    },
+                })
+            end,
         },
-        anthropic = function()
-            return require("codecompanion.adapters").extend("anthropic", {
-                name = "anthropic",
-                schema = {
-                    model = {
-                        default = "claude-sonnet-4-20250514",
-                    },
-                },
-            })
-        end,
-        flash = function()
-            return require("codecompanion.adapters").extend("gemini", {
-                name = "flash",
-                schema = {
-                    model = {
-                        default = "gemini-2.5-flash-lite-preview-06-17",
-                    },
-                },
-            })
-        end,
-        gemini = function()
-            return require("codecompanion.adapters").extend("gemini", {
-                name = "gemini",
-                schema = {
-                    model = {
-                        default = "gemini-2.5-pro-preview-06-05",
-                    },
-                },
-            })
-        end,
-        opus = function()
-            return require("codecompanion.adapters").extend("anthropic", {
-                schema = {
-                    model = {
-                        default = "claude-opus-4-20250514",
-                    },
-                },
-            })
-        end,
     },
     extensions = {
         mcphub = {
             callback = "mcphub.extensions.codecompanion",
             opts = {
                 show_result_in_chat = true, -- Show mcp tool results in chat
-                make_vars = true,   -- Convert resources to #variables
+                make_vars = true,           -- Convert resources to #variables
                 make_slash_commands = true, -- Add prompts as /slash commands
             }
         }
