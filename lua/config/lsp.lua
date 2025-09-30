@@ -15,7 +15,10 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- Note: Assignment syntax, not function call
 vim.lsp.config.lua_ls = {
+    cmd = { 'lua-language-server' },
+    filetypes = { 'lua' },
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -34,16 +37,22 @@ vim.lsp.config.lua_ls = {
 }
 
 vim.lsp.config.clangd = {
+    cmd = { 'clangd' },
+    filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
     on_attach = on_attach,
     capabilities = capabilities
 }
 
 vim.lsp.config.pylsp = {
+    cmd = { 'pylsp' },
+    filetypes = { 'python' },
     on_attach = on_attach,
     capabilities = capabilities
 }
 
 vim.lsp.config.ruff = {
+    cmd = { 'ruff', 'server', '--preview' },
+    filetypes = { 'python' },
     on_attach = on_attach,
     capabilities = capabilities,
     commands = {
@@ -120,6 +129,8 @@ vim.lsp.config.ruff = {
 }
 
 vim.lsp.config.rust_analyzer = {
+    cmd = { 'rust-analyzer' },
+    filetypes = { 'rust' },
     on_attach = on_attach,
     capabilities = capabilities
 }
@@ -142,3 +153,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
 })
 
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('pylsp')
+vim.lsp.enable('ruff')

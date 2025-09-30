@@ -1,5 +1,10 @@
 require("codecompanion").setup({
     adapters = {
+        acp = {
+          opts = {
+                show_defaults = false,
+            },
+        },
         http = {
             opts = {
                 show_defaults = false,
