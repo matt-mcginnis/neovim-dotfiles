@@ -1,9 +1,25 @@
 require("codecompanion").setup({
     adapters = {
         acp = {
-          opts = {
+            opts = {
                 show_defaults = false,
             },
+            gemini_cli = function()
+                return require("codecompanion.adapters").extend("gemini_cli", {
+                    commands = {
+                        default = {
+                            "/opt/homebrew/bin/gemini",
+                            "--experimental-acp",
+                        },
+                    },
+                    defaults = {
+                        auth_method = "gemini-api-key",
+                    },
+                    env = {
+                        GEMINI_API_KEY = "cmd:op read op://Employee/Gemini/credential --no-newline",
+                    },
+                })
+            end,
         },
         http = {
             opts = {
@@ -15,7 +31,7 @@ require("codecompanion").setup({
                     name = "anthropic",
                     schema = {
                         model = {
-                            default = "claude-sonnet-4-20250514",
+                            default = "claude-sonnet-4-5-20250929",
                         },
                     },
                 })
@@ -44,7 +60,7 @@ require("codecompanion").setup({
                 return require("codecompanion.adapters").extend("anthropic", {
                     schema = {
                         model = {
-                            default = "claude-opus-4-20250514",
+                            default = "claude-opus-4-1-20250805",
                         },
                     },
                 })
@@ -63,7 +79,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "gemini",
+            adapter = "anthropic",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -262,10 +278,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "gemini",
+            adapter = "anthropic",
         },
         inline = {
-            adapter = "gemini",
+            adapter = "anthropic",
             keymaps = {
                 accept_change = {
                     modes = {
