@@ -274,7 +274,24 @@ require("codecompanion").setup({
                     index = 19,
                     callback = "keymaps.goto_file_under_cursor",
                     description = "Open the file under cursor in a new tab.",
-                }
+                },
+                -- Keymaps for ACP permission requests
+                _acp_allow_always = {
+                    modes = { n = "eA" },
+                    description = "Allow Always",
+                },
+                _acp_allow_once = {
+                    modes = { n = "ea" },
+                    description = "Allow Once",
+                },
+                _acp_reject_once = {
+                    modes = { n = "er" },
+                    description = "Reject Once",
+                },
+                _acp_reject_always = {
+                    modes = { n = "eR" },
+                    description = "Reject Always",
+                },
             }
         },
         cmd = {
