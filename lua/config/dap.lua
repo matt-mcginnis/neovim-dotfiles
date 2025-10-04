@@ -1,5 +1,6 @@
 -- Python setup
 require('nvim-dap-virtual-text').setup()
+require('dap-go').setup()
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
 table.insert(require('dap').configurations.python, {
