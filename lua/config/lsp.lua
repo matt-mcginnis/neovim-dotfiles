@@ -107,6 +107,13 @@ vim.lsp.config.clangd = {
     capabilities = capabilities
 }
 
+vim.lsp.config.gopls = {
+    cmd = { 'gopls' },
+    filetypes = { 'go' },
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 vim.lsp.config.pylsp = {
     cmd = { 'pylsp' },
     filetypes = { 'python' },
@@ -159,6 +166,13 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "lua",
     callback = function()
         vim.lsp.enable('lua_ls')
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "go" },
+    callback = function()
+        vim.lsp.enable('gopls')
     end,
 })
 
