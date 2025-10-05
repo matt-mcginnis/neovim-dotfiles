@@ -3,6 +3,27 @@ require('nvim-dap-virtual-text').setup()
 require('dap-go').setup()
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
+require('dap').adapters.codelldb = {
+  type = "server",
+  port = "${port}",
+  executable = {
+    command = "codelldb",
+    args = { "--port", "${port}" },
+  },
+}
+
+require('dap').configurations.rust = require('dap').configurations.rust or {}
+table.insert(require('dap').configurations.rust, {
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false
+})
+
 table.insert(require('dap').configurations.python, {
     name = 'Fast API',
     type = 'python',
