@@ -17,14 +17,6 @@ require("obsidian").setup({
             name = "personal",
             path = "~/vaults/personal",
         },
-        {
-            name = "ai-innovation",
-            path = "~/Github/mckinney/ai-obsidian",
-        },
-        {
-            name = "analytics",
-            path = "~/Github/mckinney/analytics-obsidian",
-        },
     },
     -- Optional, for templates (see below).
     templates = {
