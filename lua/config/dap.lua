@@ -1,7 +1,7 @@
 -- Python setup
 require('nvim-dap-virtual-text').setup()
 require('dap-go').setup()
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+require('dap-python').setup('uv')
 
 require('dap').adapters.codelldb = {
   type = "server",
