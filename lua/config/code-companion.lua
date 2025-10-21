@@ -34,6 +34,9 @@ require("codecompanion").setup({
                             default = "claude-sonnet-4-5-20250929",
                         },
                     },
+                    env = {
+                        api_key = "cmd:op read op://Employee/anthropic_api_key/credential --no-newline",
+                    },
                 })
             end,
             flash = function()
@@ -43,6 +46,9 @@ require("codecompanion").setup({
                         model = {
                             default = "gemini-2.5-flash-lite-preview-06-17",
                         },
+                    },
+                    env = {
+                        api_key = "cmd:op read op://Employee/Gemini/credential --no-newline",
                     },
                 })
             end,
@@ -54,6 +60,9 @@ require("codecompanion").setup({
                             default = "gemini-2.5-pro-preview-06-05",
                         },
                     },
+                    env = {
+                        api_key = "cmd:op read op://Employee/Gemini/credential --no-newline",
+                    },
                 })
             end,
             opus = function()
@@ -62,6 +71,9 @@ require("codecompanion").setup({
                         model = {
                             default = "claude-opus-4-1-20250805",
                         },
+                    },
+                    env = {
+                        api_key = "cmd:op read op://Employee/anthropic_api_key/credential --no-newline",
                     },
                 })
             end,
