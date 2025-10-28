@@ -4,6 +4,18 @@ require("codecompanion").setup({
             opts = {
                 show_defaults = false,
             },
+            codex = function()
+                return require("codecompanion.adapters").extend("codex", {
+                    commands = {
+                        default = {
+                            "/Users/mmcginnis/.local/bin/codex-acp",
+                        },
+                    },
+                    defaults = {
+                        auth_method = "chatgpt",
+                    },
+                })
+            end,
             gemini_cli = function()
                 return require("codecompanion.adapters").extend("gemini_cli", {
                     commands = {
@@ -91,7 +103,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "anthropic",
+            adapter = "codex",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -307,10 +319,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "anthropic",
+            adapter = "codex",
         },
         inline = {
-            adapter = "anthropic",
+            adapter = "codex",
             keymaps = {
                 accept_change = {
                     modes = {
