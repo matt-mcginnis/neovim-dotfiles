@@ -16,22 +16,6 @@ require("codecompanion").setup({
                     },
                 })
             end,
-            gemini_cli = function()
-                return require("codecompanion.adapters").extend("gemini_cli", {
-                    commands = {
-                        default = {
-                            "/opt/homebrew/bin/gemini",
-                            "--experimental-acp",
-                        },
-                    },
-                    defaults = {
-                        auth_method = "gemini-api-key",
-                    },
-                    env = {
-                        GEMINI_API_KEY = "cmd:op read op://Employee/Gemini/credential --no-newline",
-                    },
-                })
-            end,
         },
         http = {
             opts = {
@@ -48,32 +32,6 @@ require("codecompanion").setup({
                     },
                     env = {
                         api_key = "cmd:op read op://Employee/anthropic_api_key/credential --no-newline",
-                    },
-                })
-            end,
-            flash = function()
-                return require("codecompanion.adapters").extend("gemini", {
-                    name = "flash",
-                    schema = {
-                        model = {
-                            default = "gemini-2.5-flash-lite-preview-06-17",
-                        },
-                    },
-                    env = {
-                        api_key = "cmd:op read op://Employee/Gemini/credential --no-newline",
-                    },
-                })
-            end,
-            gemini = function()
-                return require("codecompanion.adapters").extend("gemini", {
-                    name = "gemini",
-                    schema = {
-                        model = {
-                            default = "gemini-2.5-pro-preview-06-05",
-                        },
-                    },
-                    env = {
-                        api_key = "cmd:op read op://Employee/Gemini/credential --no-newline",
                     },
                 })
             end,
