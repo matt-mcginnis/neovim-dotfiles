@@ -13,6 +13,7 @@ require("codecompanion").setup({
                     },
                     defaults = {
                         auth_method = "chatgpt",
+                        timeout = 30000, -- 30 seconds
                     },
                 })
             end,
@@ -61,7 +62,7 @@ require("codecompanion").setup({
     },
     strategies = {
         chat = {
-            adapter = "codex",
+            adapter = "anthropic",
             slash_commands = {
                 ["buffer"] = {
                     callback = "strategies.chat.slash_commands.buffer",
@@ -277,10 +278,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "codex",
+            adapter = "anthropic",
         },
         inline = {
-            adapter = "codex",
+            adapter = "anthropic",
             keymaps = {
                 accept_change = {
                     modes = {
