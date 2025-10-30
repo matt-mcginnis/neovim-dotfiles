@@ -1,23 +1,5 @@
 require("codecompanion").setup({
     adapters = {
-        acp = {
-            opts = {
-                show_defaults = false,
-            },
-            codex = function()
-                return require("codecompanion.adapters").extend("codex", {
-                    commands = {
-                        default = {
-                            "/Users/mmcginnis/.local/bin/codex-acp",
-                        },
-                    },
-                    defaults = {
-                        auth_method = "chatgpt",
-                        timeout = 30000, -- 30 seconds
-                    },
-                })
-            end,
-        },
         http = {
             opts = {
                 show_defaults = false,
