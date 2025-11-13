@@ -135,6 +135,13 @@ vim.lsp.config.rust_analyzer = {
     capabilities = capabilities
 }
 
+vim.lsp.config.ts_ls = {
+    cmd = { 'typescript-language-server', '--stdio' },
+    filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'jsx', 'tsx' },
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.py",
     callback = function()
@@ -188,5 +195,13 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.lsp.enable('pylsp')
         vim.lsp.enable('ruff')
+    end,
+})
+
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'jsx', 'tsx' },
+    callback = function()
+        vim.lsp.enable('ts_ls')
     end,
 })
