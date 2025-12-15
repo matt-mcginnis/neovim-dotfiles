@@ -28,16 +28,26 @@ table.insert(require('dap').configurations.python, {
     name = 'Fast API',
     type = 'python',
     request = 'launch',
-    module = 'uvicorn',
-    args = { 'app.main:app', '--host', '0.0.0.0', '--port', '80' }
+    module = 'fastapi',
+    console = 'integratedTerminal',
+    args = function()
+        local host = vim.fn.input("Host: ", "127.0.0.1")
+        local port = vim.fn.input("Port: ", "8000")
+        return { 'dev', 'app/main.py', '--host', host, '--port', port }
+    end
 })
 
 table.insert(require('dap').configurations.python, {
-    name = 'Fast API dev',
+    name = 'Fast API (uvicorn)',
     type = 'python',
     request = 'launch',
-    module = 'fastapi',
-    args = { 'dev', 'main.py' }
+    module = 'uvicorn',
+    console = 'integratedTerminal',
+    args = function()
+        local host = vim.fn.input("Host: ", "127.0.0.1")
+        local port = vim.fn.input("Port: ", "8000")
+        return { 'app.main:app', '--host', host, '--port', port }
+    end
 })
 
 table.insert(require('dap').configurations.python, {
