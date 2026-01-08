@@ -42,44 +42,14 @@ require("codecompanion").setup({
             }
         }
     },
-    strategies = {
+    interactions = {
         chat = {
             adapter = "anthropic",
             slash_commands = {
-                ["buffer"] = {
-                    callback = "strategies.chat.slash_commands.buffer",
-                    description = "Insert open buffers",
-                    opts = {
-                        contains_code = true,
-                        provider = "telescope",
-                    },
-                },
-                ["file"] = {
-                    callback = "strategies.chat.slash_commands.file",
-                    description = "Insert a file",
-                    opts = {
-                        contains_code = true,
-                        max_lines = 1000,
-                        provider = "telescope",
-                    },
-                },
-                ["help"] = {
-                    callback = "strategies.chat.slash_commands.help",
-                    description = "Insert content from help tags",
-                    opts = {
-                        contains_code = false,
-                        max_lines = 128, -- Maximum amount of lines to of the help file to send (NOTE: each vimdoc line is typically 10 tokens)
-                        provider = "telescope",
-                    },
-                },
-                ["symbols"] = {
-                    callback = "strategies.chat.slash_commands.symbols",
-                    description = "Insert symbols for a selected file",
-                    opts = {
-                        contains_code = true,
-                        provider = "telescope",
-                    },
-                },
+                buffer  = { opts = { contains_code = true, provider = "telescope" } },
+                file    = { opts = { contains_code = true, provider = "telescope", max_lines = 1000 } },
+                help    = { opts = { contains_code = false, provider = "telescope", max_lines = 128 } },
+                symbols = { opts = { contains_code = true, provider = "telescope" } },
             },
             keymaps = {
                 options = {
@@ -147,22 +117,6 @@ require("codecompanion").setup({
                     index = 8,
                     callback = "keymaps.yank_code",
                     description = "Yank Code",
-                },
-                pin = {
-                    modes = {
-                        n = "sp",
-                    },
-                    index = 9,
-                    callback = "keymaps.pin_context",
-                    description = "Pin Context",
-                },
-                watch = {
-                    modes = {
-                        n = "sw",
-                    },
-                    index = 10,
-                    callback = "keymaps.toggle_watch",
-                    description = "Watch Buffer",
                 },
                 next_chat = {
                     modes = {
