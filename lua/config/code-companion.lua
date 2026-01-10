@@ -1,5 +1,14 @@
 require("codecompanion").setup({
     adapters = {
+        acp = {
+            claude_code = function()
+                return require("codecompanion.adapters").extend("claude_code", {
+                    env = {
+                        CLAUDE_CODE_OAUTH_TOKEN = "cmd:op read op://Employee/claude_code_oauth_token/credential --no-newline",
+                    },
+                })
+            end,
+        },
         http = {
             opts = {
                 show_defaults = false,
@@ -44,12 +53,23 @@ require("codecompanion").setup({
     },
     interactions = {
         chat = {
-            adapter = "anthropic",
+            adapter = "claude_code",
             slash_commands = {
                 buffer  = { opts = { contains_code = true, provider = "telescope" } },
                 file    = { opts = { contains_code = true, provider = "telescope", max_lines = 1000 } },
                 help    = { opts = { contains_code = false, provider = "telescope", max_lines = 128 } },
                 symbols = { opts = { contains_code = true, provider = "telescope" } },
+            },
+            variables = {
+                ["plan"] = {
+                    callback = function()
+                        return "Please use the EnterPlanMode tool to plan the following task:"
+                    end,
+                    description = "Trigger plan mode",
+                    opts = {
+                        contains_code = true,
+                    },
+                },
             },
             keymaps = {
                 options = {
@@ -214,10 +234,10 @@ require("codecompanion").setup({
             }
         },
         cmd = {
-            adapter = "anthropic",
+            adapter = "claude_code",
         },
         inline = {
-            adapter = "anthropic",
+            adapter = "claude_code",
             keymaps = {
                 accept_change = {
                     modes = {
@@ -264,3 +284,10 @@ vim.api.nvim_set_keymap("v", "<leader>ai", "<cmd>CodeCompanion<cr>", { noremap =
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
+
+
+
+
+
+
+
