@@ -114,8 +114,8 @@ vim.lsp.config.gopls = {
     capabilities = capabilities
 }
 
-vim.lsp.config.pylsp = {
-    cmd = { 'pylsp' },
+vim.lsp.config.pyright = {
+    cmd = { 'pyright-langserver', '--stdio' },
     filetypes = { 'python' },
     on_attach = on_attach,
     capabilities = capabilities
@@ -193,7 +193,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "python",
     callback = function()
-        vim.lsp.enable('pylsp')
+        vim.lsp.enable('pyright')
         vim.lsp.enable('ruff')
     end,
 })
