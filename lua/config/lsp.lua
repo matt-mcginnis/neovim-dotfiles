@@ -79,6 +79,22 @@ local function ruff_format()
     end
 end
 
+local function eslint_fix_all()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local eslint_client = vim.lsp.get_clients({ name = 'eslint', bufnr = bufnr })[1]
+    if eslint_client then
+        eslint_client.request('workspace/executeCommand', {
+            command = 'eslint.applyAllFixes',
+            arguments = {
+                {
+                    uri = vim.uri_from_bufnr(bufnr),
+                    version = vim.lsp.util.buf_versions[bufnr],
+                },
+            },
+        }, nil, bufnr)
+    end
+end
+
 -- Note: Assignment syntax, not function call
 vim.lsp.config.lua_ls = {
     cmd = { 'lua-language-server' },
@@ -142,6 +158,23 @@ vim.lsp.config.ts_ls = {
     capabilities = capabilities
 }
 
+vim.lsp.config.eslint = {
+    cmd = { 'vscode-eslint-language-server', '--stdio' },
+    filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'jsx', 'tsx' },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    root_markers = {
+        'eslint.config.js', 'eslint.config.mjs', 'eslint.config.cjs',
+        'eslint.config.ts', 'eslint.config.mts', 'eslint.config.cts',
+        '.eslintrc', '.eslintrc.js', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml',
+    },
+    settings = {
+        eslint = {
+            workingDirectories = { mode = "auto" },
+        },
+    },
+}
+
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.py",
     callback = function()
@@ -152,6 +185,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
                 ruff_format()
             end, 20)
         end, 20)
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+    callback = function()
+        eslint_fix_all()
     end,
 })
 
@@ -203,5 +243,6 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'jsx', 'tsx' },
     callback = function()
         vim.lsp.enable('ts_ls')
+        vim.lsp.enable('eslint')
     end,
 })
