@@ -69,16 +69,6 @@ require("lazy").setup({
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     },
 
-    -- Code Companion (AI)
-    {
-        "olimorris/codecompanion.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        config = true
-    },
-
     -- Multicursor
     {
         "jake-stewart/multicursor.nvim",
@@ -94,17 +84,6 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-    },
-
-    -- MCP Hub
-    {
-        "ravitemer/mcphub.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
-        },
-        -- comment the following line to ensure hub will be ready at the earliest
-        cmd = "MCPHub",                          -- lazy load by default
-        build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
     },
 
     -- Go DAP

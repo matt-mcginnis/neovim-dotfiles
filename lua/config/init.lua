@@ -4,11 +4,9 @@ require("config.options")
 
 -- Plugins
 require("config.cmp")
-require("config.code-companion")
 require("config.comment")
 require("config.dap")
 require("config.lsp")
-require("config.mcp")
 require("config.movement")
 require("config.multicursor")
 require("config.obsidian")
