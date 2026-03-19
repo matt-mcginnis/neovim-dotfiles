@@ -21,19 +21,19 @@ local function ruff_organize_imports()
     local ruff_client = vim.lsp.get_clients({ name = 'ruff' })[1]
     if ruff_client then
         ruff_client:exec_cmd({
-            title = "Organize imports",
-            command = "ruff.applyOrganizeImports",
-            arguments = {
-                {
-                    uri = vim.uri_from_bufnr(0),
-                    version = assert(
-                        vim.lsp.util.buf_versions[bufnr],
-                        ('No version found for buffer %d'):format(bufnr)
-                    )
-                },
-            }
-        },
-        { bufnr = bufnr })
+                title = "Organize imports",
+                command = "ruff.applyOrganizeImports",
+                arguments = {
+                    {
+                        uri = vim.uri_from_bufnr(0),
+                        version = assert(
+                            vim.lsp.util.buf_versions[bufnr],
+                            ('No version found for buffer %d'):format(bufnr)
+                        )
+                    },
+                }
+            },
+            { bufnr = bufnr })
     end
 end
 
@@ -42,19 +42,19 @@ local function ruff_auto_fix()
     local ruff_client = vim.lsp.get_clients({ name = 'ruff' })[1]
     if ruff_client then
         ruff_client:exec_cmd({
-            title = "Auto-fix",
-            command = "ruff.applyAutofix",
-            arguments = {
-                {
-                    uri = vim.uri_from_bufnr(0),
-                    version = assert(
-                        vim.lsp.util.buf_versions[bufnr],
-                        ('No version found for buffer %d'):format(bufnr)
-                    )
-                },
-            }
-        },
-        { bufnr = bufnr })
+                title = "Auto-fix",
+                command = "ruff.applyAutofix",
+                arguments = {
+                    {
+                        uri = vim.uri_from_bufnr(0),
+                        version = assert(
+                            vim.lsp.util.buf_versions[bufnr],
+                            ('No version found for buffer %d'):format(bufnr)
+                        )
+                    },
+                }
+            },
+            { bufnr = bufnr })
     end
 end
 
@@ -63,19 +63,19 @@ local function ruff_format()
     local ruff_client = vim.lsp.get_clients({ name = 'ruff' })[1]
     if ruff_client then
         ruff_client:exec_cmd({
-            title = "Format",
-            command = "ruff.applyFormat",
-            arguments = {
-                {
-                    uri = vim.uri_from_bufnr(0),
-                    version = assert(
-                        vim.lsp.util.buf_versions[bufnr],
-                        ('No version found for buffer %d'):format(bufnr)
-                    )
-                },
-            }
-        },
-        { bufnr = bufnr })
+                title = "Format",
+                command = "ruff.applyFormat",
+                arguments = {
+                    {
+                        uri = vim.uri_from_bufnr(0),
+                        version = assert(
+                            vim.lsp.util.buf_versions[bufnr],
+                            ('No version found for buffer %d'):format(bufnr)
+                        )
+                    },
+                }
+            },
+            { bufnr = bufnr })
     end
 end
 
@@ -123,13 +123,6 @@ vim.lsp.config.clangd = {
     capabilities = capabilities
 }
 
-vim.lsp.config.gopls = {
-    cmd = { 'gopls' },
-    filetypes = { 'go' },
-    on_attach = on_attach,
-    capabilities = capabilities
-}
-
 vim.lsp.config.pyright = {
     cmd = { 'pyright-langserver', '--stdio' },
     filetypes = { 'python' },
@@ -149,6 +142,19 @@ vim.lsp.config.rust_analyzer = {
     filetypes = { 'rust' },
     on_attach = on_attach,
     capabilities = capabilities
+}
+
+vim.lsp.config.gopls = {
+    cmd = { 'gopls' },
+    filetypes = { 'go' },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            goimports = true,
+            staticcheck = true,
+        }
+    }
 }
 
 vim.lsp.config.ts_ls = {
@@ -199,6 +205,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.rs",
     callback = function()
         vim.cmd("RustFmt")
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.go",
+    callback = function()
+        vim.lsp.buf.format({ async = false })
     end,
 })
 
