@@ -151,7 +151,6 @@ vim.lsp.config.gopls = {
     capabilities = capabilities,
     settings = {
         gopls = {
-            goimports = true,
             staticcheck = true,
         }
     }
