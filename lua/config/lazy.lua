@@ -31,7 +31,7 @@ require("lazy").setup({
     { "rose-pine/neovim" },
 
     -- Leap Motions
-    { "ggandor/leap.nvim" },
+    { url = "https://codeberg.org/andyg/leap.nvim" },
 
     -- LSP Plugins
     { "williamboman/mason.nvim" },

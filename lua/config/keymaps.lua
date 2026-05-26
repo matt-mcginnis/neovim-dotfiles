@@ -1,9 +1,5 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "j", "h")
-vim.keymap.set("n", "k", "j")
-vim.keymap.set("n", "h", "k")
-
 vim.keymap.set("n", "<", "_", { desc = "Go to beginning of line" })
 vim.keymap.set("n", ">", "$", { desc = "Go to end of line" })
 
@@ -20,8 +16,8 @@ vim.keymap.set("n", "<leader>tM", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 
-vim.keymap.set("n", "H", "<C-u>zz", { desc = "Page up and center" })
-vim.keymap.set("n", "K", "<C-d>zz", { desc = "Page down and center" })
+vim.keymap.set("n", "<c-k>", "<C-u>zz", { desc = "Page up and center" })
+vim.keymap.set("n", "<c-j>", "<C-d>zz", { desc = "Page down and center" })
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", { desc = "Toggle search highlight" })
 
@@ -56,18 +52,18 @@ vim.keymap.set("n", "<leader>s.", "@:", { desc = "Sed repeat replace all isntanc
 
 vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<c-.>", "}zz", { desc = "Move up a paragragh" })
-vim.keymap.set("n", "<c-,>", "{zz", { desc = "Move down a paragragh" })
+vim.keymap.set("n", "<c-,>", "}zz", { desc = "Move up a paragragh" })
+vim.keymap.set("n", "<c-.>", "{zz", { desc = "Move down a paragragh" })
 
-vim.keymap.set("n", "<leader>wj", "<c-w>h", { desc = "Move to left split" })
+vim.keymap.set("n", "<leader>wh", "<c-w>h", { desc = "Move to left split" })
 vim.keymap.set("n", "<leader>wl", "<c-w>l", { desc = "Move to right split" })
-vim.keymap.set("n", "<leader>wh", "<c-w>k", { desc = "Move to above split" })
-vim.keymap.set("n", "<leader>wk", "<c-w>j", { desc = "Move to below split" })
+vim.keymap.set("n", "<leader>wk", "<c-w>k", { desc = "Move to above split" })
+vim.keymap.set("n", "<leader>wj", "<c-w>j", { desc = "Move to below split" })
 
-vim.keymap.set("n", "<leader>wJ", "<c-w>H", { desc = "Move split to the left" })
+vim.keymap.set("n", "<leader>wH", "<c-w>H", { desc = "Move split to the left" })
 vim.keymap.set("n", "<leader>wL", "<c-w>L", { desc = "Move split to the right" })
-vim.keymap.set("n", "<leader>wH", "<c-w>K", { desc = "Move split up" })
-vim.keymap.set("n", "<leader>wK", "<c-w>J", { desc = "Move split down" })
+vim.keymap.set("n", "<leader>wK", "<c-w>K", { desc = "Move split up" })
+vim.keymap.set("n", "<leader>wJ", "<c-w>J", { desc = "Move split down" })
 
 vim.keymap.set("n", "<leader>wt", "<c-w>T", { desc = "Move split to its own window" })
 
@@ -77,18 +73,14 @@ vim.keymap.set("n", "<leader>w-", ":new<cr>", { desc = "Create new horizontal sp
 vim.keymap.set("n", "'", "@", { desc = "Run recorded macro" })
 
 -- Visual Keymaps
-vim.keymap.set("v", "j", "h")
-vim.keymap.set("v", "k", "j")
-vim.keymap.set("v", "h", "k")
-
 vim.keymap.set("v", "<", "_", { desc = "Go to beginning of line" })
 vim.keymap.set("v", ">", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("v", "<c-.>", "}zz", { desc = "Move up a paragragh" })
 vim.keymap.set("v", "<c-,>", "{zz", { desc = "Move down a paragragh" })
 
-vim.keymap.set("v", "H", ":m '<-2<CR>gv=gv", { desc = "Move highlighted block up" })
-vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv", { desc = "Move highlighted block down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted block up" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted block down" })
 
 vim.keymap.set("v", "p", "\"_dP", { desc = "Paste and retain what was pasted" })
 vim.keymap.set("v", "<leader>p", "\"+p", { desc = "Paste from computer register" })
