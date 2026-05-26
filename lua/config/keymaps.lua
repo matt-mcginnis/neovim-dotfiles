@@ -7,12 +7,12 @@ vim.keymap.set("n", "<leader>b", ":b#<cr>", { desc = "Go to last open buffer" })
 
 vim.keymap.set("n", "<leader>d", ":RenderMarkdown toggle<cr>", { desc = "Toggle markdown render" })
 
-vim.keymap.set("n", "<leader>ta", "zA", { desc = "Toggle collapsable folds recursively" })
-vim.keymap.set("n", "<leader>tA", "za", { desc = "Toggle collapsable fold" })
-vim.keymap.set("n", "<leader>tr", "zR", { desc = "Open all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>tR", "zr", { desc = "Open a collapsable fold" })
-vim.keymap.set("n", "<leader>tm", "zM", { desc = "Close all collapsable folds recursively" })
-vim.keymap.set("n", "<leader>tM", "zm", { desc = "Close a collapsable fold" })
+vim.keymap.set("n", "<leader>aa", "zA", { desc = "Toggle collapsable folds recursively" })
+vim.keymap.set("n", "<leader>aA", "za", { desc = "Toggle collapsable fold" })
+vim.keymap.set("n", "<leader>ar", "zR", { desc = "Open all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>aR", "zr", { desc = "Open a collapsable fold" })
+vim.keymap.set("n", "<leader>am", "zM", { desc = "Close all collapsable folds recursively" })
+vim.keymap.set("n", "<leader>aM", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 
@@ -50,7 +50,7 @@ vim.keymap.set("n", "<c-0>", ":vertical resize +10<cr>", { desc = "Increase hori
 vim.keymap.set("n", "<leader>st", ":%s/", { desc = "Sed replace all instances in file" })
 vim.keymap.set("n", "<leader>s.", "@:", { desc = "Sed repeat replace all isntances in file" })
 
-vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ao", "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<c-,>", "}zz", { desc = "Move up a paragragh" })
 vim.keymap.set("n", "<c-.>", "{zz", { desc = "Move down a paragragh" })

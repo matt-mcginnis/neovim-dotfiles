@@ -52,18 +52,18 @@ require 'nvim-treesitter.configs'.setup {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-                ["<leader>tF"] = "@function.outer",
-                ["<leader>tC"] = "@class.outer",
-                ["<leader>t?"] = "@comment.outer",
-                ["<leader>tI"] = "@conditional.*",
-                ["<leader>tL"] = "@loop.*",
+                ["<leader>aF"] = "@function.outer",
+                ["<leader>aC"] = "@class.outer",
+                ["<leader>a?"] = "@comment.outer",
+                ["<leader>aI"] = "@conditional.*",
+                ["<leader>aL"] = "@loop.*",
             },
             goto_next_end = {
-                ["<leader>tf"] = "@function.outer",
-                ["<leader>tc"] = "@class.outer",
-                ["<leader>t/"] = "@comment.outer",
-                ["<leader>ti"] = "@conditional.*",
-                ["<leader>tl"] = "@loop.*",
+                ["<leader>af"] = "@function.outer",
+                ["<leader>ac"] = "@class.outer",
+                ["<leader>a/"] = "@comment.outer",
+                ["<leader>ai"] = "@conditional.*",
+                ["<leader>al"] = "@loop.*",
             },
             goto_previous_start = {
                 ["<leader>sf"] = "@function.outer",
@@ -89,7 +89,3 @@ local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 -- ensure ; goes forward and , goes backward regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
-
--- Optionally, make builtin f, F also repeatable with ; and ,
-vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
-vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
