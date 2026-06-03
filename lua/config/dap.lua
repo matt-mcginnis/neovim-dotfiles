@@ -24,6 +24,14 @@ table.insert(require('dap').configurations.rust, {
     stopOnEntry = false
 })
 
+table.insert(require('dap').configurations.go, {
+      name = 'API Server (cmd/server)',
+      type = 'go',
+      request = 'launch',
+      program = '${workspaceFolder}/cmd/server',
+      cwd = '${workspaceFolder}',
+})
+
 table.insert(require('dap').configurations.python, {
     name = 'Fast API',
     type = 'python',
