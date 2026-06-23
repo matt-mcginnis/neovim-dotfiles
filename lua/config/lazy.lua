@@ -37,11 +37,11 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "neovim/nvim-lspconfig" },
 
-    -- Treesitter
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    -- Treesitter (main branch — the Neovim 0.12+ rewrite)
+    { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "BufReadPost",
+        branch = "main",
         build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
