@@ -156,6 +156,13 @@ vim.lsp.config.gopls = {
     }
 }
 
+vim.lsp.config.terraformls = {
+    cmd = { 'terraform-ls', 'serve' },
+    filetypes = { 'terraform', 'terraform-vars' },
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 vim.lsp.config.ts_ls = {
     cmd = { 'typescript-language-server', '--stdio' },
     filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'jsx', 'tsx' },
@@ -256,5 +263,12 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('eslint')
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { 'terraform', 'terraform-vars' },
+    callback = function()
+        vim.lsp.enable('terraformls')
     end,
 })

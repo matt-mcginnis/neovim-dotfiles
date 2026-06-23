@@ -6,7 +6,7 @@
 -- Install parsers (no-op if already installed; runs async)
 require('nvim-treesitter').install {
   "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline",
-  "python", "hcl", "latex", "javascript", "go",
+  "python", "hcl", "terraform", "latex", "javascript", "go",
 }
 
 -- Native highlighting + experimental treesitter indentation, per buffer
