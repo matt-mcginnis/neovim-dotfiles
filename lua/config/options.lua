@@ -24,11 +24,11 @@ vim.diagnostic.config({ signs = false, virtual_text = false })
 
 vim.opt.conceallevel = 1
 
--- Load telescope find_files on startup
+-- Load file picker on startup
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     if vim.fn.argv(0) == "" then
-      require("telescope.builtin").find_files()
+      require("fzf-lua").files()
     end
   end,
 })

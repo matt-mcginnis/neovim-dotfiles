@@ -48,10 +48,10 @@ require("lazy").setup({
         },
     },
 
-    -- Telescope
+    -- fzf-lua
     {
-        'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        'ibhagwan/fzf-lua',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
     {
