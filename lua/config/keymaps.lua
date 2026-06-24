@@ -1,5 +1,14 @@
 vim.g.mapleader = " "
 
+local g_defaults = {
+  "grn", "gra", "grr", "gri", "grt", "grx", "gO", "gc", "gcc"
+}
+for _, lhs in ipairs(g_defaults) do
+  for _, mode in ipairs({ "n", "x", "o" }) do
+    pcall(vim.keymap.del, mode, lhs)
+  end
+end
+
 vim.keymap.set("n", "<", "_", { desc = "Go to beginning of line" })
 vim.keymap.set("n", ">", "$", { desc = "Go to end of line" })
 
@@ -16,8 +25,8 @@ vim.keymap.set("n", "<leader>aM", "zm", { desc = "Close a collapsable fold" })
 
 vim.keymap.set('n', '<leader>ef', function() vim.lsp.buf.format { async = true } end)
 
-vim.keymap.set("n", "<c-k>", "<C-u>zz", { desc = "Page up and center" })
-vim.keymap.set("n", "<c-j>", "<C-d>zz", { desc = "Page down and center" })
+vim.keymap.set("n", "<c-.>", "<C-u>zz", { desc = "Page up and center" })
+vim.keymap.set("n", "<c-,>", "<C-d>zz", { desc = "Page down and center" })
 
 vim.keymap.set("n", "<leader>h", ":set hlsearch! hlsearch?<cr>", { desc = "Toggle search highlight" })
 
@@ -34,6 +43,9 @@ vim.keymap.set("n", "m", "`", { desc = "Go to mark" })
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Move to next in search and center" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Move to previous in search and center" })
+
+vim.keymap.set({ "n", "x" }, "<leader>k", "gg", { desc = "Go to top of file" })
+vim.keymap.set({ "n", "x" }, "<leader>j", "G", { desc = "Go to bottom of file" })
 
 vim.keymap.set("n", "<leader>p", "\"+p", { desc = "Paste from computer register" })
 
@@ -52,8 +64,8 @@ vim.keymap.set("n", "<leader>s.", "@:", { desc = "Sed repeat replace all isntanc
 
 vim.api.nvim_set_keymap("n", "<leader>ao", "<cmd>silent !wezterm cli spawn --cwd $(pwd) -- lazygit<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<c-,>", "}zz", { desc = "Move up a paragragh" })
-vim.keymap.set("n", "<c-.>", "{zz", { desc = "Move down a paragragh" })
+vim.keymap.set("n", "<c-j>", "}zz", { desc = "Move down a paragragh" })
+vim.keymap.set("n", "<c-k>", "{zz", { desc = "Move up a paragragh" })
 
 vim.keymap.set("n", "<leader>wh", "<c-w>h", { desc = "Move to left split" })
 vim.keymap.set("n", "<leader>wl", "<c-w>l", { desc = "Move to right split" })
