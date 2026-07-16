@@ -24,9 +24,6 @@ require("lazy").setup({
     { "dcampos/cmp-snippy" },
     { "matt-mcginnis/vim-snippets" },
 
-    -- Commenting
-    { "numToStr/Comment.nvim" },
-
     -- Rose Pine
     { "rose-pine/neovim" },
 
