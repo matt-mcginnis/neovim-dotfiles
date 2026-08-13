@@ -107,6 +107,13 @@ require("lazy").setup({
         cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
     },
 
+    -- HTTP Client
+    {
+        "mistweaverco/kulala.nvim",
+        version = "*",
+        ft = { "http", "rest" },
+    },
+
     -- Supermaven
     { "supermaven-inc/supermaven-nvim" }
 })
