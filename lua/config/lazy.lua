@@ -97,6 +97,16 @@ require("lazy").setup({
     { "theHamsta/nvim-dap-virtual-text" },
 
 
+    -- Database
+    {
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = {
+            { "tpope/vim-dadbod", lazy = true },
+            { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "plsql" }, lazy = true },
+        },
+        cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
+    },
+
     -- Supermaven
     { "supermaven-inc/supermaven-nvim" }
 })

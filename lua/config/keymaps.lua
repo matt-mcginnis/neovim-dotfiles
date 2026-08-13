@@ -67,6 +67,9 @@ vim.api.nvim_set_keymap("n", "<leader>ao", "<cmd>silent !wezterm cli spawn --cwd
 vim.keymap.set("n", "<c-j>", "}zz", { desc = "Move down a paragragh" })
 vim.keymap.set("n", "<c-k>", "{zz", { desc = "Move up a paragragh" })
 
+vim.keymap.set({ "n", "x" }, "<c-h>", "B", { desc = "Move back a WORD" })
+vim.keymap.set({ "n", "x" }, "<c-l>", "W", { desc = "Move forward a WORD" })
+
 vim.keymap.set("n", "<leader>wh", "<c-w>h", { desc = "Move to left split" })
 vim.keymap.set("n", "<leader>wl", "<c-w>l", { desc = "Move to right split" })
 vim.keymap.set("n", "<leader>wk", "<c-w>k", { desc = "Move to above split" })

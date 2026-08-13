@@ -5,6 +5,7 @@ require("config.options")
 -- Plugins
 require("config.cmp")
 require("config.comment")
+require("config.dadbod")
 require("config.dap")
 require("config.lsp")
 require("config.movement")
